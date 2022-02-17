@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.cardnewcontact{
+    height: 500px;
+    margin-top: 8%;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    }
+
+.addcontact{
+    color: white;
+}
+
+.textaddcontact{
+    color: #F8B74E;
+}
+.starregister{
+    color: red;
+}
+
+.card-header{
+color: white;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #B586BD;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+}
+
+.add_contact_btn{
+color: black;
+margin-top: 2%;
+background-color: #B586BD;
+transition: background-color 1s;
+width: 100px;
+}
+
+.add_contact_btn:hover{
+color: black;
+background-color: white;
+}
+
