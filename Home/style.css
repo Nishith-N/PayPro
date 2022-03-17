@@ -197,14 +197,14 @@ body {
   --------------------------------------------------------------*/
   #hero {
     width: 100%;
-    height: 80vh;
+    height: 82vh;
     background: #892883;
   }
   #cont{
       color: #F8B84E;
   }
   #hero .container {
-    padding-top: px;
+    padding-top: 0%;
   }
   #hero h1 {
     margin: 0 0 10px 0;
@@ -412,3 +412,4 @@ body {
 #tab1 th {
   text-align: left;
 }
+
