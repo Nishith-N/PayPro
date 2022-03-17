@@ -379,3 +379,36 @@ body {
   background-color: #555;
   color: #F8B84E;
 }
+
+/* Footer */
+.short-text { display: none; }
+
+@media (max-width: 1200px) {
+    .short-text { display: inline-block; }
+    .full-text { display: none; }
+}
+
+#tab a {
+  margin-right: 15px;
+}
+#tab th {
+  text-align: left;
+  padding-left: 20px;
+}
+#tab td{
+   padding-left: 40px;
+   text-align: left;
+ }
+#tab{
+  margin-bottom: -25px;
+}
+#tab1{
+  padding-left: 20px;
+}
+#tab1 td{
+  padding-left: 20px;
+   text-align: left;
+}
+#tab1 th {
+  text-align: left;
+}
