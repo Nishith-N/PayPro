@@ -19,12 +19,14 @@ if(isset($_POST['submit_btn']))
 	$row=mysqli_fetch_row($result);
 	if(mysqli_num_rows($result)==1)
 	{
-	$phone=$row[0];
+		$phone=$row[0];
     
 	}
+
     $sql="SELECT pay_id FROM user_details WHERE phone='".$phone."'";
 	$result=mysqli_query($db,$sql);
     $row=mysqli_fetch_row($result);
+
     if(mysqli_num_rows($result)==1)
 	{
 	$pay_id=$row[0];
