@@ -25,6 +25,7 @@ $result=mysqli_query($db,$sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PayPro-Home</title>
     <meta charset="utf-8">
+    
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   
@@ -115,7 +116,7 @@ $result=mysqli_query($db,$sql);
         $i++;
 
       print '<div class="flip-card">
-      
+
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <div class="card-container">
