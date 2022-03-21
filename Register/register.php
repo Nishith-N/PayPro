@@ -15,6 +15,7 @@ if(isset($_POST['submit_btn']))
 
 $sql="CREATE TABLE IF NOT EXISTS user_details ( pay_id INT NOT NULL AUTO_INCREMENT , phone BIGINT NOT NULL , email VARCHAR(25) NOT NULL , fname VARCHAR(25) NOT NULL , lname VARCHAR(25) NOT NULL , city VARCHAR(25) NOT NULL, zip BIGINT NOT NULL , state1 VARCHAR(25) NOT NULL , block1 INT NOT NULL , addresss VARCHAR(50) NOT NULL , primary_card BIGINT NOT NULL , wallet INT NOT NULL, password1 VARCHAR(50) NOT NULL , PRIMARY KEY (pay_id)) ENGINE = MyISAM";
 	$result=mysqli_query($db,$sql);
+  
 
   $fname=$_POST['fname'];
   $lname=$_POST['lname'];
