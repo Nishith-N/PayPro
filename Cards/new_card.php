@@ -1,17 +1,21 @@
 <?php
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
-$pay_id=0;
+session_start();
+$pay_id=$_SESSION['pay_id'];
+
 $phone=0;
 
 if(isset($_POST['submit_btn']))
 {
-	$sql="CREATE TABLE IF NOT EXISTS card_details ( card_number BIGINT NOT NULL , cvv INT NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (card_number), FOREIGN KEY (pay_id) REFERENCES user_details(pay_id))";
+	$sql="CREATE TABLE IF NOT EXISTS card_details ( card_number BIGINT NOT NULL , cvv INT NOT NULL, card_name VARCHAR(25) NOT NULL, validto VARCHAR(25) NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (card_number), FOREIGN KEY (pay_id) REFERENCES user_details(pay_id))";
 	$result=mysqli_query($db,$sql);
 
 	$card_num=$_POST['card_num'];
 	$cvv=$_POST['cvv'];
-	$pay_id=1;
+	$card_name=$_POST['card_name'];
+	$validto=$_POST['validto'];
+	
 
 	$sql="SELECT phone FROM bank_details WHERE card_number='".$card_num."'";
 	$result=mysqli_query($db,$sql);
@@ -19,9 +23,11 @@ if(isset($_POST['submit_btn']))
 	$row=mysqli_fetch_row($result);
 	if(mysqli_num_rows($result)==1)
 	{
-		$phone=$row[0];
+		$sql="INSERT INTO card_details VALUES ('$card_num','$cvv','$card_name','$validto','$pay_id')";
+		$result=mysqli_query($db,$sql);
     
 	}
+	/*
 
     $sql="SELECT pay_id FROM user_details WHERE phone='".$phone."'";
 	$result=mysqli_query($db,$sql);
@@ -32,11 +38,13 @@ if(isset($_POST['submit_btn']))
 	$pay_id=$row[0];
     
 	}
+	
 	if($pay_id)
 	{
 		$sql="INSERT INTO card_details VALUES ('$card_num','$cvv','$pay_id')";
 		$result=mysqli_query($db,$sql);
 	}
+	*/
 }
 
 
@@ -83,6 +91,15 @@ if(isset($_POST['submit_btn']))
                         <label for="cvv" class="textaddcontact">CVV </label><label for="cvv" class="starregister"> * </label>
                         <input type="number" id="cvv" name="cvv" class="form-control" style="width: 300px;">
                     </div> 
+					<div class="form-group">
+                        <label for="card_name" class="textaddcontact">Card Name </label><label for="card_name" class="starregister"> * </label>
+                        <input type="text" id="card_name" name="card_name" class="form-control" style="width: 300px;">
+                    </div>
+
+					<div class="form-group">
+                        <label for="validto" class="textaddcontact">Valid Upto </label><label for="validto" class="starregister"> * </label>
+                        <input type="text" id="validto" name="validto" class="form-control" style="width: 300px;">
+                    </div>
   
                     
                    

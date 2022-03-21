@@ -4,6 +4,16 @@ or die('Error connecting to MySQL server.');
 session_start();
 $username=$_SESSION['varname'];
 $_SESSION['username']=$username;
+
+$sql="SELECT pay_id FROM user_details WHERE phone='".$username."' OR email='".$username."'";
+$result=mysqli_query($db,$sql);
+
+if(mysqli_num_rows($result)==1)
+    {
+		$row=mysqli_fetch_row($result);
+		$_SESSION['pay_id'] = $row[0];
+        
+    }
 ?>
 
 
@@ -52,7 +62,7 @@ $_SESSION['username']=$username;
                 <?php print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
                   <ul style="margin-left: 45%;">
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#">Cards</a></li>
+                    <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="#">Contact</a></li>
                     <li><a class="getstarted scrollto" href="../Login/login.php">Sign Out</a></li>
@@ -74,7 +84,7 @@ $_SESSION['username']=$username;
               <nav id="navbar" class="navbar">
               <ul style="margin-left: 0%;">
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#">Cards</a></li>
+                    <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="#">Contact</a></li>
                     <li><a class="getstarted scrollto" href="../Login/login.php">Login/Sign Up  </a></li>

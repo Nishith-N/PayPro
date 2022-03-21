@@ -113,6 +113,21 @@ $result=mysqli_query($db,$sql);
           $row1=mysqli_fetch_row($result1);
 	        $cvv=$row1[0];
         }
+        $sql2="SELECT card_name FROM card_details WHERE card_number='".$card_number."'";
+        $result2=mysqli_query($db,$sql2);
+        if(mysqli_num_rows($result2))
+      	{
+          $row2=mysqli_fetch_row($result2);
+	        $card_name=$row2[0];
+        }
+        $sql3="SELECT validto FROM card_details WHERE card_number='".$card_number."'";
+        $result3=mysqli_query($db,$sql3);
+        if(mysqli_num_rows($result3))
+      	{
+          $row3=mysqli_fetch_row($result3);
+	        $validto=$row3[0];
+        }
+
         $i++;
 
       print '<div class="flip-card">
@@ -129,10 +144,10 @@ $result=mysqli_query($db,$sql);
                 <div class="expire-data">
                   <div class="expire-date">
                     <div class="date-label">MONTH/YEAR</div>
-                    <div class="date" title="01/17">01/35</div>
+                    <div class="date" title="01/17">'.$validto.'</div>
                   </div>
                 </div>
-                <div>Kowshik Harish</div>
+                <div>'.$card_name.'</div>
               </div>
             </div>
           </div>
