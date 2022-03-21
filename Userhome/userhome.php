@@ -60,7 +60,7 @@ if(mysqli_num_rows($result)==1)
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul>
                 <?php print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
-                  <ul style="margin-left: 45%;">
+                  <ul style="margin-left: 25%;">
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
