@@ -1,18 +1,31 @@
 <?php
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
+session_start();
 if(isset($_POST['uid']) && isset($_POST['pwd']))
 {
 	$username=$_POST['uid'];
 	$pwd=$_POST['pwd'];
 
-	$sql="SELECT * FROM test WHERE user_id='".$username."' AND user_pwd='".$pwd."' limit 1";
+
+	if(preg_match("/^[0-9]+$/",$username))
+	{
+		$sql="SELECT * FROM user_details WHERE phone='".$username."' AND password1='".$pwd."' limit 1";
+	}
+	else{
+		$sql="SELECT * FROM user_details WHERE email='".$username."' AND password1='".$pwd."' limit 1";
+	}
+
+	
 
 	$result=mysqli_query($db,$sql);
 	
 	if(mysqli_num_rows($result)==1)
     {
-        header("Location:../Contacts/new_contact.html");
+		$var_value = "SELECT pay_id FROM user_details WHERE phone='".$username."' AND password1='".$pwd."' limit 1";
+		$res=mysqli_query($db,$var_value);
+		$_SESSION['varname'] = $res;
+        header("Location:../Userhome/userhome.php");
         exit();
     }
     else{
