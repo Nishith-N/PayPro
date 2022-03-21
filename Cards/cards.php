@@ -113,7 +113,9 @@ $result=mysqli_query($db,$sql);
 	        $cvv=$row1[0];
         }
         $i++;
+
       print '<div class="flip-card">
+      
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <div class="card-container">
