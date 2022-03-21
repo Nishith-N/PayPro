@@ -2,8 +2,16 @@
 
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
-$fnameerr='';
 $flag=1;
+$fnameerr='';
+$lnameerr='';
+$addresserr='';
+$pwderr='';
+$cityerr='';
+$stateerr='';
+$ziperr='';
+$emailerr='';
+$phoneerr='';
 
 if(isset($_POST['submit_btn']))
 {
@@ -40,8 +48,63 @@ $sql="CREATE TABLE IF NOT EXISTS user_details ( pay_id INT NOT NULL AUTO_INCREME
   else if (!preg_match("/^[a-zA-Z ]*$/",$fname)) {  
     $fnameerr = "Only alphabets and white space are allowed";  
     $flag=0;
+  }
+  if(empty($lname))
+  {
+    $lnameerr = "Last Name is required"; 
+    $flag=0;
+  }
+  else if (!preg_match("/^[a-zA-Z ]*$/",$lname)) {  
+    $lnameerr = "Only alphabets and white space are allowed";  
+    $flag=0;
+  }
+  if(empty($address1))
+  {
+    $addresserr = "Address is required"; 
+    $flag=0;
+  }
+  if(empty($pwd))
+  {
+    $pwderr = "Password is required"; 
+    $flag=0;
+  }
+  if(empty($city))
+  {
+    $cityerr = "City is required"; 
+    $flag=0;
+  }
+  else if (!preg_match("/^[a-zA-Z ]*$/",$city)) {  
+    $cityerr = "Only alphabets and white space are allowed";  
+    $flag=0;
+  }
+  if(empty($state))
+  {
+    $stateerr = "State is required"; 
+    $flag=0;
+  }
+  if(empty($zip))
+  {
+    $ziperr = "Zip is required"; 
+    $flag=0;
+  }
+  if(empty($email))
+  {
+    $emailerr = "Email is required"; 
+    $flag=0;
+  }
+  else if (!preg_match("/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/",$email)) {  
+    $emailerr = "enter your email correctly";  
+    $flag=0;
+  }
+  if(empty($phone))
+  {
+    $phoneerr = "Phone is required"; 
+    $flag=0;
+  }
+
   
-}
+
+  
 if($flag==1)
 {
   $sql="INSERT INTO user_details (pay_id, phone, email, fname, lname, city, zip, state1, block1, addresss, primary_card, wallet,password1) VALUES (NULL,$phone,'$email','$fname','$lname','$city',$zip,'$state',$block,'$address',$primary_card,$wallet,'$pwd')";
@@ -88,18 +151,18 @@ if($flag==1)
 			<div class="card-body">
 				<form method="POST" action="#">
                     <div class="form-group">
-                        <label for="fname" class="textregister">First Name </label><label for="fname" class="starregister"> * </label> <span class="error"><?php echo $fnameerr; ?> </span>  
-                        <input type="text" id="fname" name="fname" class="form-control" style="width: 300px;">
+                        <label for="fname" class="textregister">First Name </label><label for="fname" class="starregister"> * </label>   
+                        <input type="text" id="fname" name="fname" class="form-control" style="width: 300px;"> <span class="error"><?php echo $fnameerr; ?> </span>
                     </div>
 
                     <div class="form-group">
-                        <label for="lname" class="textregister">Last Name </label><label for="lname" class="starregister"> * </label>
-                        <input type="text" id="lname" name="lname" class="form-control" style="width: 300px;">
+                        <label for="lname" class="textregister">Last Name </label><label for="lname" class="starregister"> * </label> 
+                        <input type="text" id="lname" name="lname" class="form-control" style="width: 300px;"> <span class="error"><?php echo $lnameerr; ?> </span>
                     </div>
 
                     <div class="form-group">
-                        <label for="address1" class="textregister">Address 1</label><label for="address1" class="starregister"> * </label>
-                        <input type="text" id="address1" name="address1" class="form-control" style="width: 300px;">
+                        <label for="address1" class="textregister">Address 1</label><label for="address1" class="starregister"> * </label> 
+                        <input type="text" id="address1" name="address1" class="form-control" style="width: 300px;"> <span class="error"><?php echo $addresserr; ?> </span>
                     </div>
 
                     <div class="form-group">
@@ -108,17 +171,17 @@ if($flag==1)
                     </div>
                     <div class="form-group">
                         <label for="pwd" class="textregister">Password</label><label for="address1" class="starregister"> * </label>
-                        <input type="text" id="pwd" name="pwd" class="form-control" style="width: 300px;">
+                        <input type="text" id="pwd" name="pwd" class="form-control" style="width: 300px;">  <span class="error"><?php echo $pwderr; ?> </span>
                     </div>                    
                     
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                          <label for="city" class="textregister">City</label><label for="city" class="starregister"> * </label>
-                          <input type="text" id="city" name="city" class="form-control">
+                          <label for="city" class="textregister">City</label><label for="city" class="starregister"> * </label> 
+                          <input type="text" id="city" name="city" class="form-control"> <span class="error"><?php echo $cityerr; ?> </span>
                         </div>
 
                         <div class="form-group col-md-4">
-                          <label for="state" class="textregister">State</label><label for="state" class="starregister"> * </label>
+                          <label for="state" class="textregister">State</label><label for="state" class="starregister"> * </label> 
                           <select id="state" class="form-control" name="state">
                             <option selected>Choose...</option>
                             <option value="TamilNadu">TamilNadu</option>
@@ -126,23 +189,23 @@ if($flag==1)
                             <option value="Karnataka">Karnataka</option>
                             <option value="Kerala">Kerala</option>
                             <option value="Maharashtra">Maharashtra</option>
-                          </select>
+                          </select> <span class="error"><?php echo $stateerr; ?> </span>
                         </div>
 
                         <div class="form-group col-md-4">
-                          <label for="zip" class="textregister">Zip</label><label for="state" class="starregister"> * </label>
-                          <input type="number" class="form-control" id="zip" name="zip">
+                          <label for="zip" class="textregister">Zip</label><label for="state" class="starregister"> * </label> 
+                          <input type="number" class="form-control" id="zip" name="zip"> <span class="error"><?php echo $ziperr; ?> </span>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                          <label for="email" class="textregister">Email</label><label for="email" class="starregister"> * </label>
-                          <input type="text" id="email" name="email" class="form-control">
+                          <label for="email" class="textregister">Email</label><label for="email" class="starregister"> * </label> 
+                          <input type="text" id="email" name="email" class="form-control"> <span class="error"><?php echo $emailerr; ?> </span>
                         </div>
 
                         <div class="form-group col-md-6">
-                          <label for="phone" class="textregister">Phone</label><label for="phone" class="starregister"> * </label>
-                          <input type="number" id="phone" name="phone" class="form-control">
+                          <label for="phone" class="textregister">Phone</label><label for="phone" class="starregister"> * </label> 
+                          <input type="number" id="phone" name="phone" class="form-control"> <span class="error"><?php echo $phoneerr; ?> </span>
                         </div>
 
                       
