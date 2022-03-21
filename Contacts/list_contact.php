@@ -1,3 +1,17 @@
+<?php
+/*$db = mysqli_connect('localhost','root','','payprodb')
+or die('Error connecting to MySQL server.');
+session_start();
+
+$pay_id=$_SESSION['pay_id'];
+
+$sql="SELECT pay_name FROM contact_details WHERE pay_id='".$pay_id."' OR email='".$username."'";
+$result=mysqli_query($db,$sql);
+*/
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

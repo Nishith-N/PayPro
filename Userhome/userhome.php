@@ -64,7 +64,7 @@ if(mysqli_num_rows($result)==1)
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
-                    <li><a class="nav-link scrollto" href="#">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="getstarted scrollto" href="../Login/login.php">Sign Out</a></li>
                   </ul>
                 </ul>
@@ -86,7 +86,7 @@ if(mysqli_num_rows($result)==1)
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
-                    <li><a class="nav-link scrollto" href="#">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="getstarted scrollto" href="../Login/login.php">Login/Sign Up  </a></li>
               </ul>
               </nav>
