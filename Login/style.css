@@ -3,13 +3,16 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');
-background-size: cover;
-background-repeat: no-repeat;
+
 height: 100%;
 font-family: 'Numans', sans-serif;
 }
-
+.mainhead{
+    background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
 .logo:hover{
     width: 180px;
     height: 150px;
