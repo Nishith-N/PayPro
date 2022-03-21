@@ -22,9 +22,10 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 	
 	if(mysqli_num_rows($result)==1)
     {
-		$var_value = "SELECT pay_id FROM user_details WHERE phone='".$username."' AND password1='".$pwd."' limit 1";
-		$res=mysqli_query($db,$var_value);
-		$_SESSION['varname'] = $res;
+		$sql = "SELECT pay_id FROM user_details WHERE phone='".$username."' AND password1='".$pwd."' limit 1";
+		$result=mysqli_query($db,$sql);
+		$row=mysqli_fetch_row($result);
+		$_SESSION['varname'] = $username;
         header("Location:../Userhome/userhome.php");
         exit();
     }

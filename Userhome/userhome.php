@@ -1,3 +1,12 @@
+<?php
+$db = mysqli_connect('localhost','root','','payprodb')
+or die('Error connecting to MySQL server.');
+session_start();
+$username=$_SESSION['varname'];
+$_SESSION['username']=$username;
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,11 +49,11 @@
             <span class="full-text" >
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul>
-                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                <?php print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
                   <ul style="margin-left: 45%;">
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#">Cards</a></li>
-                    <li><a class="nav-link scrollto" href="#">Transaction</a></li>
+                    <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="#">Contact</a></li>
                     <li><a class="getstarted scrollto" href="../Login/login.php">Sign Out</a></li>
                   </ul>
@@ -57,7 +66,7 @@
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul>
-                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                <?php print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
                   
                 </ul>
               </nav>
@@ -66,7 +75,7 @@
               <ul style="margin-left: 0%;">
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#">Cards</a></li>
-                    <li><a class="nav-link scrollto" href="#">Transaction</a></li>
+                    <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="#">Contact</a></li>
                     <li><a class="getstarted scrollto" href="../Login/login.php">Login/Sign Up  </a></li>
               </ul>
