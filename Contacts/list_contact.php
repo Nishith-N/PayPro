@@ -111,7 +111,7 @@ $result=mysqli_query($db,$sql);
 
 <br>
 <form method="post" action="#">
-<input type="submit" value="ADD" name="add_btn" id="add_btn">
+  <input type="submit" value="ADD CONTACTS" name="add_btn" id="add_btn" style="background-color: purple;width: 150px;height: 40px;border-radius: 12px;color: white;margin-left: 85%;">
 </form>
 <?php
  while($row=mysqli_fetch_row($result))
