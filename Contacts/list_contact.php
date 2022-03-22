@@ -121,7 +121,7 @@ $result=mysqli_query($db,$sql);
 
 <br>
 <form method="post" action="#">
-  <input type="submit" value="ADD CONTACTS" name="add_btn" id="add_btn" style="background-color: purple;width: 150px;height: 40px;border-radius: 12px;color: white;margin-left: 85%;">
+  <input type="submit" value="ADD CONTACTS" name="add_btn" id="add_btn" class="addcontacts_btn" >
 </form>
 <?php
  while($row=mysqli_fetch_row($result))
@@ -162,10 +162,10 @@ print '<center>
       <table style="width: 100%;">
         <tr>
           <td rowspan="2" style="width: 80%;"><h3>'.$username.'</h3></td>
-          <td style="width: 20%;text-align: center;"><form method="post" action="#"><input type="submit"  value="Pay" id="pay_btn" name="pay_btn" style="width: 90%;border-radius: 10px;"></form></td>
+          <td style="width: 20%;text-align: center;"><form method="post" action="#"><input type="submit"  value="Pay" id="pay_btn" name="pay_btn" class="paydel_btn"></form></td>
         </tr>
         <tr>
-          <td><a href="userhome.html"><button type="submit" id="delete" name="delete" style="width: 90%;border-radius: 10px;">Delete</button></a></td>
+          <td><a href="userhome.html"><button type="submit" id="delete" name="delete" class="paydel_btn">Delete</button></a></td>
         </tr>
       </table>
             

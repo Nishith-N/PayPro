@@ -313,3 +313,32 @@ color: #F8B84E;
   border-radius: 20px;
   transform: rotateY(180deg);
 }
+
+
+
+.addcontacts_btn{
+  color: black;
+  background-color: #892883;
+  width: 150px;
+  height: 40px;
+  border-radius: 12px;
+  color: white;
+  margin-left: 85%;
+  border-color: white;
+  }
+  
+.addcontacts_btn:hover{
+  color: white;
+  background-color: #F8B84E;
+  border-color: white;
+  cursor: pointer;
+  }
+
+.paydel_btn{
+  width: 90%;
+  border-radius: 10px;
+  color:white;
+  background-color: #F8B84E;
+  border-color: white;
+  cursor: pointer;
+}
