@@ -7,6 +7,14 @@ $username=$_SESSION['username'];
 echo $username;
 $otp=1234;
 
+
+if(isset($_POST['recharge_btn']))
+{
+	$_SESSION['username']=$username;
+	header("Location:../Userhome/wallet_recharge.php");
+        exit();
+}
+
 if(isset($_POST['submit_btn']))
 {
 	$phno=$_POST['phno'];
@@ -42,6 +50,7 @@ if(isset($_POST['submit_btn']))
 
 		}
 	}
+
 
 
 }
@@ -91,7 +100,8 @@ if(isset($_POST['submit_btn']))
                     </div>                  
 
 					<div class="form-group">
-						<input type="submit" value="Submit" class="btn float-right login_btn" name="submit_btn" id="submit_btn">
+						<input type="submit" value="Submit" class="btn float-right login_btn" name="submit_btn" id="submit_btn"><br><br>
+						<input type="submit" value="Recharge" class="btn float-right login_btn" name="recharge_btn" id="recharge_btn">
 					</div>
 				</form>
 			</div>

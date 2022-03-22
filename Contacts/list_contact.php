@@ -3,6 +3,8 @@ $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 session_start();
 $pay_id=$_SESSION['pay_id'];
+$username=$_SESSION['username'];
+echo $username;
 
 $sql="SELECT username FROM contact_details WHERE pay_id='".$pay_id."'";
 $result=mysqli_query($db,$sql);
@@ -11,6 +13,14 @@ if(isset($_POST['add_btn']))
 {
   $_SESSION['pay_id']=$pay_id;
   header("Location:../Contacts/new_contact.php");
+        exit();
+}
+
+if(isset($_POST['pay_btn']))
+{
+  
+  $_SESSION['username']=$username;
+  header("Location:../Transaction/form.php");
         exit();
 }
 /*
@@ -152,7 +162,7 @@ print '<center>
       <table style="width: 100%;">
         <tr>
           <td rowspan="2" style="width: 80%;"><h3>'.$username.'</h3></td>
-          <td style="width: 20%;text-align: center;"><button type="submit" id="pay" name="pay" style="width: 90%;border-radius: 10px;">Pay</button></td>
+          <td style="width: 20%;text-align: center;"><form method="post" action="#"><input type="submit"  value="Pay" id="pay_btn" name="pay_btn" style="width: 90%;border-radius: 10px;"></form></td>
         </tr>
         <tr>
           <td><a href="userhome.html"><button type="submit" id="delete" name="delete" style="width: 90%;border-radius: 10px;">Delete</button></a></td>
