@@ -26,6 +26,9 @@ if(isset($_POST['submit_btn']))
 	{
 		$sql="INSERT INTO card_details VALUES ('$card_num','$cvv','$card_name','$validto','$pay_id')";
 		$result=mysqli_query($db,$sql);
+		$_SESSION['pay_id'] = $pay_id;
+		header("Location:../Cards/cards.php");
+        exit();
     
 	}
 	/*

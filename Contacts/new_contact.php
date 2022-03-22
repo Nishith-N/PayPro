@@ -8,9 +8,21 @@ if(isset($_POST['submit_btn']))
 	$sql="CREATE TABLE IF NOT EXISTS contact_details ( username VARCHAR(25) NOT NULL , pay_name VARCHAR(25) NOT NULL , nickname VARCHAR(25) NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (username,pay_id))";
 	$result=mysqli_query($db,$sql);
 
-	$cname=$_POST['contact_name'];
+	
 	$nickname=$_POST['nick_name'];
 	$uname=$_POST['uname'];
+
+	$sql="SELECT fname FROM user_details WHERE email='".$uname."' OR phone='".$uname."'";
+	$result=mysqli_query($db,$sql);
+	$row=mysqli_fetch_row($result);
+	$fname=$row[0];
+
+	$sql="SELECT lname FROM user_details WHERE email='".$uname."' OR phone='".$uname."'";
+	$result=mysqli_query($db,$sql);
+	$row=mysqli_fetch_row($result);
+	$lname=$row[0];
+
+	$name=$fname.$lname;
 
 	$sql="SELECT pay_id FROM user_details WHERE email='".$uname."' OR phone='".$uname."'";
 	$result=mysqli_query($db,$sql);
@@ -18,7 +30,7 @@ if(isset($_POST['submit_btn']))
 	$row=mysqli_fetch_row($result);
 	if(mysqli_num_rows($result)==1)
 	{
-		$sql="INSERT INTO contact_details VALUES ('$uname','$cname','$nickname','$pay_id')";
+		$sql="INSERT INTO contact_details VALUES ('$uname','$name','$nickname','$pay_id')";
 		$result=mysqli_query($db,$sql);
 	}
 	
@@ -58,10 +70,7 @@ if(isset($_POST['submit_btn']))
 
 			<div class="card-body">
 				<form method="post" action="#">
-                    <div class="form-group">
-                        <label for="contact_name" class="textaddcontact">Contact Name</label><label for="contact_name" class="starregister"> * </label>
-                        <input type="text" id="contact_name" name="contact_name" class="form-control" style="width: 300px;">
-                    </div>                   
+                                      
                     
 
                     <div class="form-group">

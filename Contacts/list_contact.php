@@ -169,8 +169,8 @@ print '<center>
     <div class="flip-card-back">
       <table style="width: 100%;">
         <tr>
-          <td rowspan="2" style="width: 80%;"><h3>'.$pay_username.'</h3></td>
-          <td style="width: 20%;text-align: center;"><form method="post" action="#"><input type="submit"  value="Pay" id="pay_btn" name="pay_btn" style="width: 90%;border-radius: 10px;"></form></td>
+          <td rowspan="2" id="'.$i.'" style="width: 80%;"><h3>'.$pay_username.'</h3></td>
+          <td style="width: 20%;text-align: center;"><form method="post" action="#"><input type="submit"  value="Pay" id="'.$i.'" name="pay_btn" style="width: 90%;border-radius: 10px;"></form></td>
         </tr>
         <tr>
           <td style="width: 20%;text-align: center;"><form method="post" action="#"><input type="submit"  value="Delete" id="delete_btn" name="delete_btn" style="width: 90%;border-radius: 10px;"></form></td>
@@ -206,5 +206,13 @@ $i++;
           </script>
               
 </body>
+<script>
+
+var user=document.getElementById('0');
+let num=document.getElementById('pay_username_td').length;
+alert(user);
+alert(num);
+
+</script>
 
 </html>
