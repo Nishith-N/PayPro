@@ -109,6 +109,9 @@ if($flag==1)
 {
   $sql="INSERT INTO user_details (pay_id, phone, email, fname, lname, city, zip, state1, block1, addresss, primary_card, wallet,password1) VALUES (NULL,$phone,'$email','$fname','$lname','$city',$zip,'$state',$block,'$address',$primary_card,$wallet,'$pwd')";
   $result=mysqli_query($db,$sql);
+  header("Location:../Login/login.php");
+        exit();
+
 }
 
 }
