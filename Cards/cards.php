@@ -1,11 +1,21 @@
 <?php
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
+session_start();
+$pay_id=$_SESSION['pay_id'];
+echo $pay_id;
 $pay_id=1;
 $card_number=0;
 
 $sql="SELECT card_number FROM card_details WHERE pay_id='".$pay_id."'";
 $result=mysqli_query($db,$sql);
+
+if(isset($_POST['add_cards']))
+{
+  $_SESSION['pay_id']=$pay_id;
+  header("Location:../Cards/new_card.php");
+        exit();
+}
 
 /*if(mysqli_num_rows($result)!=0)
 	{

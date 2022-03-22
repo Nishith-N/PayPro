@@ -3,6 +3,7 @@ $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 session_start();
 $pay_id=$_SESSION['pay_id'];
+echo $pay_id;
 
 $phone=0;
 
