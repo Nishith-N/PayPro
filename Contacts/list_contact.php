@@ -1,8 +1,19 @@
 <?php
-/*$db = mysqli_connect('localhost','root','','payprodb')
+$db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 session_start();
+$pay_id=$_SESSION['pay_id'];
 
+$sql="SELECT username FROM contact_details WHERE pay_id='".$pay_id."'";
+$result=mysqli_query($db,$sql);
+
+if(isset($_POST['add_btn']))
+{
+  $_SESSION['pay_id']=$pay_id;
+  header("Location:../Contacts/new_contact.php");
+        exit();
+}
+/*
 $pay_id=$_SESSION['pay_id'];
 
 $sql="SELECT pay_name FROM contact_details WHERE pay_id='".$pay_id."' OR email='".$username."'";
@@ -99,28 +110,51 @@ $result=mysqli_query($db,$sql);
       <!-- End Header -->
 
 <br>
-<button type="submit">Add</button>
+<form method="post" action="#">
+<input type="submit" value="ADD" name="add_btn" id="add_btn">
+</form>
+<?php
+ while($row=mysqli_fetch_row($result))
+ {
+  $i=0;
+  $username=$row[$i];
+  $sql1="SELECT pay_name FROM contact_details WHERE username='".$username."'";
+  $result1=mysqli_query($db,$sql1);
+  if(mysqli_num_rows($result1))
+  {
+    $row1=mysqli_fetch_row($result1);
+    $pay_name=$row1[0];
+  }
+  $sql2="SELECT nickname FROM contact_details WHERE username='".$username."'";
+  $result2=mysqli_query($db,$sql2);
+  if(mysqli_num_rows($result2))
+  {
+    $row2=mysqli_fetch_row($result2);
+    $nickname=$row2[0];
+  }
 
-<div class="flip-card">
+print '<div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <span class='fas fa-user-alt'></span>
+      <span class="fas fa-user-alt"></span>
       <br>
       <div style="text-align: left;padding-left: 2%;">
-      Name:Kowshik 
+      Name:'.$pay_name.' 
       <br>
-      Nick Name:Kowshik
+      Nick Name:'.$nickname.'
       <br>
       </div>
       <button type="submit" id="pay" name="pay">Pay</button>
       <button type="submit" id="delete" name="delete">Delete</button>
     </div>
     <div class="flip-card-back">
-      <h3>JohnDoe@gmail.com</h3> 
+      <h3>'.$username.'</h3> 
       
     </div>
   </div>
-</div>
+</div>';
+ }
+?>
 
 
         <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>    

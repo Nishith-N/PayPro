@@ -1,8 +1,8 @@
 <?php
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
-$payid=0;
-
+session_start();
+$pay_id=$_SESSION['pay_id'];
 if(isset($_POST['submit_btn']))
 {
 	$sql="CREATE TABLE IF NOT EXISTS contact_details ( username VARCHAR(25) NOT NULL , pay_name VARCHAR(25) NOT NULL , nickname VARCHAR(25) NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (username))";
@@ -18,13 +18,10 @@ if(isset($_POST['submit_btn']))
 	$row=mysqli_fetch_row($result);
 	if(mysqli_num_rows($result)==1)
 	{
-	$payid=$row[0];
-	}
-	if($payid)
-	{
-		$sql="INSERT INTO contact_details VALUES ('$uname','$cname','$nickname','$payid')";
+		$sql="INSERT INTO contact_details VALUES ('$uname','$cname','$nickname','$pay_id')";
 		$result=mysqli_query($db,$sql);
 	}
+	
 }
 
 
