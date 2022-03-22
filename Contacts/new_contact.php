@@ -5,7 +5,7 @@ session_start();
 $pay_id=$_SESSION['pay_id'];
 if(isset($_POST['submit_btn']))
 {
-	$sql="CREATE TABLE IF NOT EXISTS contact_details ( username VARCHAR(25) NOT NULL , pay_name VARCHAR(25) NOT NULL , nickname VARCHAR(25) NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (username))";
+	$sql="CREATE TABLE IF NOT EXISTS contact_details ( username VARCHAR(25) NOT NULL , pay_name VARCHAR(25) NOT NULL , nickname VARCHAR(25) NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (username,pay_id))";
 	$result=mysqli_query($db,$sql);
 
 	$cname=$_POST['contact_name'];
