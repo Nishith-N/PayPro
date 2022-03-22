@@ -99,6 +99,10 @@ $result=mysqli_query($db,$sql);
       <!-- End Header -->
 
 <br>
+
+<form method="post" action="#">
+  <input type="submit" value="ADD CARDS" name="add_cards" id="add_cards" class="addcards_btn" >
+</form>
      
       <?php
 

@@ -381,3 +381,21 @@ body {
     padding: 0.7rem 2rem;
     color: white;
   }
+
+  .addcards_btn{
+    color: black;
+    background-color: #892883;
+    width: 150px;
+    height: 40px;
+    border-radius: 12px;
+    color: white;
+    margin-left: 85%;
+    border-color: white;
+    }
+    
+  .addcards_btn:hover{
+    color: white;
+    background-color: #F8B84E;
+    border-color: white;
+    cursor: pointer;
+    }
