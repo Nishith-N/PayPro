@@ -133,26 +133,36 @@ $result=mysqli_query($db,$sql);
     $nickname=$row2[0];
   }
 
-print '<div class="flip-card">
+print '<center>
+<div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <span class="fas fa-user-alt"></span>
-      <br>
-      <div style="text-align: left;padding-left: 2%;">
-      Name:'.$pay_name.' 
-      <br>
-      Nick Name:'.$nickname.'
-      <br>
-      </div>
-      <button type="submit" id="pay" name="pay">Pay</button>
-      <button type="submit" id="delete" name="delete">Delete</button>
-    </div>
-    <div class="flip-card-back">
-      <h3>'.$username.'</h3> 
+      <table style="width: 100%;height: 100%;">
+        <tr>
+          <td rowspan="2" style="width: 15%;"><i class="fa fa-user" style="font-size: 30px;"></i></td>
+          <td style="text-align:left;">'.$pay_name.'</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;">'.$nickname.'</td>
+        </tr>
+      </table>
       
     </div>
+    <div class="flip-card-back">
+      <table style="width: 100%;">
+        <tr>
+          <td rowspan="2" style="width: 80%;"><h3>'.$username.'</h3></td>
+          <td style="width: 20%;text-align: center;"><button type="submit" id="pay" name="pay" style="width: 90%;border-radius: 10px;">Pay</button></td>
+        </tr>
+        <tr>
+          <td><a href="userhome.html"><button type="submit" id="delete" name="delete" style="width: 90%;border-radius: 10px;">Delete</button></a></td>
+        </tr>
+      </table>
+            
+    </div>
   </div>
-</div>';
+</div>
+</center>';
  }
 ?>
 
