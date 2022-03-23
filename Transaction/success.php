@@ -1,3 +1,20 @@
+
+<?php
+$db = mysqli_connect('localhost','root','','payprodb')
+or die('Error connecting to MySQL server.');
+		session_start();
+    $username=$_SESSION['username'];
+    $_SESSION['varname'] = $username;
+
+    if(isset($_POST['gotohome_btn']))
+    {
+      header("Location:../Userhome/userhome.php");
+        		exit();
+    }
+
+
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +61,7 @@
       </div>                
     </div>
     
-      <form method="post" action="error.php" style="margin-top: 500px;margin-left: -300px;">
+      <form method="post" action="#" style="margin-top: 500px;margin-left: -300px;">
         <input type="submit"  value="Go To Home" id="gotohome_btn" name="gotohome_btn" class="home" >
       </form> 
     </div>   

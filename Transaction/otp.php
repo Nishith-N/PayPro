@@ -28,8 +28,16 @@ or die('Error connecting to MySQL server.');
 				$addamount=$recv_wallet+$amount;
 				$sql="UPDATE user_details SET wallet='".$addamount."' WHERE phone='".$phno."'";
 				$result=mysqli_query($db,$sql);
-
-				header("Location:../Userhome/userhome.php");
+				if($result)
+				{
+				$_SESSION['username'] = $username;
+				header("Location:../Transaction/success.php");
+        		exit();
+				}
+				
+				}
+				else{
+					header("Location:../Transaction/error.php");
         		exit();
 				}
 			}
