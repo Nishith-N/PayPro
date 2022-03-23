@@ -20,6 +20,7 @@ if(isset($_POST['add_cards']))
 }
 
 
+
 /*if(mysqli_num_rows($result)!=0)
 	{
 	$card_number=$row[0];
