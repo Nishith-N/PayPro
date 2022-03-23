@@ -124,8 +124,9 @@ if(isset($_POST['add_cards']))
      
 <?php
       
-      if($result=='')
+      if($num==0)
       {
+        echo $pay_id;
         print '
         <center>
         
@@ -136,52 +137,54 @@ if(isset($_POST['add_cards']))
         </center>
         
         ';
+        
       }
       else
       {
-      while($row=mysqli_fetch_row($result))
-      { $i=0;
-        $cvv=0;
-        $card_number=$row[$i];
-        $sql1="SELECT cvv FROM card_details WHERE card_number='".$card_number."'";
-        $result1=mysqli_query($db,$sql1);
-        if(mysqli_num_rows($result1))
-      	{
-          $row1=mysqli_fetch_row($result1);
-	        $cvv=$row1[0];
-        }
-        $sql2="SELECT card_name FROM card_details WHERE card_number='".$card_number."'";
-        $result2=mysqli_query($db,$sql2);
-        if(mysqli_num_rows($result2))
-      	{
-          $row2=mysqli_fetch_row($result2);
-	        $card_name=$row2[0];
-        }
-        $sql3="SELECT validto FROM card_details WHERE card_number='".$card_number."'";
-        $result3=mysqli_query($db,$sql3);
-        if(mysqli_num_rows($result3))
-      	{
-          $row3=mysqli_fetch_row($result3);
-	        $validto=$row3[0];
-        }
-
-        $i++;
-
-      print '<div class="flip-card">
-
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <div class="card-container">
-              <div class="card-name">Credit Card</div>
-              <div class="chip">
-                <img src="chip.png">
-              </div>
-              <div class="card-data">
-                <div class="card-no">'.$card_number.'</div>
-                <div class="expire-data">
-                  <div class="expire-date">
-                    <div class="date-label">MONTH/YEAR</div>
-                    <div class="date" title="01/17">'.$validto.'</div>
+        while($row=mysqli_fetch_row($result))
+        { $i=0;
+          $cvv=0;
+          $card_number=$row[$i];
+          $sql1="SELECT cvv FROM card_details WHERE card_number='".$card_number."'";
+          $result1=mysqli_query($db,$sql1);
+          if(mysqli_num_rows($result1))
+          {
+            $row1=mysqli_fetch_row($result1);
+            $cvv=$row1[0];
+          }
+          $sql2="SELECT card_name FROM card_details WHERE card_number='".$card_number."'";
+          $result2=mysqli_query($db,$sql2);
+          if(mysqli_num_rows($result2))
+          {
+            $row2=mysqli_fetch_row($result2);
+            $card_name=$row2[0];
+          }
+          $sql3="SELECT validto FROM card_details WHERE card_number='".$card_number."'";
+          $result3=mysqli_query($db,$sql3);
+          if(mysqli_num_rows($result3))
+          {
+            $row3=mysqli_fetch_row($result3);
+            $validto=$row3[0];
+          }
+  
+          $i++;
+  
+        print '<div class="flip-card">
+  
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-container">
+                <div class="card-name">Credit Card</div>
+                <div class="chip">
+                  <img src="chip.png">
+                </div>
+                <div class="card-data">
+                  <div class="card-no">'.$card_number.'</div>
+                  <div class="expire-data">
+                    <div class="expire-date">
+                      <div class="date-label">MONTH/YEAR</div>
+                      <div class="date" title="01/17">'.$validto.'</div>
+                    </div>
                   </div>
                   <div>'.$card_name.'</div>
                 </div>
@@ -200,10 +203,9 @@ if(isset($_POST['add_cards']))
               </p>        
             </div>
           </div>
-        </div>
-      </div>';
-
-      }
+        </div>';
+  
+        }
     }
       ?>
     
