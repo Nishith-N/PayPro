@@ -88,7 +88,7 @@ if(mysqli_num_rows($result)==1)
                     <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Porfile</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
                     <li><a class="getstarted scrollto" href="../Login/login.php">Sign Out  </a></li>
               </ul>
               </nav>
@@ -303,7 +303,7 @@ if(mysqli_num_rows($result)==1)
                   Manage your MONEY more quickly
                 </td>
                 <td>
-                  <a class="nav-link scrollto active" href="#about" style="color: black;">About Us</a>
+                  <a class="nav-link scrollto active" href="../Cards/cards.php" style="color: black;">Cards</a>
                 </td>
                 <td>
                   <i class="fa fa-envelope" style="color: black;font-size:20px"></i>&emsp; enquiries@paypro.com
@@ -314,7 +314,7 @@ if(mysqli_num_rows($result)==1)
                 <td>
                 </td>
                 <td>
-                  <a class="nav-link scrollto active" href="#team" style="color: black;">Team</a>
+                  <a class="nav-link scrollto active" href="../Transaction/form.php" style="color: black;">Transaction</a>
                 </td>
                 <td>
                   <i class="fa fa-phone" style="color: black;font-size:24px"></i>&emsp; +91 90817 24356
@@ -325,7 +325,7 @@ if(mysqli_num_rows($result)==1)
                 <td>
                 </td>
                 <td>
-                  <a class="nav-link scrollto active" href="#contact" style="color: black;">Contact</a>
+                  <a class="nav-link scrollto active" href="../Contacts/list_contact.php" style="color: black;">Contact</a>
                 </td>
                 <td>
                   <i class="fa fa-fax" style="color: black;font-size:20px"></i>&emsp; +91 90817 24356
@@ -336,7 +336,7 @@ if(mysqli_num_rows($result)==1)
                 <td>
                 </td>
                 <td>
-                  <a class="getstarted scrollto" href="../Login/login.html" style="color: black;">Login/Sign Up  </a>
+                  <a class="getstarted scrollto" href="../Profile/profilehome.php" style="color: black;">Profile  </a>
                 </td>
                 <td>
                 </td>
@@ -385,16 +385,16 @@ if(mysqli_num_rows($result)==1)
                     <td><a class="nav-link scrollto active" href="#hero" style="color: black;">Home</a> <br></td>                    
                   </tr>
                   <tr>
-                    <td><a class="nav-link scrollto active" href="#about" style="color: black;">About Us</a> <br></td>                    
+                    <td><a class="nav-link scrollto active" href="../Cards/cards.php" style="color: black;">Cards</a> <br></td>                    
                   </tr>
                   <tr>
-                    <td><a class="nav-link scrollto active" href="#team" style="color: black;">Team</a> <br></td>                    
+                    <td><a class="nav-link scrollto active" href="../Transaction/form.php" style="color: black;">Transaction</a> <br></td>                    
                   </tr>
                   <tr>
-                    <td><a class="nav-link scrollto active" href="#contact" style="color: black;">Contact</a> <br></td>                    
+                    <td><a class="nav-link scrollto active" href="../Contacts/list_contact.php" style="color: black;">Contact</a> <br></td>                    
                   </tr>
                   <tr>
-                    <td><a class="getstarted scrollto" href="../Login/login.html" style="color: black;">Login/Sign Up  </a> <br></td>                    
+                    <td><a class="getstarted scrollto" href="../Profile/profilehome.php" style="color: black;">Profile  </a> <br></td>                    
                   </tr>
                 <tr>
                   <th><h3>Find Us</h3></th>                                
