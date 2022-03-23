@@ -8,6 +8,7 @@ echo $username;
 
 $sql="SELECT username FROM contact_details WHERE pay_id='".$pay_id."'";
 $result=mysqli_query($db,$sql);
+$num=mysqli_num_rows($result);
 
 if(isset($_POST['add_btn']))
 {
@@ -92,11 +93,11 @@ $result=mysqli_query($db,$sql);
                 <ul>
                   <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 45%;">
-                    <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#">Cards</a></li>
-                    <li><a class="nav-link scrollto" href="#">Transaction</a></li>
-                    <li><a class="nav-link scrollto" href="#">Contact</a></li>
-                    <li><a class="getstarted scrollto" href="Login/login.html">Login/Sign Up  </a></li>
+                    <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
+                    <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
+                    <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
+                    <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
+                    <li><a class="getstarted scrollto" href="..Login/login.php">Login/Sign Up  </a></li>
                   </ul>
                 </ul>
               </nav>
@@ -133,8 +134,24 @@ $result=mysqli_query($db,$sql);
   <input type="submit" value="ADD CONTACTS" name="add_btn" id="add_btn" class="addcontacts_btn" >
 </form>
 <?php
-$arr=array();
 $i=0;
+if($num==0)
+{
+  echo $pay_id;
+        print '
+        <center>
+        
+          <div>
+          
+          <h3>"No contacts"</h3>
+          </div>
+        </center>
+        
+        ';
+}
+
+
+else{
  while($row=mysqli_fetch_row($result))
  {
   $pay_username=$row[0];
@@ -187,6 +204,7 @@ print '<center>
 </center>';
 $i++;
  }
+}
 
 ?>
 

@@ -5,11 +5,12 @@ session_start();
 $username=$_SESSION['username'];
 $pay_id=$_SESSION['pay_id'];
 echo $pay_id;
-$pay_id=1;
+
 $card_number=0;
 
 $sql="SELECT card_number FROM card_details WHERE pay_id='".$pay_id."'";
 $result=mysqli_query($db,$sql);
+$num=mysqli_num_rows($result);
 
 if(isset($_POST['add_cards']))
 {
@@ -17,6 +18,8 @@ if(isset($_POST['add_cards']))
   header("Location:../Cards/new_card.php");
         exit();
 }
+
+
 
 /*if(mysqli_num_rows($result)!=0)
 	{
@@ -89,7 +92,9 @@ if(isset($_POST['add_cards']))
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul>
-                <?php print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
+                <?php 
+                
+                print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
                   
                 </ul>
               </nav>
@@ -178,22 +183,22 @@ if(isset($_POST['add_cards']))
                     <div class="date-label">MONTH/YEAR</div>
                     <div class="date" title="01/17">'.$validto.'</div>
                   </div>
+                  <div>'.$card_name.'</div>
                 </div>
-                <div>'.$card_name.'</div>
               </div>
             </div>
-          </div>
-    
-          <div class="flip-card-back">
-            <br><br>
-            <div class="card-stripe"></div>
-            <div class="card-signature">
-              <span class="card-cvv">CVV</span>
-              <span class="card-cvv-number">'.$cvv.'</span>
+      
+            <div class="flip-card-back">
+              <br><br>
+              <div class="card-stripe"></div>
+              <div class="card-signature">
+                <span class="card-cvv">CVV</span>
+                <span class="card-cvv-number">'.$cvv.'</span>
+              </div>
+              <p class="card-info">Using this card to purchase goods and services
+                whenever you see the MASTERCARD symbol.
+              </p>        
             </div>
-            <p class="card-info">Using this card to purchase goods and services
-              whenever you see the MASTERCARD symbol.
-            </p>        
           </div>
         </div>
       </div>';
