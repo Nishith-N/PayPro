@@ -59,8 +59,8 @@ echo $username;
                   <ul style="margin-left: 29%;">
                     <li><a class="nav-link scrollto" href="#">Manage Profile</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
-                    <li><a class="nav-link scrollto" href="#">Remove Money</a></li>
-                    <li><a class="nav-link scrollto" href="#">Reset Password</a></li>
+                    <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
                     <li><a class="getstarted scrollto" href="Login/login.html">SignOut  </a></li>
                   </ul>
                 </ul>
