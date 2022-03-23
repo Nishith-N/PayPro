@@ -23,15 +23,16 @@ if(isset($_POST['pay_btn']))
   header("Location:../Transaction/form.php");
         exit();
 }
-/*
+
 if(isset($_POST['delete_btn']))
 {
+  
   $sql="DELETE FROM contact_details WHERE pay_id='".$pay_id."' AND username='".$pay_username."'";
   $result=mysqli_query($db,$sql);
   header("Location:../Contacts/new_contact.php");
         exit();
 }
-
+/*
 $pay_id=$_SESSION['pay_id'];
 
 $sql="SELECT pay_name FROM contact_details WHERE pay_id='".$pay_id."' OR email='".$username."'";
@@ -132,10 +133,12 @@ $result=mysqli_query($db,$sql);
   <input type="submit" value="ADD CONTACTS" name="add_btn" id="add_btn" class="addcontacts_btn" >
 </form>
 <?php
+$arr=array();
+$i=0;
  while($row=mysqli_fetch_row($result))
  {
-  $i=0;
-  $pay_username=$row[$i];
+  $pay_username=$row[0];
+  echo $pay_username;
   $sql1="SELECT pay_name FROM contact_details WHERE username='".$pay_username."' AND pay_id='".$pay_id."'";
   $result1=mysqli_query($db,$sql1);
   if(mysqli_num_rows($result1))
@@ -151,6 +154,7 @@ $result=mysqli_query($db,$sql);
     $nickname=$row2[0];
   }
 
+  
 print '<center>
 <div class="flip-card">
   <div class="flip-card-inner">
@@ -169,8 +173,8 @@ print '<center>
     <div class="flip-card-back">
       <table style="width: 100%;">
         <tr>
-          <td rowspan="2" id="'.$i.'" style="width: 80%;"><h3>'.$pay_username.'</h3></td>
-          <td style="width: 20%;text-align: center;"><form method="post" action="#"><input type="submit"  value="Pay" id="'.$i.'" name="pay_btn" style="width: 90%;border-radius: 10px;"></form></td>
+          <td rowspan="2" style="width: 80%;"><h3>'.$pay_username.'</h3></td>
+          <td style="width: 20%;text-align: center;"><form method="post" action="#"><input type="submit"  value="Pay" name="pay_btn" style="width: 90%;border-radius: 10px;"></form></td>
         </tr>
         <tr>
           <td style="width: 20%;text-align: center;"><form method="post" action="#"><input type="submit"  value="Delete" id="delete_btn" name="delete_btn" style="width: 90%;border-radius: 10px;"></form></td>
@@ -183,6 +187,7 @@ print '<center>
 </center>';
 $i++;
  }
+
 ?>
 
 

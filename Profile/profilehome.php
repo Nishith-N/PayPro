@@ -1,3 +1,18 @@
+<?php
+
+$db = mysqli_connect('localhost','root','','payprodb')
+or die('Error connecting to MySQL server.');
+session_start();
+$username=$_SESSION['username'];
+$_SESSION['username']=$username;
+$pay_id=$_SESSION['pay_id'];
+echo $pay_id;
+echo $username;
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +58,7 @@
                   <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 29%;">
                     <li><a class="nav-link scrollto" href="#">Manage Profile</a></li>
-                    <li><a class="nav-link scrollto" href="#">Recharge</a></li>
+                    <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="#">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="#">Reset Password</a></li>
                     <li><a class="getstarted scrollto" href="Login/login.html">SignOut  </a></li>
