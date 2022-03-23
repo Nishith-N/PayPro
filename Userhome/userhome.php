@@ -3,6 +3,11 @@ $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 session_start();
 $username=$_SESSION['varname'];
+if($username=='')
+{
+  header("Location:../Home/home.html");
+        exit(); 
+}
 $_SESSION['username']=$username;
 
 $sql="SELECT pay_id FROM user_details WHERE phone='".$username."' OR email='".$username."'";
@@ -13,6 +18,14 @@ if(mysqli_num_rows($result)==1)
 		$row=mysqli_fetch_row($result);
 		$_SESSION['pay_id'] = $row[0];
         
+    }
+
+    if(isset($_POST['delete_btn']))
+    {
+      session_destroy();
+      header("Location:../Home/home.html");
+        exit();
+
     }
 ?>
 
@@ -65,8 +78,8 @@ if(mysqli_num_rows($result)==1)
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Porfile</a></li>
-                    <li><a class="getstarted scrollto" href="../Login/login.php">Sign Out</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
+                    <li><form method="post" action="#"><input type="submit"  value="Delete" id="delete_btn" name="delete_btn" style="width: 90%;border-radius: 10px;"></form></li>
                   </ul>
                 </ul>
               </nav>

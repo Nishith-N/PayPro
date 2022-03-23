@@ -57,7 +57,7 @@ echo $username;
                 <ul>
                   <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 29%;">
-                    <li><a class="nav-link scrollto" href="#">Manage Profile</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>

@@ -163,15 +163,6 @@ if($flag==1)
                         <input type="text" id="lname" name="lname" class="form-control" style="width: 300px;"> <span class="error"><?php echo $lnameerr; ?> </span>
                     </div>
 
-                    <div class="form-group">
-                        <label for="gender" class="textregister">Gender </label><label for="gender" class="starregister"> * </label><br>
-                            <input type="radio" id="male" name="gender" value="male" style="accent-color: orange;">
-                        <label for="male" style="color: white;">Male</label>
-                            <input type="radio" id="female" name="gender" value="female" style="accent-color: orange;">
-                        <label for="female" style="color: white;">Female</label>
-                            <input type="radio" id="others" name="gender" value="others" style="accent-color: orange;">
-                        <label for="others" style="color: white;">Others</label>
-                    </div>
 
                     <div class="form-group">
                         <label for="address1" class="textregister">Address 1</label><label for="address1" class="starregister"> * </label> 
