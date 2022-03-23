@@ -76,7 +76,7 @@ if(isset($_POST['add_cards']))
                 <ul>
                 <?php print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
                   <ul style="margin-left: 23%;">
-                    <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
@@ -101,7 +101,7 @@ if(isset($_POST['add_cards']))
               <br>
               <nav id="navbar" class="navbar">
               <ul style="margin-left: 0%;">
-                <li><a class="nav-link scrollto ctive" href="#hero">Home</a></li>
+                <li><a class="nav-link scrollto ctive" href="../Userhome/userhome.php">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
