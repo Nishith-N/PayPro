@@ -1,118 +1,303 @@
 html,body{
-    background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    font-family: 'Numans', sans-serif;
-    }
+  background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: 'Numans', sans-serif;
+  }
 
-  .alert{
-    margin-top:25px;
-    font-size:25px;
-    font-family:sans-serif;
-    text-align:center;
-    width:330px;
-    padding-top: 150px;
-    position:relative;
-    
-    
+   /*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #37517e;
+}  
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #37517e;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
+}  
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .alert::before{
-    width:100px;
-    height:100px;
-    position:absolute;
-    border-radius: 100%;
-    inset: 20px 0px 0px 100px;
-    font-size: 60px;
-    line-height: 100px;
-    border : 5px solid gray;
-    animation-name: reveal;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
+  100% {
+    transform: rotate(360deg);
   }
+}  
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 15px 0;
+  background: #892883;
+}
+#header.header-scrolled, #header.header-inner-pages {
+  background: rgba(40, 58, 90, 0.9);
+}
+#header .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#header .logo a {
+  color:white;
+}
+#header .logo img {
+  max-height: 40px;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.navbar {
+  padding: 0;
+}
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  background-color: #892883;
+}
+.navbar li {
+  position: relative;
+}
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.navbar a i, .navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  color: #F8B84E;
+}
+.navbar .getstarted, .navbar .getstarted:focus {
+  padding: 8px 20px;
+  margin-left: 30px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 18px;
+  border: 2px solid #B586BD;
+  font-weight: 600;
+}
+.navbar .getstarted:hover, .navbar .getstarted:focus:hover {
+  color: #fff;
+  background: #F8B84E;
+}
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  text-transform: none;
+  font-weight: 500;
+  color: #0c3c53;
+}
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+  color: #47b2e4;
+}
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+.navbar .dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
+} 
+
+a {
+  color: white;
+  text-decoration: none;
+}  
+a:hover {
+  color: #F8B84E;
+  text-decoration: none;
+}  
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Jost", sans-serif;
+}
+
+.alert{
+  margin-top:25px;
+  font-size:25px;
+  font-family:sans-serif;
+  text-align:center;
+  width:330px;
+  padding-top: 150px;
+  position:relative;
   
-  .alert>.alert-body{
+  
+}
+
+.alert::before{
+  width:100px;
+  height:100px;
+  position:absolute;
+  border-radius: 100%;
+  inset: 20px 0px 0px 100px;
+  font-size: 60px;
+  line-height: 100px;
+  border : 5px solid gray;
+  animation-name: reveal;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+}
+
+.alert>.alert-body{
+  opacity:0;
+  animation-name: reveal-message;
+  animation-duration:1s;
+  animation-timing-function: ease-out;
+  animation-delay:1.5s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes reveal-message{
+  from{
     opacity:0;
-    animation-name: reveal-message;
-    animation-duration:1s;
-    animation-timing-function: ease-out;
-    animation-delay:1.5s;
-    animation-fill-mode:forwards;
   }
-  
-  @keyframes reveal-message{
-    from{
-      opacity:0;
-    }
-    to{
-      opacity:1;
-    }
+  to{
+    opacity:1;
   }
-  
-  .success{
-    color:green;
-  }
-  
-  .success::before{
-    content: '✓';
-    background-color: #eff;
-    box-shadow: 0px 0px 12px 7px rgba(200,255,150,0.8) inset;
-    border : 5px solid green;
-  }
-  
-  .error{
-    color: red;
-  }
-  
-  .error::before{
-    content: '✗';
-    background-color: #fef;
-    border : 5px solid red;
-  }
-  
-  @keyframes reveal {
-    0%{
-      border: 5px solid transparent;
-      color: transparent;
-      box-shadow: 0px 0px 12px 7px rgba(255,250,250,0.8) inset;
-      transform: rotate(1000deg);
-    }
-    25% {
-      border-top:5px solid gray;
-      color: transparent;
-      box-shadow: 0px 0px 17px 10px rgba(255,250,250,0.8) inset;
-      }
-    50%{
-      border-right: 5px solid gray;
-      border-left : 5px solid gray;
-      color:transparent;
-      box-shadow: 0px 0px 17px 10px rgba(200,200,200,0.8) inset;
-    }
-    75% {
-      border-bottom: 5px solid gray;
-      color:gray;
-      box-shadow: 0px 0px 12px 7px rgba(200,200,200,0.8) inset;
-      }
-    100%{
-      border: 5px solid gray;
-      box-shadow: 0px 0px 12px 7px rgba(200,200,200,0.8) inset;
-    }
-  }
-  
+}
 
-  .home{
-    background-color: purple;
-    color: white;    
-    padding: 10px 1px;
-    width: 130px;
-    border-radius: 12px;
-    border-color: white;
-  }  
-  
-  .home:hover {
-      color: white;
-      background-color: #F8B84E;
-      border-color: white;
-      cursor: pointer;
+.success{
+  color:green;
+}
+
+.success::before{
+  content: '✓';
+  background-color: #eff;
+  box-shadow: 0px 0px 12px 7px rgba(200,255,150,0.8) inset;
+  border : 5px solid green;
+}
+
+.error{
+  color: red;
+}
+
+.error::before{
+  content: '✗';
+  background-color: #fef;
+  border : 5px solid red;
+}
+
+@keyframes reveal {
+  0%{
+    border: 5px solid transparent;
+    color: transparent;
+    box-shadow: 0px 0px 12px 7px rgba(255,250,250,0.8) inset;
+    transform: rotate(1000deg);
   }
+  25% {
+    border-top:5px solid gray;
+    color: transparent;
+    box-shadow: 0px 0px 17px 10px rgba(255,250,250,0.8) inset;
+    }
+  50%{
+    border-right: 5px solid gray;
+    border-left : 5px solid gray;
+    color:transparent;
+    box-shadow: 0px 0px 17px 10px rgba(200,200,200,0.8) inset;
+  }
+  75% {
+    border-bottom: 5px solid gray;
+    color:gray;
+    box-shadow: 0px 0px 12px 7px rgba(200,200,200,0.8) inset;
+    }
+  100%{
+    border: 5px solid gray;
+    box-shadow: 0px 0px 12px 7px rgba(200,200,200,0.8) inset;
+  }
+}
+
+
+.home{
+  background-color: purple;
+  color: white;    
+  padding: 10px 1px;
+  width: 130px;
+  border-radius: 12px;
+  border-color: white;
+}  
+
+.home:hover {
+    color: white;
+    background-color: #F8B84E;
+    border-color: white;
+    cursor: pointer;
+}

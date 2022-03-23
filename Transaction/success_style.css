@@ -7,11 +7,10 @@
 html,body{
     background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
     }
-body  { 
+.body1  { 
   height: 100vh;
   display: flex;
   font-size: 14px;
@@ -19,8 +18,31 @@ body  {
   justify-content: center;
   align-items: center;
   font-family: 'Khand', sans-serif;   
+  padding-bottom: 190px;
 }        
 
+.navbar {
+  padding: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  background-color: #892883;
+}
+
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+  
 .wrapperAlert {
   width: 500px;
   height: 350px;
