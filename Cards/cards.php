@@ -73,7 +73,7 @@ if(isset($_POST['add_cards']))
                 <ul>
                 <?php print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
                   <ul style="margin-left: 23%;">
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto " href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
@@ -96,7 +96,7 @@ if(isset($_POST['add_cards']))
               <br>
               <nav id="navbar" class="navbar">
               <ul style="margin-left: 0%;">
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a class="nav-link scrollto ctive" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
@@ -117,8 +117,23 @@ if(isset($_POST['add_cards']))
   <input type="submit" value="ADD CARDS" name="add_cards" id="add_cards" class="addcards_btn" >
 </form>
      
-      <?php
-
+<?php
+      
+      if($result=='')
+      {
+        print '
+        <center>
+        
+          <div>
+          
+          <h3>"No cards"</h3>
+          </div>
+        </center>
+        
+        ';
+      }
+      else
+      {
       while($row=mysqli_fetch_row($result))
       { $i=0;
         $cvv=0;
@@ -184,6 +199,7 @@ if(isset($_POST['add_cards']))
       </div>';
 
       }
+    }
       ?>
     
       <br><br>

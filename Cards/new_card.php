@@ -76,14 +76,14 @@ if(isset($_POST['submit_btn']))
           <section>
             <span class="full-text" >
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
-                <ul>
-                <?php print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
-                  <ul style="margin-left: 23%;">
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <ul style="padding-top: 20px;">
+                  <li><h1 class="logo me-auto" style="margin-left: -200px;"><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  <ul style="margin-left: 43%;">
+                  <li><a class="nav-link scrollto " href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Porfile</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
                     <li><a class="getstarted scrollto" href="../Login/login.php">Sign Out</a></li>
                   </ul>
                 </ul>
@@ -95,19 +95,19 @@ if(isset($_POST['submit_btn']))
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul>
-                <?php print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
+                  <li><h1 class="logo me-auto" style="padding-top: 24px;margin-left: -100px;"><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   
                 </ul>
               </nav>
               <br>
               <nav id="navbar" class="navbar">
-              <ul style="margin-left: 0%;">
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
+              <ul style="margin-left: -24px;">
+                <li><li><a class="nav-link scrollto " href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
-                    <li><a class="getstarted scrollto" href="../Login/login.php">Sign Out  </a></li>
+                    <li><a class="getstarted scrollto" href="../Login/login.php">Sign Out</a></li>>
               </ul>
               </nav>
               <!-- .navbar --> 
@@ -116,10 +116,11 @@ if(isset($_POST['submit_btn']))
         </div>
       </header>
       <!-- End Header -->
+
 	  
-    <div class="container-fluid mainhead">
+<div class="container-fluid mainhead">
 		
-<div class="container">
+<div class="container" style="padding-top: 50px;">
     
 	<div class="d-flex justify-content-center h-100">      
 
@@ -129,7 +130,7 @@ if(isset($_POST['submit_btn']))
 				<h3 class="addcontact">Add Card</h3>				
 			</div>
 
-			<div class="card-body">
+			<div class="card-body" >
 				<form method="post" action="#">
                     <div class="form-group">
                         <label for="card_num" class="textaddcontact">Card Number</label><label for="card_num" class="starregister"> * </label>
