@@ -5,11 +5,12 @@ session_start();
 $username=$_SESSION['username'];
 $pay_id=$_SESSION['pay_id'];
 echo $pay_id;
-$pay_id=1;
+
 $card_number=0;
 
 $sql="SELECT card_number FROM card_details WHERE pay_id='".$pay_id."'";
 $result=mysqli_query($db,$sql);
+$num=mysqli_num_rows($result);
 
 if(isset($_POST['add_cards']))
 {
@@ -17,6 +18,7 @@ if(isset($_POST['add_cards']))
   header("Location:../Cards/new_card.php");
         exit();
 }
+
 
 /*if(mysqli_num_rows($result)!=0)
 	{
@@ -89,7 +91,9 @@ if(isset($_POST['add_cards']))
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul>
-                <?php print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
+                <?php 
+                
+                print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
                   
                 </ul>
               </nav>
@@ -118,72 +122,90 @@ if(isset($_POST['add_cards']))
 </form>
      
       <?php
-
-      while($row=mysqli_fetch_row($result))
-      { $i=0;
-        $cvv=0;
-        $card_number=$row[$i];
-        $sql1="SELECT cvv FROM card_details WHERE card_number='".$card_number."'";
-        $result1=mysqli_query($db,$sql1);
-        if(mysqli_num_rows($result1))
-      	{
-          $row1=mysqli_fetch_row($result1);
-	        $cvv=$row1[0];
-        }
-        $sql2="SELECT card_name FROM card_details WHERE card_number='".$card_number."'";
-        $result2=mysqli_query($db,$sql2);
-        if(mysqli_num_rows($result2))
-      	{
-          $row2=mysqli_fetch_row($result2);
-	        $card_name=$row2[0];
-        }
-        $sql3="SELECT validto FROM card_details WHERE card_number='".$card_number."'";
-        $result3=mysqli_query($db,$sql3);
-        if(mysqli_num_rows($result3))
-      	{
-          $row3=mysqli_fetch_row($result3);
-	        $validto=$row3[0];
-        }
-
-        $i++;
-
-      print '<div class="flip-card">
-
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <div class="card-container">
-              <div class="card-name">Credit Card</div>
-              <div class="chip">
-                <img src="chip.png">
-              </div>
-              <div class="card-data">
-                <div class="card-no">'.$card_number.'</div>
-                <div class="expire-data">
-                  <div class="expire-date">
-                    <div class="date-label">MONTH/YEAR</div>
-                    <div class="date" title="01/17">'.$validto.'</div>
-                  </div>
-                </div>
-                <div>'.$card_name.'</div>
-              </div>
-            </div>
+      
+      if($num==0)
+      {
+        echo $pay_id;
+        print '
+        <center>
+        
+          <div>
+          
+          <h3>"No cards"</h3>
           </div>
-    
-          <div class="flip-card-back">
-            <br><br>
-            <div class="card-stripe"></div>
-            <div class="card-signature">
-              <span class="card-cvv">CVV</span>
-              <span class="card-cvv-number">'.$cvv.'</span>
-            </div>
-            <p class="card-info">Using this card to purchase goods and services
-              whenever you see the MASTERCARD symbol.
-            </p>        
-          </div>
-        </div>
-      </div>';
-
+        </center>
+        
+        ';
+        
       }
+      else
+      {
+        while($row=mysqli_fetch_row($result))
+        { $i=0;
+          $cvv=0;
+          $card_number=$row[$i];
+          $sql1="SELECT cvv FROM card_details WHERE card_number='".$card_number."'";
+          $result1=mysqli_query($db,$sql1);
+          if(mysqli_num_rows($result1))
+          {
+            $row1=mysqli_fetch_row($result1);
+            $cvv=$row1[0];
+          }
+          $sql2="SELECT card_name FROM card_details WHERE card_number='".$card_number."'";
+          $result2=mysqli_query($db,$sql2);
+          if(mysqli_num_rows($result2))
+          {
+            $row2=mysqli_fetch_row($result2);
+            $card_name=$row2[0];
+          }
+          $sql3="SELECT validto FROM card_details WHERE card_number='".$card_number."'";
+          $result3=mysqli_query($db,$sql3);
+          if(mysqli_num_rows($result3))
+          {
+            $row3=mysqli_fetch_row($result3);
+            $validto=$row3[0];
+          }
+  
+          $i++;
+  
+        print '<div class="flip-card">
+  
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-container">
+                <div class="card-name">Credit Card</div>
+                <div class="chip">
+                  <img src="chip.png">
+                </div>
+                <div class="card-data">
+                  <div class="card-no">'.$card_number.'</div>
+                  <div class="expire-data">
+                    <div class="expire-date">
+                      <div class="date-label">MONTH/YEAR</div>
+                      <div class="date" title="01/17">'.$validto.'</div>
+                    </div>
+                  </div>
+                  <div>'.$card_name.'</div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="flip-card-back">
+              <br><br>
+              <div class="card-stripe"></div>
+              <div class="card-signature">
+                <span class="card-cvv">CVV</span>
+                <span class="card-cvv-number">'.$cvv.'</span>
+              </div>
+              <p class="card-info">Using this card to purchase goods and services
+                whenever you see the MASTERCARD symbol.
+              </p>        
+            </div>
+          </div>
+        </div>';
+  
+        }
+    }
       ?>
     
       <br><br>

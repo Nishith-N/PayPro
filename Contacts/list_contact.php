@@ -8,6 +8,7 @@ echo $username;
 
 $sql="SELECT username FROM contact_details WHERE pay_id='".$pay_id."'";
 $result=mysqli_query($db,$sql);
+$num=mysqli_num_rows($result);
 
 if(isset($_POST['add_btn']))
 {
@@ -133,8 +134,23 @@ $result=mysqli_query($db,$sql);
   <input type="submit" value="ADD CONTACTS" name="add_btn" id="add_btn" class="addcontacts_btn" >
 </form>
 <?php
+if($num==0)
+{
+  echo $pay_id;
+        print '
+        <center>
+        
+          <div>
+          
+          <h3>"No contacts"</h3>
+          </div>
+        </center>
+        
+        ';
+}
 $arr=array();
 $i=0;
+else{
  while($row=mysqli_fetch_row($result))
  {
   $pay_username=$row[0];
@@ -187,6 +203,7 @@ print '<center>
 </center>';
 $i++;
  }
+}
 
 ?>
 
