@@ -92,8 +92,8 @@ if(isset($_POST['signout']))
             <span class="full-text" >
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul>
-                <?php print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
-                  <ul style="margin-left: 23%;">
+                <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  <ul style="margin-left: 43%;">
                     <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
@@ -110,9 +110,7 @@ if(isset($_POST['signout']))
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul>
-                <?php 
-                
-                print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>'?>
+                <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   
                 </ul>
               </nav>
@@ -139,7 +137,7 @@ if(isset($_POST['signout']))
 <form method="post" action="#">
   <input type="submit" value="ADD CARDS" name="add_cards" id="add_cards" class="addcards_btn" >
 </form>
-
+<br>
 <form method="post" action="#">
   <input type="submit" value="DELETE CARDS" name="delete_cards" id="delete_cards" class="delete_cards_btn" >
 </form>
