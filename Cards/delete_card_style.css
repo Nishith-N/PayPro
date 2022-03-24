@@ -225,17 +225,17 @@ background-color: white;
 }
 
 .signout_btn{
-  width: 80px;
-  border-radius: 20px;
-  height: 30px;
-  border-color: white;
-  background-color: #892883;
-  color: white;
-  font-size: 18px;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+        width: 120px;
+        border-radius: 20px;
+        height: 40px;
+        border-color: white;
+        background-color: #892883;
+        color: white;
+        font-size: 18px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 5px;
+        padding-bottom: 5px;
 }
 .signout_btn:hover{
   background-color: #F8B84E;
