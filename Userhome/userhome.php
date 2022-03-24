@@ -78,8 +78,8 @@ if(mysqli_num_rows($result)==1)
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
-                    <li><form method="post" action="#"><input type="submit"  value="Delete" id="delete_btn" name="delete_btn" style="width: 90%;border-radius: 10px;"></form></li>
+                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
                 </ul>
               </nav>
@@ -101,8 +101,8 @@ if(mysqli_num_rows($result)==1)
                     <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
-                    <li><a class="getstarted scrollto" href="../Login/login.php">Sign Out  </a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
               <!-- .navbar --> 
