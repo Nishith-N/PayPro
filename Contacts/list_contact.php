@@ -103,14 +103,14 @@ $result=mysqli_query($db,$sql);
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul>
                  
-                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi</strong></i></a></h1></li>
+                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   
                   <ul style="margin-left: 45%;">
                     <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
                 </ul>
@@ -122,9 +122,7 @@ $result=mysqli_query($db,$sql);
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul>
-                  <?php
-                  print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>';
-                  ?>
+                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   
                 </ul>
               </nav>
@@ -136,8 +134,8 @@ $result=mysqli_query($db,$sql);
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
-                    <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
               <!-- .navbar --> 
@@ -151,10 +149,12 @@ $result=mysqli_query($db,$sql);
 <form method="post" action="#">
   <input type="submit" value="ADD CONTACTS" name="add_btn" id="add_btn" class="addcontacts_btn" >
 </form>
+<br>
 
 <form method="post" action="#">
   <input type="submit" value="DELETE CONTACTS" name="delete_btn" id="delete_btn" class="deletecontacts_btn" >
 </form>
+<br>
 
 <form method="post" action="#">
   <input type="submit" value="UPDATE CONTACTS" name="update_btn" id="update_btn" class="updatecontacts_btn" >
