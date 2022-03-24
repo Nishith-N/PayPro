@@ -121,6 +121,10 @@ if(isset($_POST['add_cards']))
 <form method="post" action="#">
   <input type="submit" value="ADD CARDS" name="add_cards" id="add_cards" class="addcards_btn" >
 </form>
+
+<form method="post" action="#">
+  <input type="submit" value="DELETE CARDS" name="delete_cards" id="delete_cards" class="delete_cards_btn" >
+</form>
      
 <?php
       

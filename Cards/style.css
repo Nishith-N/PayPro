@@ -399,3 +399,21 @@ body {
     border-color: white;
     cursor: pointer;
     }
+
+    .delete_cards_btn{
+      color: black;
+      background-color: #892883;
+      width: 150px;
+      height: 40px;
+      border-radius: 12px;
+      color: white;
+      margin-left: 85%;
+      border-color: white;
+      }
+      
+    .delete_cards_btn:hover{
+      color: white;
+      background-color: #F8B84E;
+      border-color: white;
+      cursor: pointer;
+      }
