@@ -225,7 +225,8 @@ print '<center>
     </div>
   </div>
 </div>
-</center>';
+</center>
+<br>';
 $i++;
  }
 }
