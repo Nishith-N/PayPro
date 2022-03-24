@@ -170,14 +170,13 @@ body {
   }
 
 .container{
-height: 100%;
+height: 50%;
 align-content: center;
 }
 
 .cardregister{
+  margin-top: 200px;
     height: 360px;
-    margin-top: 40%;
-    margin-bottom: auto;
     width: 400px;
     background-color: rgba(0,0,0,0.5) !important;
     border-radius: 13px;
@@ -229,6 +228,7 @@ background-color: white;
         background-color: #892883;
         color: white;
         font-size: 18px;
+        margin-top: 10px;
         padding-left: 12px;
         padding-right: 12px;
         padding-top: 5px;
