@@ -61,7 +61,7 @@ if(isset($_POST['submit_btn']))
         <div class="container d-flex align-items-center">  
           <section>
             <span class="full-text" >
-              <nav id="navbar" class="navbar" style="margin-top: 0%;">
+              <nav id="navbar" class="navbar" style="margin-top: 3%;">
                 <ul>
                   <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 45%;">

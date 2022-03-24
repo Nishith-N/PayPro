@@ -177,10 +177,11 @@ body {
   
 
 .cardnewcontact{
-    height: 26%;
+    height: 350px;
     margin-top: 13%;
     margin-bottom: auto;
     width: 400px;
+    border-radius: 13px;
     background-color: rgba(0,0,0,0.5) !important;
     }
 
