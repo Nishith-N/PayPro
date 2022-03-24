@@ -31,7 +31,7 @@ if(isset($_POST['submit_btn']))
 	$validto=$_POST['validto'];
 	
 
-	$sql="SELECT phone FROM bank_details WHERE card_number='".$card_num."'";
+	$sql="SELECT phone FROM bank_details WHERE card_number='".$card_num."' AND CVV='".$cvv."'";
 	$result=mysqli_query($db,$sql);
 
 	$row=mysqli_fetch_row($result);
