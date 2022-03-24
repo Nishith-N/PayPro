@@ -136,6 +136,14 @@ $result=mysqli_query($db,$sql);
 <form method="post" action="#">
   <input type="submit" value="ADD CONTACTS" name="add_btn" id="add_btn" class="addcontacts_btn" >
 </form>
+
+<form method="post" action="#">
+  <input type="submit" value="DELETE CONTACTS" name="delete_btn" id="delete_btn" class="deletecontacts_btn" >
+</form>
+
+<form method="post" action="#">
+  <input type="submit" value="UPDATE CONTACTS" name="update_btn" id="update_btn" class="updatecontacts_btn" >
+</form>
 <?php
 $i=0;
 if($num==0)

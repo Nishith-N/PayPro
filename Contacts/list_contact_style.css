@@ -334,6 +334,41 @@ color: #F8B84E;
   cursor: pointer;
   }
 
+  .deletecontacts_btn{
+    color: black;
+    background-color: #892883;
+    width: 150px;
+    height: 40px;
+    border-radius: 12px;
+    color: white;
+    margin-left: 85%;
+    border-color: white;
+    }
+    
+  .deletecontacts_btn:hover{
+    color: white;
+    background-color: #F8B84E;
+    border-color: white;
+    cursor: pointer;
+    }
+
+    .updatecontacts_btn{
+      color: black;
+      background-color: #892883;
+      width: 150px;
+      height: 40px;
+      border-radius: 12px;
+      color: white;
+      margin-left: 85%;
+      border-color: white;
+      }
+      
+    .updatecontacts_btn:hover{
+      color: white;
+      background-color: #F8B84E;
+      border-color: white;
+      cursor: pointer;
+      }
 .paydel_btn{
   width: 90%;
   border-radius: 10px;
