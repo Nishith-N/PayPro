@@ -3,28 +3,18 @@ $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 session_start();
 $pay_id=$_SESSION['pay_id'];
-echo $pay_id;
+
 
 $phone=0;
 
 if(isset($_POST['submit_btn']))
 {
-	$sql="CREATE TABLE IF NOT EXISTS card_details ( card_number BIGINT NOT NULL , cvv INT NOT NULL, card_name VARCHAR(25) NOT NULL, validto VARCHAR(25) NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (card_number), FOREIGN KEY (pay_id) REFERENCES user_details(pay_id))";
-	$result=mysqli_query($db,$sql);
+	
 
 	$card_num=$_POST['card_num'];
 	$cvv=$_POST['cvv'];
-	$card_name=$_POST['card_name'];
-	$validto=$_POST['validto'];
-	
-
-	$sql="SELECT phone FROM bank_details WHERE card_number='".$card_num."'";
-	$result=mysqli_query($db,$sql);
-
-	$row=mysqli_fetch_row($result);
-	if(mysqli_num_rows($result)==1)
-	{
-		$sql="INSERT INTO card_details VALUES ('$card_num','$cvv','$card_name','$validto','$pay_id')";
+  
+		$sql="DELETE FROM card_details WHERE card_number='".$card_num."' AND pay_id='".$pay_id."'";
 		$result=mysqli_query($db,$sql);
 		$_SESSION['pay_id'] = $pay_id;
 		header("Location:../Cards/cards.php");
@@ -49,7 +39,7 @@ if(isset($_POST['submit_btn']))
 		$result=mysqli_query($db,$sql);
 	}
 	*/
-}
+
 
 
 
@@ -130,6 +120,8 @@ if(isset($_POST['submit_btn']))
 				<h3 class="addcontact">Delete Card</h3>				
 			</div>
 
+      <?php/*  echo $pay_id;
+     */ ?>
 			<div class="card-body" >
 				<form method="post" action="#">
                     <div class="form-group">
@@ -146,7 +138,7 @@ if(isset($_POST['submit_btn']))
                    
 
 					<div class="form-group">
-						<input type="submit" value="Add" class="btn float-right add_contact_btn" id="submit_btn" name="submit_btn">
+						<input type="submit" value="Delete" class="btn float-right add_contact_btn" id="submit_btn" name="submit_btn">
 					</div>
 				</form>
 			</div>

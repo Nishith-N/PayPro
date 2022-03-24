@@ -19,6 +19,13 @@ if(isset($_POST['add_cards']))
         exit();
 }
 
+if(isset($_POST['delete_cards']))
+{
+  $_SESSION['pay_id']=$pay_id;
+  header("Location:../Cards/delete_card.php");
+        exit();
+}
+
 
 
 /*if(mysqli_num_rows($result)!=0)
