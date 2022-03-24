@@ -302,13 +302,13 @@ color: #F8B84E;
 }
 
 .flip-card-front {
-  background-color: #bbb;
+  background-color: #B586BD;
+  color: white;
   border-radius: 20px;
-  color: black;
 }
 
 .flip-card-back {
-  background-color: #B586BD;
+  background-color: grey;
   color: white;
   border-radius: 20px;
   transform: rotateY(180deg);
