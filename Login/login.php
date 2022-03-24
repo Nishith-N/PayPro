@@ -2,6 +2,8 @@
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 session_start();
+$errmsg=0;
+$att_1=1;
 if(isset($_POST['uid']) && isset($_POST['pwd']))
 {
 	$username=$_POST['uid'];
@@ -26,12 +28,28 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 		$result=mysqli_query($db,$sql);
 		$row=mysqli_fetch_row($result);
 		$_SESSION['varname'] = $username;
+		$sql="UPDATE login_attempt SET attempt=1 WHERE phone='".$username."' OR email='".$username."'";
+		$result=mysqli_query($db,$sql);
         header("Location:../Userhome/userhome.php");
         exit();
     }
     else{
-        echo "You have entered incorrect password";
-        exit();
+		$sql = "SELECT attempt FROM login_attempt WHERE phone='".$username."' OR email='".$username."'";
+		$att=mysqli_query($db,$sql);
+		if(mysqli_num_rows($att))
+      	{
+          $row1=mysqli_fetch_row($att);
+	        $att_1=$row1[0];
+        }
+		if($att_1==3){
+			$sql="UPDATE login_attempt SET attempt=1 WHERE phone='".$username."' OR email='".$username."'";
+			$result=mysqli_query($db,$sql);
+			header("Location:../Login/login_err.php");
+        	exit();
+		}
+        $errmsg= $att_1;
+		$sql="UPDATE login_attempt SET attempt=attempt+1 WHERE phone='".$username."' OR email='".$username."'";
+		$result=mysqli_query($db,$sql);
     }
 }
 
@@ -111,6 +129,7 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
 				</form>
+				<span><?php echo $errmsg; ?> </span>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">

@@ -23,6 +23,8 @@ if(isset($_POST['submit_btn']))
 	$result=mysqli_query($db,$sql);
   $sql="CREATE TABLE IF NOT EXISTS contact_details ( username VARCHAR(25) NOT NULL , pay_name VARCHAR(25) NOT NULL , nickname VARCHAR(25) NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (username,pay_id))";
 	$result=mysqli_query($db,$sql);
+  $sql="CREATE TABLE IF NOT EXISTS login_attempt ( phone BIGINT NOT NULL ,email VARCHAR(25) NOT NULL,attempt INT NOT NULL , PRIMARY KEY (phone, email)) ENGINE = MyISAM";
+  $result=mysqli_query($db,$sql);
   
 
 $sql="CREATE TABLE IF NOT EXISTS user_details ( pay_id INT NOT NULL AUTO_INCREMENT , phone BIGINT NOT NULL , email VARCHAR(25) NOT NULL , fname VARCHAR(25) NOT NULL , lname VARCHAR(25) NOT NULL , city VARCHAR(25) NOT NULL, zip BIGINT NOT NULL , state1 VARCHAR(25) NOT NULL , block1 INT NOT NULL , addresss VARCHAR(50) NOT NULL , primary_card BIGINT NOT NULL , wallet INT NOT NULL, password1 VARCHAR(50) NOT NULL , PRIMARY KEY (pay_id)) ENGINE = MyISAM";
@@ -112,6 +114,8 @@ $sql="CREATE TABLE IF NOT EXISTS user_details ( pay_id INT NOT NULL AUTO_INCREME
 if($flag==1)
 {
   $sql="INSERT INTO user_details (pay_id, phone, email, fname, lname, city, zip, state1, block1, addresss, primary_card, wallet,password1) VALUES (NULL,$phone,'$email','$fname','$lname','$city',$zip,'$state',$block,'$address',$primary_card,$wallet,'$pwd')";
+  $result=mysqli_query($db,$sql);
+  $sql="INSERT INTO login_attempt (phone, email, attempt) VALUES ($phone, '$email','1')";
   $result=mysqli_query($db,$sql);
   header("Location:../Login/login.php");
         exit();
