@@ -146,7 +146,7 @@ if(isset($_POST['submit_btn']))
                    
 
 					<div class="form-group">
-						<input type="submit" value="Add" class="btn float-right add_contact_btn" id="submit_btn" name="submit_btn">
+						<input type="submit" value="Delete" class="btn float-right add_contact_btn" id="submit_btn" name="submit_btn">
 					</div>
 				</form>
 			</div>
