@@ -95,7 +95,7 @@ if(isset($_POST['signout']))
                 <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 43%;">
                     <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
-                    <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
+                    <li><a class="nav-link scrollto active" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -118,7 +118,7 @@ if(isset($_POST['signout']))
               <nav id="navbar" class="navbar">
               <ul style="margin-left: 0%;">
                 <li><a class="nav-link scrollto ctive" href="../Userhome/userhome.php">Home</a></li>
-                    <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
+                    <li><a class="nav-link scrollto active" href="../Cards/new_card.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
