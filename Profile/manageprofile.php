@@ -140,7 +140,7 @@ $ifname=$_POST['fname'];
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
-                    <li><a class="getstarted scrollto" href="../Login/login.php">SignOut</a></li>
+                    <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
                 </ul>
               </nav>
@@ -162,8 +162,7 @@ $ifname=$_POST['fname'];
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
-                    <li><a class="getstarted scrollto" href="../Login/login.php">SignOut</a></li>
-              </ul>
+                    <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </nav>
               <!-- .navbar --> 
             </span>

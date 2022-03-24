@@ -72,7 +72,7 @@ if(isset($_POST['signout']))
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
-                    <li><form method="post" action="#"><input type="submit"  style="width: 120px;
+                    <li><form method="post" action="../Login/login.php"><input type="submit"  style="width: 120px;
                       border-radius: 20px;
                       height: 40px;
                       border-color: white;
@@ -101,7 +101,7 @@ if(isset($_POST['signout']))
                     <li><a class="nav-link scrollto" href="#">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="#">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="#">Reset Password</a></li>
-                    <li><form method="post" action="#"><input type="submit"  style="width: 120px;
+                    <li><form method="post" action="../Login/login.php"><input type="submit"  style="width: 120px;
                       border-radius: 20px;
                       height: 40px;
                       border-color: white;
