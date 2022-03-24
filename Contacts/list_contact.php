@@ -166,7 +166,7 @@ else{
  while($row=mysqli_fetch_row($result))
  {
   $pay_username=$row[0];
-  echo $pay_username;
+  
   $sql1="SELECT pay_name FROM contact_details WHERE username='".$pay_username."' AND pay_id='".$pay_id."'";
   $result1=mysqli_query($db,$sql1);
   if(mysqli_num_rows($result1))
