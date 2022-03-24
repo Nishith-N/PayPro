@@ -40,11 +40,9 @@ if(isset($_POST['pay_btn']))
 
 if(isset($_POST['delete_btn']))
 {
-  
-  $sql="DELETE FROM contact_details WHERE pay_id='".$pay_id."' AND username='".$pay_username."'";
-  $result=mysqli_query($db,$sql);
-  header("Location:../Contacts/new_contact.php");
+  header("Location:../Contacts/delete_contact.php");
         exit();
+
 }
 /*
 $pay_id=$_SESSION['pay_id'];
@@ -104,7 +102,9 @@ $result=mysqli_query($db,$sql);
             <span class="full-text" >
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul>
-                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                 
+                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi</strong></i></a></h1></li>
+                  
                   <ul style="margin-left: 45%;">
                     <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
@@ -122,7 +122,9 @@ $result=mysqli_query($db,$sql);
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul>
-                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  <?php
+                  print '<li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$username.'</strong></i></a></h1></li>';
+                  ?>
                   
                 </ul>
               </nav>
@@ -215,10 +217,10 @@ print '<center>
       <table style="width: 100%;">
         <tr>
           <td rowspan="2" style="width: 80%;"><h3>'.$pay_username.'</h3></td>
-          <td style="width: 20%;text-align: center;"><form method="post" action="#"><input type="submit"  value="Pay" name="pay_btn" style="width: 90%;border-radius: 10px;"></form></td>
+          
         </tr>
         <tr>
-          <td style="width: 20%;text-align: center;"><form method="post" action="#"><input type="submit"  value="Delete" id="delete_btn" name="delete_btn" style="width: 90%;border-radius: 10px;"></form></td>
+          
         </tr>
       </table>
             

@@ -136,11 +136,11 @@ $ifname=$_POST['fname'];
                 <ul>
                   <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 29%;">
-                    <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>
+                   
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
-                    <li><a class="getstarted scrollto" href="../Login/login.php">SignOut  </a></li>
+                    <li><a class="getstarted scrollto" href="../Login/login.php">SignOut</a></li>
                   </ul>
                 </ul>
               </nav>
@@ -158,11 +158,11 @@ $ifname=$_POST['fname'];
               <br>
               <nav id="navbar" class="navbar">
               <ul style="margin-left: 0%;">
-              <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>
+              
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
-                    <li><a class="getstarted scrollto" href="../Login/login.php">SignOut  </a></li>
+                    <li><a class="getstarted scrollto" href="../Login/login.php">SignOut</a></li>
               </ul>
               </nav>
               <!-- .navbar --> 

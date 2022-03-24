@@ -188,10 +188,62 @@ if(isset($_POST['signout']))
             $row3=mysqli_fetch_row($result3);
             $validto=$row3[0];
           }
+
+          $sql4="SELECT primary_card FROM user_details WHERE pay_id='".$pay_id."'";
+          $result4=mysqli_query($db,$sql4);
+          if(mysqli_num_rows($result4))
+          {
+            $row4=mysqli_fetch_row($result4);
+            $testcardnum=$row4[0];
+          }
   
           $i++;
   
-        print '<div class="flip-card">
+        print '<center><div class="flip-card"';
+        if($testcardnum==$card_number)
+        {
+       print  ' style="box-shadow: 1px 5px 1px 20px #F8B84E; box-shadow-bottom-right-radius: 5px;
+       box-shadow-bottom-left-radius: 20px;
+       box-shadow-top-right-radius: 20px;
+       box-shadow-top-left-radius: 20px;">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-container">
+                <div class="card-name">Credit Card</div>
+                <div class="chip">
+                  <img src="chip.png">
+                </div>
+                <div class="card-data">
+                  <div class="card-no">'.$card_number.'</div>
+                  <div class="expire-data">
+                    <div class="expire-date">
+                      <div class="date-label">MONTH/YEAR</div>
+                      <div class="date" title="01/17">'.$validto.'</div>
+                    </div>
+                  </div>
+                  <div>'.$card_name.'</div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="flip-card-back">
+              <br><br>
+              <div class="card-stripe"></div>
+              <div class="card-signature">
+                <span class="card-cvv">CVV</span>
+                <span class="card-cvv-number">'.$cvv.'</span>
+              </div>
+              <p class="card-info">Using this card to purchase goods and services
+                whenever you see the MASTERCARD symbol.
+              </p>        
+            </div>
+          </div>
+        </div>';
+        }
+        else
+        {
+          print '>';
+          print'
   
           <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -225,9 +277,10 @@ if(isset($_POST['signout']))
               </p>        
             </div>
           </div>
-        </div>';
+        </div></center><br><br>';
   
         }
+      }
     }
       ?>
     
