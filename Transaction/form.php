@@ -8,12 +8,7 @@ echo $username;
 $otp=1234;
 
 
-if(isset($_POST['recharge_btn']))
-{
-	$_SESSION['username']=$username;
-	header("Location:../Userhome/wallet_recharge.php");
-        exit();
-}
+
 
 if(isset($_POST['submit_btn']))
 {
@@ -84,7 +79,7 @@ if(isset($_POST['submit_btn']))
                 <ul style="padding-top: 20px;">
                   <li><h1 class="logo me-auto" style="margin-left: -200px;"><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 43%;">
-                  <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+                  <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
@@ -107,7 +102,7 @@ if(isset($_POST['submit_btn']))
               <br>
               <nav id="navbar" class="navbar">
               <ul style="margin-left: -24px;">
-                <li><li><a class="nav-link scrollto " href="#hero">Home</a></li>
+                <li><li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
@@ -147,7 +142,7 @@ if(isset($_POST['submit_btn']))
 
 					<div class="form-group">
 						<input type="submit" value="Submit" class="btn float-right login_btn" name="submit_btn" id="submit_btn"><br><br>
-						<input type="submit" value="Recharge" class="btn float-right login_btn" name="recharge_btn" id="recharge_btn">
+						
 					</div>
 				</form>
 			</div>
