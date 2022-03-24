@@ -235,12 +235,12 @@ $ifname=$_POST['fname'];
 
                     <div class="form-group">
                         <label for="phno" class="textregister">Phone Number </label>
-                        <input type="number" id="phno" name="phno" class="form-control" style="width: 300px;" value="'.$phone.'" readonly>
+                        <input type="number" id="phno" name="phno" class="form-control" style="width: 300px;background-color: #BEBEBE" value="'.$phone.'" readonly>
                     </div> 
 
                     <div class="form-group">
                         <label for="email" class="textregister">Email </label>
-                        <input type="email" id="email" name="email" class="form-control" style="width: 300px;" value="'.$email.'"  readonly> 
+                        <input type="email" id="email" name="email" class="form-control" style="width: 300px;background-color: #BEBEBE" value="'.$email.'"  readonly> 
                     </div>                  
 
 					<div class="form-group">
