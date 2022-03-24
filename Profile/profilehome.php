@@ -8,6 +8,17 @@ $_SESSION['username']=$username;
 $pay_id=$_SESSION['pay_id'];
 echo $pay_id;
 echo $username;
+if($username=='')
+{
+  header("Location:../Home/home.html");
+        exit(); 
+}
+if(isset($_POST['signout']))
+{
+  session_destroy();
+    header("Location:../Login/login.php");
+          exit();
+}
 
 ?>
 
@@ -61,7 +72,7 @@ echo $username;
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
-                    <li><a class="getstarted scrollto" href="../Login/login.php">SignOut  </a></li>
+                    <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
                 </ul>
               </nav>
@@ -83,7 +94,7 @@ echo $username;
                     <li><a class="nav-link scrollto" href="#">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="#">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="#">Reset Password</a></li>
-                    <li><a class="getstarted scrollto" href="Login/login.html">SignOut  </a></li>
+                    <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
               <!-- .navbar --> 
