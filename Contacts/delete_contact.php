@@ -4,7 +4,6 @@ or die('Error connecting to MySQL server.');
 session_start();
 $pay_id=$_SESSION['pay_id'];
 $usernametest=$_SESSION['username'];
-
 if($usernametest=='')
 {
   header("Location:../Home/home.html");
@@ -12,11 +11,34 @@ if($usernametest=='')
 }
 if(isset($_POST['submit_btn']))
 {
-  $pay_username=$_POST['uname'];
-	$sql="DELETE FROM contact_details WHERE pay_id='".$pay_id."' AND username='".$pay_username."'";
-  $result=mysqli_query($db,$sql);
-  header("Location:../Contacts/list_contact.php");
-        exit();
+	$sql="CREATE TABLE IF NOT EXISTS contact_details ( username VARCHAR(25) NOT NULL , pay_name VARCHAR(25) NOT NULL , nickname VARCHAR(25) NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (username,pay_id))";
+	$result=mysqli_query($db,$sql);
+
+	
+	$nickname=$_POST['nick_name'];
+	$uname=$_POST['uname'];
+
+	$sql="SELECT fname FROM user_details WHERE email='".$uname."' OR phone='".$uname."'";
+	$result=mysqli_query($db,$sql);
+	$row=mysqli_fetch_row($result);
+	$fname=$row[0];
+
+	$sql="SELECT lname FROM user_details WHERE email='".$uname."' OR phone='".$uname."'";
+	$result=mysqli_query($db,$sql);
+	$row=mysqli_fetch_row($result);
+	$lname=$row[0];
+
+	$name=$fname.$lname;
+
+	$sql="SELECT pay_id FROM user_details WHERE email='".$uname."' OR phone='".$uname."'";
+	$result=mysqli_query($db,$sql);
+
+	$row=mysqli_fetch_row($result);
+	if(mysqli_num_rows($result)==1)
+	{
+		$sql="INSERT INTO contact_details VALUES ('$uname','$name','$nickname','$pay_id')";
+		$result=mysqli_query($db,$sql);
+	}
 	
 }
 if(isset($_POST['signout']))
@@ -53,9 +75,7 @@ if(isset($_POST['signout']))
             <span class="full-text" >
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul style="padding-top: 20px;">
-                <?php
-                 print' <li><h1 class="logo me-auto" style="margin-left: -200px;"><a href=""><i style="font-size: 35px;"><strong>PayPro,Hi '.$usernametest.'</strong></i></a></h1></li> ';
-                  ?>
+                  <li><h1 class="logo me-auto" style="margin-left: -200px;"><a href=""><i style="font-size: 35px;"><strong>PayPro,HI 9876543210</strong></i></a></h1></li>
                   <ul style="margin-left: 43%;">
                   <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
@@ -73,7 +93,7 @@ if(isset($_POST['signout']))
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul>
-                  <li><h1 class="logo me-auto" style="padding-top: 24px;margin-left: -70px;"><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  <li><h1 class="logo me-auto" style="padding-top: 24px;margin-left: -70px;"><a href=""><i style="font-size: 35px;"><strong>PayPro,HI 9876543210</strong></i></a></h1></li>
                   
                 </ul>
               </nav>
