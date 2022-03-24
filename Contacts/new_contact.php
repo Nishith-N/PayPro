@@ -56,6 +56,53 @@ if(isset($_POST['submit_btn']))
     <link rel="icon" href="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/46/d1/61/46d16165-c305-5c6f-7626-1a60208042f3/source/512x512bb.jpg" type="image/icon type">
 </head>
 <body>
+
+<header id="header" style="margin-top: -22px;" class="fixed-top ">
+        <div class="container d-flex align-items-center">  
+          <section>
+            <span class="full-text" >
+              <nav id="navbar" class="navbar" style="margin-top: 0%;">
+                <ul>
+                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  <ul style="margin-left: 45%;">
+                    <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
+                    <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
+                    <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
+                    <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
+                    <li><a class="getstarted scrollto" href="..Login/login.php">SignOut </a></li>
+                  </ul>
+                </ul>
+              </nav>
+              
+              <!-- .navbar --> 
+            </span>
+
+            <span class="short-text">
+              <nav id="navbar" class="navbar">
+                <ul>
+                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  
+                </ul>
+              </nav>
+              
+              <nav id="navbar" class="navbar">
+              <ul style="margin-left: 0%;">
+                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
+                    <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
+                    <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
+                    <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
+                    <li><a class="getstarted scrollto" href="..Login/login.php">SignOut </a></li>
+              </ul>
+              </nav>
+              <!-- .navbar --> 
+            </span>
+          </section>
+        </div>
+      </header>
+      <!-- End Header -->
     <div class="container-fluid mainhead">
 		
 <div class="container">

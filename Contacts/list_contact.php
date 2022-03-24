@@ -97,7 +97,8 @@ $result=mysqli_query($db,$sql);
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
-                    <li><a class="getstarted scrollto" href="..Login/login.php">Login/Sign Up  </a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
+                    <li><a class="getstarted scrollto" href="..Login/login.php">SignOut </a></li>
                   </ul>
                 </ul>
               </nav>
@@ -116,10 +117,12 @@ $result=mysqli_query($db,$sql);
               <nav id="navbar" class="navbar">
               <ul style="margin-left: 0%;">
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#">Cards</a></li>
-                    <li><a class="nav-link scrollto" href="#">Transaction</a></li>
-                    <li><a class="nav-link scrollto" href="#">Contact</a></li>
-                    <li><a class="getstarted scrollto" href="Login/login.html">Login/Sign Up  </a></li>
+                <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
+                    <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
+                    <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
+                    <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>
+                    <li><a class="getstarted scrollto" href="..Login/login.php">SignOut </a></li>
               </ul>
               </nav>
               <!-- .navbar --> 
