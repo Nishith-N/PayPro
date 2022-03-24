@@ -129,7 +129,7 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
 				</form>
-				<span><?php echo $errmsg; ?> </span>
+				
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">

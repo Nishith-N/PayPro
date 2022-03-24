@@ -4,6 +4,11 @@ or die('Error connecting to MySQL server.');
 session_start();
 $username=$_SESSION['username'];
 $pay_id=$_SESSION['pay_id'];
+if($username=='')
+{
+  header("Location:../Home/home.html");
+        exit(); 
+}
 echo $pay_id;
 
 $card_number=0;
@@ -24,6 +29,12 @@ if(isset($_POST['delete_cards']))
   $_SESSION['pay_id']=$pay_id;
   header("Location:../Cards/delete_card.php");
         exit();
+}
+if(isset($_POST['signout']))
+{
+  session_destroy();
+    header("Location:../Login/login.php");
+          exit();
 }
 
 
@@ -88,7 +99,7 @@ if(isset($_POST['delete_cards']))
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+  <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
                 </ul>
               </nav>
@@ -113,7 +124,7 @@ if(isset($_POST['delete_cards']))
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+  <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
               <!-- .navbar --> 

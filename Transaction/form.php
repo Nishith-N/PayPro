@@ -6,7 +6,11 @@ session_start();
 $username=$_SESSION['username'];
 echo $username;
 $otp=1234;
-
+if($username=='')
+{
+  header("Location:../Home/home.html");
+        exit(); 
+}
 
 
 
@@ -50,6 +54,13 @@ if(isset($_POST['submit_btn']))
 
 }
 
+if(isset($_POST['signout']))
+{
+  session_destroy();
+    header("Location:../Login/login.php");
+          exit();
+}
+
 
 
 
@@ -71,7 +82,7 @@ if(isset($_POST['submit_btn']))
 </head>
 <body>
 
-    <header id="header" style="margin-top: -22px;" class="fixed-top ">
+<header id="header" style="margin-top: -22px;" class="fixed-top ">
         <div class="container d-flex align-items-center">  
           <section>
             <span class="full-text" >
@@ -84,7 +95,7 @@ if(isset($_POST['submit_btn']))
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+  <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
                 </ul>
               </nav>
@@ -107,7 +118,7 @@ if(isset($_POST['submit_btn']))
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+  <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
               <!-- .navbar --> 

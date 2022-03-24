@@ -3,9 +3,22 @@ $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 session_start();
 $pay_id=$_SESSION['pay_id'];
+$usernametest=$_SESSION['username'];
 echo $pay_id;
 
 $phone=0;
+if($usernametest=='')
+{
+  header("Location:../Home/home.html");
+        exit(); 
+}
+if(isset($_POST['signout']))
+{
+  session_destroy();
+    header("Location:../Login/login.php");
+          exit();
+}
+
 
 if(isset($_POST['submit_btn']))
 {
@@ -84,7 +97,7 @@ if(isset($_POST['submit_btn']))
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+  <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
                 </ul>
               </nav>
@@ -107,7 +120,7 @@ if(isset($_POST['submit_btn']))
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+  <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
               <!-- .navbar --> 
