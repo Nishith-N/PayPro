@@ -143,7 +143,7 @@ $ifname=$_POST['fname'];
                 <ul>
                   <li><h1 class="logo me-auto" ><a href="" style="text-decoration:none;"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 40%;">
-                    <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
+                    <li><a class="nav-link scrollto active" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>
@@ -166,7 +166,7 @@ $ifname=$_POST['fname'];
               <br>
               <nav id="navbar" class="navbar">
               <ul style="margin-left: 0%;">
-              <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
+              <li><a class="nav-link scrollto active" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>
