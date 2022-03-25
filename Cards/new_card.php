@@ -44,6 +44,12 @@ if(isset($_POST['submit_btn']))
         exit();
     
 	}
+  else{
+    $_SESSION['username'] = $usernametest;
+		header("Location:../Transaction/error.php");
+        exit();
+    
+  }
 	/*
 
     $sql="SELECT pay_id FROM user_details WHERE phone='".$phone."'";

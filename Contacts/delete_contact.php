@@ -11,34 +11,24 @@ if($usernametest=='')
 }
 if(isset($_POST['submit_btn']))
 {
-	$sql="CREATE TABLE IF NOT EXISTS contact_details ( username VARCHAR(25) NOT NULL , pay_name VARCHAR(25) NOT NULL , nickname VARCHAR(25) NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (username,pay_id))";
-	$result=mysqli_query($db,$sql);
-
-	
-	$nickname=$_POST['nick_name'];
-	$uname=$_POST['uname'];
-
-	$sql="SELECT fname FROM user_details WHERE email='".$uname."' OR phone='".$uname."'";
-	$result=mysqli_query($db,$sql);
-	$row=mysqli_fetch_row($result);
-	$fname=$row[0];
-
-	$sql="SELECT lname FROM user_details WHERE email='".$uname."' OR phone='".$uname."'";
-	$result=mysqli_query($db,$sql);
-	$row=mysqli_fetch_row($result);
-	$lname=$row[0];
-
-	$name=$fname.$lname;
-
-	$sql="SELECT pay_id FROM user_details WHERE email='".$uname."' OR phone='".$uname."'";
-	$result=mysqli_query($db,$sql);
-
-	$row=mysqli_fetch_row($result);
+  $uname=$_POST['uname'];
+  $sql="SELECT username FROM contact_details WHERE username='".$uname."' AND pay_id='".$pay_id."'";
+  $result=mysqli_query($db,$sql);
 	if(mysqli_num_rows($result)==1)
-	{
-		$sql="INSERT INTO contact_details VALUES ('$uname','$name','$nickname','$pay_id')";
-		$result=mysqli_query($db,$sql);
-	}
+  {
+    $sql="DELETE FROM contact_details WHERE username='".$uname."' AND pay_id='".$pay_id."'";
+  $result=mysqli_query($db,$sql);
+  header("Location:../Contacts/list_contact.php");
+          exit();
+  }
+  else{
+    
+      $_SESSION['username'] = $usernametest;
+      header("Location:../Transaction/error.php");
+          exit();
+      
+    
+  }
 	
 }
 if(isset($_POST['signout']))
