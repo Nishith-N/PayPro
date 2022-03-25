@@ -141,13 +141,13 @@ if(isset($_POST['signout']))
     
 	<div class="d-flex justify-content-center h-100">      
 
-		<div class="cardregister" style="margin-top: 10%;">
+		<div class="cardregister" style="margin-top: 20%;">
            
 			<div class="card-header">
 				<h3 class="register">Transaction</h3>				
 			</div>
 
-			<div class="card-body">
+			<div class="card-body" >
 				<form action="#" method="post">
 
                     <div class="form-group">
