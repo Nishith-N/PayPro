@@ -2,7 +2,7 @@
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 session_start();
-$errmsg=0;
+$errmsg='';
 $att_1=1;
 if(isset($_POST['uid']) && isset($_POST['pwd']))
 {
@@ -10,7 +10,18 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 	$pwd=$_POST['pwd'];
 
 
-	if(preg_match("/^[0-9]+$/",$username))
+	if(empty($username))
+	{
+		$errmsg.=" Enter your username";
+	}
+	else if(empty($pwd))
+	{
+		$errmsg.=" \nEnter your password";
+	}
+	else
+	{
+
+		if(preg_match("/^[0-9]+$/",$username))
 	{
 		$sql="SELECT * FROM user_details WHERE phone='".$username."' AND password1='".$pwd."' limit 1";
 	}
@@ -52,6 +63,10 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 		$result=mysqli_query($db,$sql);
     }
 }
+
+	}
+
+	
 
 
 
@@ -129,7 +144,7 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
 				</form>
-				
+				<span><?php echo $errmsg ?></span>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
