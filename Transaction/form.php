@@ -141,7 +141,7 @@ if(isset($_POST['signout']))
     
 	<div class="d-flex justify-content-center h-100">      
 
-		<div class="cardregister" style="margin-top: 23%;">
+		<div class="cardregister" style="margin-top: 150px;">
            
 			<div class="card-header">
 				<h3 class="register">Transaction</h3>				

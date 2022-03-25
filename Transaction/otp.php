@@ -53,7 +53,7 @@ or die('Error connecting to MySQL server.');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Transaction</title>
+	<title>Otp</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="otpstyle.css">   
@@ -64,7 +64,7 @@ or die('Error connecting to MySQL server.');
     
 	<div class="d-flex justify-content-center h-100">      
 
-		<div class="cardregister">
+		<div class="cardregister" style="margin-top: 100px;">
            
 			<div class="card-header">
 				<h3 class="register">OTP</h3>				
