@@ -7,6 +7,11 @@ height: 100%;
 font-family: 'Numans', sans-serif;
 }
 
+.container{
+height: 100%;
+align-content: center;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
@@ -168,27 +173,22 @@ body {
     .short-text { display: inline-block; }
     .full-text { display: none; }
   }
+  
 
-.container{
-height: 50%;
-align-content: center;
-}
-
-.cardregister{
-  margin-top: 200px;
-    height: 360px;
-    
+.cardnewcontact{
+    height: 400px;
+    margin-top: 13%;
     margin-bottom: auto;
     width: 400px;
-    background-color: rgba(0,0,0,0.5) !important;
     border-radius: 13px;
+    background-color: rgba(0,0,0,0.5) !important;
     }
 
-.register{
-    color: #B586BD;
+.addcontact{
+    color: white;
 }
 
-.textregister{
+.textaddcontact{
     color: #F8B74E;
 }
 .starregister{
@@ -211,33 +211,33 @@ outline: 0 0 0 0  !important;
 box-shadow: 0 0 0 0 !important;
 }
 
-.login_btn{
+.add_contact_btn{
 color: black;
+margin-top: 2%;
 background-color: #B586BD;
+transition: background-color 1s;
 width: 100px;
 }
 
-.login_btn:hover{
+.add_contact_btn:hover{
 color: black;
 background-color: white;
 }
 
 .signout_btn{
-  width: 120px;
-        border-radius: 20px;
-        height: 40px;
-        border-color: white;
-        background-color: #892883;
-        color: white;
-        font-size: 18px;
-        margin-top: 10px;
-        padding-left: 12px;
-        padding-right: 12px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+  width: 80px;
+  border-radius: 20px;
+  height: 30px;
+  border-color: white;
+  background-color: #892883;
+  color: white;
+  font-size: 18px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .signout_btn:hover{
   background-color: #F8B84E;
   cursor: pointer;
 }
-

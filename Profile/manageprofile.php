@@ -54,6 +54,8 @@ $ifname=$_POST['fname'];
   $icity=$_POST['city'];
   $istate=$_POST['state'];
   $izip=$_POST['zip'];
+  $iphone=$_POST['phno'];
+  $iemail=$_POST['email'];
 
   
 
@@ -103,11 +105,17 @@ $ifname=$_POST['fname'];
  
   if($flag==1)
   {
-    $sql="UPDATE user_details SET fname='".$ifname."',lname='".$ilname."',city='".$icity."',zip='".$izip."',state1='".$istate."',addresss='".$iaddress."' WHERE email='".$username."' OR phone='".$username."'";
+    $sql="SELECT acc_number FROM bank_details WHERE PHONE='".$iphone."'";
+    $result=mysqli_query($db,$sql);
+    $row=mysqli_fetch_row($result);
+   if($row[0])
+    {
+    $sql="UPDATE user_details SET fname='".$ifname."',lname='".$ilname."',phone='".$iphone."',email='".$iemail."',city='".$icity."',zip='".$izip."',state1='".$istate."',addresss='".$iaddress."' WHERE email='".$username."' OR phone='".$username."'";
     $result=mysqli_query($db,$sql);
     session_destroy();
     header("Location:../Login/login.php");
           exit();
+    }
   
   }
 }
@@ -234,12 +242,12 @@ $ifname=$_POST['fname'];
 
                     <div class="form-group">
                         <label for="phno" class="textregister">Phone Number </label>
-                        <input type="number" id="phno" name="phno" class="form-control" style="width: 300px;background-color: #BEBEBE" value="'.$phone.'" readonly>
+                        <input type="number" id="phno" name="phno" class="form-control" style="width: 300px;" value="'.$phone.'" >
                     </div> 
 
                     <div class="form-group">
                         <label for="email" class="textregister">Email </label>
-                        <input type="email" id="email" name="email" class="form-control" style="width: 300px;background-color: #BEBEBE" value="'.$email.'"  readonly> 
+                        <input type="email" id="email" name="email" class="form-control" style="width: 300px;" value="'.$email.'"> 
                     </div>                  
 
 					<div class="form-group">

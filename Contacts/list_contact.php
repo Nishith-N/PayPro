@@ -44,6 +44,12 @@ if(isset($_POST['delete_btn']))
         exit();
 
 }
+if(isset($_POST['update_btn']))
+{
+  header("Location:../Contacts/update_contact.php");
+        exit();
+
+}
 /*
 $pay_id=$_SESSION['pay_id'];
 
