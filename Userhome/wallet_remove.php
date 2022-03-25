@@ -4,10 +4,12 @@ or die('Error connecting to MySQL server.');
 		session_start();
         $username=$_SESSION['username'];
         echo $username;
-
+$amount=0;
 			if(isset($_POST['submit_btn']))
 			{
                 $amount=$_POST['amount'];
+				if($amount)
+				{
 				$sql="SELECT amount FROM bank_details WHERE phone='".$username."'";
                 $result=mysqli_query($db,$sql);
                 $row=mysqli_fetch_row($result);
@@ -28,7 +30,17 @@ or die('Error connecting to MySQL server.');
 				$result=mysqli_query($db,$sql);
                 $sql="UPDATE bank_details SET amount='".$addamount."' WHERE phone='".$username."'";
 				$result=mysqli_query($db,$sql);
+				$_SESSION['username']=$username;
+				header("Location:../Transaction/success.php");
+			exit();
                 }
+			}
+			else{
+				$_SESSION['username']=$username;
+				header("Location:../Transaction/error.php");
+			exit();
+			
+			}
 /*
 				header("Location:../Userhome/userhome.php");
         		exit();
