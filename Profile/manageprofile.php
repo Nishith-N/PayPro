@@ -139,15 +139,16 @@ $ifname=$_POST['fname'];
 <header id="header" style="margin-top: -22px;" class="fixed-top ">
           <section>
             <span class="full-text" >
-              <nav id="navbar" class="navbar" style="margin-top: 0%;">
+              <nav id="navbar" class="navbar" style="margin-top:7px;">
                 <ul>
-                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
-                  <ul style="margin-left: 75%;">
+                  <li><h1 class="logo me-auto" ><a href="" style="text-decoration:none;"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  <ul style="margin-left: 40%;">
                     <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
-                    <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+                    <li style="padding-left:20px;"><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;border-radius: 20px;height: 40px;border-color: white;background-color: #892883;color: white;
+        font-size: 18px;" value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
                 </ul>
               </nav>
@@ -157,7 +158,7 @@ $ifname=$_POST['fname'];
 
             <span class="short-text">
               <nav id="navbar" class="navbar">
-                <ul>
+                <ul style="padding-top:15px;">
                   <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   
                 </ul>
@@ -169,12 +170,7 @@ $ifname=$_POST['fname'];
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
-                    <li><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;
-        border-radius: 20px;
-        height: 40px;
-        border-color: white;
-        background-color: #892883;
-        color: white;
+                    <li style="padding-left:15px;"><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;border-radius: 20px;height: 40px;border-color: white;background-color: #892883;color: white;
         font-size: 18px;" value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </nav>
               <!-- .navbar --> 
@@ -187,7 +183,7 @@ $ifname=$_POST['fname'];
     
 	<div class="d-flex justify-content-center h-100">      
 
-		<div class="cardregister">
+		<div class="cardregister" style="height:750px;margin-top:130px">
            
 			<div class="card-header">
 				<h3 class="register">Profile</h3>				
@@ -256,7 +252,7 @@ $ifname=$_POST['fname'];
 
 					<div class="form-group">
 						<input type="submit" value="Submit" class="btn float-right login_btn" id="submit_btn" name="submit_btn">
-					</div>
+					</div><br><br>
 				</form>'
                 ?>
 			</div>
