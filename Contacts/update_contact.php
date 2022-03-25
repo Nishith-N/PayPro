@@ -83,8 +83,8 @@ if(isset($_POST['signout']))
             <span class="full-text" >
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul style="padding-top: 20px;">
-                  <li><h1 class="logo me-auto" style="margin-left: -200px;"><a href=""><i style="font-size: 35px;"><strong>PayPro,HI 9876543210</strong></i></a></h1></li>
-                  <ul style="margin-left: 43%;">
+                  <li><h1 class="logo me-auto" style="margin-left: -200px;"><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  <ul style="margin-left: 93%;">
                   <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
@@ -101,7 +101,7 @@ if(isset($_POST['signout']))
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul>
-                  <li><h1 class="logo me-auto" style="padding-top: 24px;margin-left: -70px;"><a href=""><i style="font-size: 35px;"><strong>PayPro,HI 9876543210</strong></i></a></h1></li>
+                  <li><h1 class="logo me-auto" style="padding-top: 24px;margin-left: -70px;"><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   
                 </ul>
               </nav>
@@ -128,10 +128,10 @@ if(isset($_POST['signout']))
     
 	<div class="d-flex justify-content-center h-100">      
 
-		<div class="cardnewcontact">
+		<div class="cardnewcontact" style="height: 430px;margin-top: 150px;">
            
 			<div class="card-header">
-				<h3 class="addcontact">Add Contact</h3>				
+				<h3 class="addcontact">Update Contact</h3>				
 			</div>
 
 			<div class="card-body">

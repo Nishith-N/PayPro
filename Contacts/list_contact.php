@@ -101,7 +101,10 @@ $result=mysqli_query($db,$sql);
   <link href="list_contact_style.css" rel="stylesheet">
   <link rel="icon" href="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/46/d1/61/46d16165-c305-5c6f-7626-1a60208042f3/source/512x512bb.jpg" type="image/icon type">
 </head>
-<body>
+<body style="background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');
+background-size: cover;
+height: 100%;
+font-family: 'Numans', sans-serif;">
     <header id="header" style="margin-top: -22px;" class="fixed-top ">
         <div class="container d-flex align-items-center">  
           <section>

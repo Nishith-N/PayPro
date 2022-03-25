@@ -104,7 +104,7 @@ if(mysqli_num_rows($result)==1)
               <nav id="navbar" class="navbar">
               <ul style="margin-left: 0%;">
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="../Cards/new_card.php">Cards</a></li>
+                    <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
