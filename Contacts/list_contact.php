@@ -155,17 +155,17 @@ font-family: 'Numans', sans-serif;">
 
 <br>
 <form method="post" action="#">
-  <input type="submit" value="ADD CONTACTS" name="add_btn" id="add_btn" class="addcontacts_btn" >
+  <input type="submit" style="margin-left: 50px" value="ADD CONTACTS" name="add_btn" id="add_btn" class="addcontacts_btn" >
 </form>
 <br>
 
 <form method="post" action="#">
-  <input type="submit" value="DELETE CONTACTS" name="delete_btn" id="delete_btn" class="deletecontacts_btn" >
+  <input type="submit" style="margin-left: 50px" value="DELETE CONTACTS" name="delete_btn" id="delete_btn" class="deletecontacts_btn" >
 </form>
 <br>
 
 <form method="post" action="#">
-  <input type="submit" value="UPDATE CONTACTS" name="update_btn" id="update_btn" class="updatecontacts_btn" >
+  <input type="submit" style="margin-left: 50px" value="UPDATE CONTACTS" name="update_btn" id="update_btn" class="updatecontacts_btn" >
 </form>
 <?php
 $i=0;

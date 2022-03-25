@@ -59,3 +59,15 @@ color: black;
 background-color: white;
 }
 
+.back_btn{
+    color: black;
+    background-color: #B586BD;
+    transition: background-color 1s;
+    width: 100px;
+    }
+    
+    .back_btn:hover{
+    color: black;
+    background-color: white;
+    }
+

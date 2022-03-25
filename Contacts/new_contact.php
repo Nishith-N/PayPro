@@ -38,8 +38,11 @@ if(isset($_POST['submit_btn']))
 	{
 		$sql="INSERT INTO contact_details VALUES ('$uname','$name','$nickname','$pay_id')";
 		$result=mysqli_query($db,$sql);
+    header("Location:../Contacts/list_contact.php");
+          exit();
 	}
 	
+
 }
 if(isset($_POST['signout']))
 {

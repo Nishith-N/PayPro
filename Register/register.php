@@ -13,6 +13,12 @@ $ziperr='';
 $emailerr='';
 $phoneerr='';
 
+if(isset($_POST['back_btn']))
+{
+  header("Location:../Login/login.php");
+        exit();
+}
+
 if(isset($_POST['submit_btn']))
 {
   $sql="CREATE TABLE IF NOT EXISTS bank_details ( acc_number BIGINT NOT NULL , card_number BIGINT NOT NULL , bank_name VARCHAR(25) NOT NULL , amount BIGINT NOT NULL , phone BIGINT NOT NULL , cvv INT NOT NULL , PRIMARY KEY (acc_number, card_number)) ENGINE = MyISAM";
@@ -224,6 +230,9 @@ if($flag==1)
 
 					<div class="form-group">
 						<input type="submit" value="Submit" class="btn float-right register_btn" id="submit_btn" name="submit_btn">
+					</div>
+          <div class="form-group">
+						<input type="submit" value="Back" style="margin-top:10px;margin-left:170px;" class="btn float-right register_btn" id="back_btn" name="back_btn">
 					</div>
 				</form>
 			</div>

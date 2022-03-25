@@ -135,11 +135,11 @@ if(isset($_POST['signout']))
 <br>
 
 <form method="post" action="#">
-  <input type="submit" value="ADD CARDS" name="add_cards" id="add_cards" class="addcards_btn" >
+  <input type="submit" style="margin-left: 50px" value="ADD CARDS" name="add_cards" id="add_cards" class="addcards_btn" >
 </form>
 <br>
 <form method="post" action="#">
-  <input type="submit" value="DELETE CARDS" name="delete_cards" id="delete_cards" class="delete_cards_btn" >
+  <input type="submit" style="margin-left: 50px" value="DELETE CARDS" name="delete_cards" id="delete_cards" class="delete_cards_btn" >
 </form>
      
 <?php
