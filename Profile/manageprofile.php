@@ -130,20 +130,19 @@ $ifname=$_POST['fname'];
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register</title>
+	<title>Manage Profile</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="manageprofile_style.css">   
 </head>
 <body>
 <header id="header" style="margin-top: -22px;" class="fixed-top ">
-        <div class="container d-flex align-items-center">  
           <section>
             <span class="full-text" >
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul>
-                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px; margin-left: -25%;"><strong>PayPro</strong></i></a></h1></li>
-                  <ul style="margin-left: 10%;">
+                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  <ul style="margin-left: 75%;">
                    
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
@@ -170,12 +169,17 @@ $ifname=$_POST['fname'];
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
-                    <li><form method="post" action="../Login/login.php"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+                    <li><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;
+        border-radius: 20px;
+        height: 40px;
+        border-color: white;
+        background-color: #892883;
+        color: white;
+        font-size: 18px;" value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </nav>
               <!-- .navbar --> 
             </span>
           </section>
-        </div>
       </header>
       <!-- End Header -->
     

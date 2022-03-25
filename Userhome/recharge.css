@@ -1,14 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Numans');
-
-html,body{
-background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
-}
-
-/*--------------------------------------------------------------
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }  
+  a {
+    color: #47b2e4;
+    text-decoration: none;
+  }  
+  a:hover {
+    color: #73c5eb;
+    text-decoration: none;
+  }  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Jost", sans-serif;
+  }
+  
+  /*--------------------------------------------------------------
   # Preloader
   --------------------------------------------------------------*/
   #preloader {
@@ -54,7 +63,7 @@ font-family: 'Numans', sans-serif;
   #header {
     transition: all 0.5s;
     z-index: 997;
-    padding: 0px 0;
+    padding: 15px 0;
     background: #892883;
   }
   #header.header-scrolled, #header.header-inner-pages {
@@ -125,141 +134,7 @@ font-family: 'Numans', sans-serif;
     color: #fff;
     background: #F8B84E;
   }
-  .navbar .dropdown ul {
-    display: block;
-    position: absolute;
-    left: 14px;
-    top: calc(100% + 30px);
-    margin: 0;
-    padding: 10px 0;
-    z-index: 99;
-    opacity: 0;
-    visibility: hidden;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-    transition: 0.3s;
-    border-radius: 4px;
-  }
-  .navbar .dropdown ul li {
-    min-width: 200px;
-  }
-  .navbar .dropdown ul a {
-    padding: 10px 20px;
-    font-size: 14px;
-    text-transform: none;
-    font-weight: 500;
-    color: #0c3c53;
-  }
-  .navbar .dropdown ul a i {
-    font-size: 12px;
-  }
-  .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-    color: #47b2e4;
-  }
-  .navbar .dropdown:hover > ul {
-    opacity: 1;
-    top: 100%;
-    visibility: visible;
-  }
-  .navbar .dropdown .dropdown ul {
-    top: 0;
-    left: calc(100% - 30px);
-    visibility: hidden;
-  }
-  .navbar .dropdown .dropdown:hover > ul {
-    opacity: 1;
-    top: 0;
-    left: 100%;
-    visibility: visible;
-  }
-  @media (max-width: 1366px) {
-    .navbar .dropdown .dropdown ul {
-      left: -90%;
-    }
-    .navbar .dropdown .dropdown:hover > ul {
-      left: -100%;
-    }
-  } 
-   /*--------------------------------------------------------------
-  # Hero Section
-  --------------------------------------------------------------*/
-  #hero {
-    width: 100%;
-    height: 82vh;
-    background: #892883;
-  }
-  #cont{
-      color: #F8B84E;
-  }
-  #hero .container {
-    padding-top: 0%;
-  }
-  #hero h1 {
-    margin: 0 0 10px 0;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 56px;
-    color: #fff;
-  }
-  #hero h2 {
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 50px;
-    font-size: 24px;
-  }
-  #hero .btn-get-started {
-    font-family: "Jost", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 10px 28px 11px 28px;
-    border-radius: 50px;
-    border:white solid 1px;
-    transition: 0.5s;
-    margin: 10px 0 0 0;
-    color: #fff;
-  }
-  #hero .btn-get-started:hover {
-    background: #F8B84E;
-  }
-  #hero .btn-watch-video {
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    transition: 0.5s;
-    margin: 10px 0 0 25px;
-    color: #fff;
-    line-height: 1;
-  }
-  #hero .btn-watch-video i {
-    line-height: 0;
-    color: #fff;
-    font-size: 32px;
-    transition: 0.3s;
-    margin-right: 8px;
-  }
-  #hero .btn-watch-video:hover i {
-    color: #47b2e4;
-  }
-  #hero .animated {
-    animation: up-down 2s ease-in-out infinite alternate-reverse both;
-  }
-  @-webkit-keyframes up-down {
-    0% {
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(-10px);
-    }
-  }  
-  @keyframes up-down {
-    0% {
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(-10px);
-    }
-  }
+
   section {
     padding: 20px 0;
     overflow: hidden;
@@ -303,54 +178,98 @@ font-family: 'Numans', sans-serif;
   .section-title p {
     margin-bottom: 0;
   }   
-
-  .signout_btn:hover{
-    background-color: #F8B84E;
-    cursor: pointer;
-  }
   
-  /*--------------------------------------------------------------
-  # Go to Top
-  --------------------------------------------------------------*/
-  #topBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: #F8B84E;
-  color: #892883;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
-  }
-  #topBtn:hover {
-  background-color: #555;
-  color: #F8B84E;
-  }
-  
-  /*------- Footer -------*/
+/*------- Footer -------*/
   .short-text { display: none; }
   
   @media (max-width: 1200px) {
     .short-text { display: inline-block; }
     .full-text { display: none; }
   }
+ 
+  
+  /*--------------------------------------------------------------
+  # accept payments online
+  --------------------------------------------------------------*/
+  
+  .html1 {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  .column1 {
+    float: left;
+    width: 33%;
+    margin-bottom: 10px;
+    padding: 0 8px;
+  }
+  @media screen and (max-width: 650px) {
+    .column1 {
+      width: 100%;
+      display: block;
+    }
+  }
+  .card1 {
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+    border-radius: 0;
+    border: 0;
+    background-color: purple;
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+  }
+  .card1:hover {
+    transform: scale(1.06);
+  }
+  #cardfont1{
+    color: #F8B84E;
+  }
+  #cardfont2{
+    color: white;
+  }
+  .container1 {
+    padding: 0 16px;
+    background-color: blue;
+  }
+  .container1::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
-.container{
+
+   .signout_btn:hover{
+    background-color: #F8B84E;
+    cursor: pointer;
+  }
+  
+
+  @import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');
+background-size: cover;
+background-repeat: no-repeat;
 height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.container2{
+height: 50%;
 align-content: center;
 }
 
 .cardregister{
-    height: 800px;
-    margin-top: 4%;
+    height: 240px;
+    margin-top: 14%;
     margin-bottom: auto;
     width: 400px;
     background-color: rgba(0,0,0,0.5) !important;
+    border-radius: 13px;
     }
 
 .register{
@@ -390,4 +309,3 @@ width: 100px;
 color: black;
 background-color: white;
 }
-
