@@ -66,7 +66,7 @@ if(isset($_POST['signout']))
             <span class="full-text" >
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul>
-                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  <li><h1 class="logo me-auto" ><a href="../Userhome/userhome.php"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 29%;">
                     <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/wallet_recharge.php">Recharge</a></li>
