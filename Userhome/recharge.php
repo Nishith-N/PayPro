@@ -98,7 +98,7 @@ or die('Error connecting to MySQL server.');
             <span class="full-text" >
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul>
-                <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                <li><h1 class="logo me-auto" ><a href="../Userhome/userhome.php"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 50%;">
                   <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto active" href="../Userhome/recharge.php">Recharge</a></li>
@@ -121,7 +121,7 @@ or die('Error connecting to MySQL server.');
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul>
-                <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                <li><h1 class="logo me-auto" ><a href="../Userhome/userhome.php"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   
                 </ul>
               </nav>

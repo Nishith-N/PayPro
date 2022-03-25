@@ -141,7 +141,7 @@ $ifname=$_POST['fname'];
             <span class="full-text" >
               <nav id="navbar" class="navbar" style="margin-top:7px;">
                 <ul>
-                  <li><h1 class="logo me-auto" ><a href="" style="text-decoration:none;"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  <li><h1 class="logo me-auto" ><a href="../Userhome/userhome.php" style="text-decoration:none;"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 40%;">
                     <li><a class="nav-link scrollto active" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
@@ -159,7 +159,7 @@ $ifname=$_POST['fname'];
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul style="padding-top:15px;">
-                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                  <li><h1 class="logo me-auto" ><a href="../Userhome/userhome.php"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   
                 </ul>
               </nav>

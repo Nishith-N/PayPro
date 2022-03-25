@@ -53,7 +53,7 @@ or die('Error connecting to MySQL server.');
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul>
                     <br>
-                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;margin-top: 20px;"><strong>PayPro</strong></i></a></h1></li>                  
+                  <li><h1 class="logo me-auto" ><a href="../Userhome/userhome.php"><i style="font-size: 35px;margin-top: 20px;"><strong>PayPro</strong></i></a></h1></li>                  
                 </ul>
               </nav>
               <br>

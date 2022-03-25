@@ -66,10 +66,10 @@ if(isset($_POST['signout']))
                 <ul>
                   <li><h1 class="logo me-auto" ><a href="../Userhome/userhome.php"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 29%;">
-                    <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>
-                    <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
-                    <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
+                  <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
+                    <li><a class="nav-link scrollto " href="../Userhome/recharge.php">Recharge</a></li>
+                    <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a>
                     <li><form method="post" action="../Login/login.php"><input type="submit"  style="width: 120px;
                       border-radius: 20px;
                       height: 40px;
@@ -95,10 +95,10 @@ if(isset($_POST['signout']))
               <br>
               <nav id="navbar" class="navbar">
               <ul style="margin-left: 0%;">
-                <li><a class="nav-link scrollto" href="#">Manage Profile</a></li>
-                    <li><a class="nav-link scrollto" href="#">Recharge</a></li>
-                    <li><a class="nav-link scrollto" href="#">Remove Money</a></li>
-                    <li><a class="nav-link scrollto" href="#">Reset Password</a></li>
+              <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
+                    <li><a class="nav-link scrollto " href="../Userhome/recharge.php">Recharge</a></li>
+                    <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a>
                     <li><form method="post" action="../Login/login.php"><input type="submit"  style="width: 120px;
                       border-radius: 20px;
                       height: 40px;

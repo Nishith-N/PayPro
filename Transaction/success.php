@@ -30,7 +30,7 @@ or die('Error connecting to MySQL server.');
 
 <body>  
   <nav id="navbar" class="navbar" style="margin-top: 0%;">                
-    <h1 class="logo me-auto" ><a href="" style="text-decoration: none;padding-bottom: 10px;"><i style="font-size: 35px;margin-top: 20px;"><strong>PAYPRO</strong></i></a></h1>
+    <h1 class="logo me-auto" ><a href="../Userhome/userhome.php" style="text-decoration: none;padding-bottom: 10px;"><i style="font-size: 35px;margin-top: 20px;"><strong>PAYPRO</strong></i></a></h1>
   </nav>
   
   <br>
