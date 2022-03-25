@@ -145,8 +145,8 @@ $ifname=$_POST['fname'];
                   <ul style="margin-left: 40%;">
                     <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
-                    <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
+                    <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>
                     <li style="padding-left:20px;"><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;border-radius: 20px;height: 40px;border-color: white;background-color: #892883;color: white;
         font-size: 18px;" value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
@@ -168,8 +168,8 @@ $ifname=$_POST['fname'];
               <ul style="margin-left: 0%;">
               <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
-                    <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>
+                    <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>
                     <li style="padding-left:15px;"><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;border-radius: 20px;height: 40px;border-color: white;background-color: #892883;color: white;
         font-size: 18px;" value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </nav>

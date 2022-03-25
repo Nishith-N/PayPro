@@ -102,8 +102,8 @@ or die('Error connecting to MySQL server.');
                   <ul style="margin-left: 50%;">
                   <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
-                    <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <li><form method="post" action="#"><input type="submit" style=" width: 120px;
                         border-radius: 20px;
                         height: 40px;
@@ -130,8 +130,8 @@ or die('Error connecting to MySQL server.');
               <ul style="margin-left: 0%;">
               <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
-                    <li><a class="nav-link scrollto" href="../Userhome/wallet_remove.php">Remove Money</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/reset_password.php">Reset Password</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <li><form method="post" action="#"><input type="submit" style=" width: 120px;
                         border-radius: 20px;
                         height: 40px;
