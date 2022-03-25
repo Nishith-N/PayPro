@@ -1,0 +1,311 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }  
+  a {
+    color: #47b2e4;
+    text-decoration: none;
+  }  
+  a:hover {
+    color: #73c5eb;
+    text-decoration: none;
+  }  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Jost", sans-serif;
+  }
+  
+  /*--------------------------------------------------------------
+  # Preloader
+  --------------------------------------------------------------*/
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #37517e;
+  }  
+  #preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #37517e;
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+  }  
+  @-webkit-keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }  
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  #header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    background: #892883;
+  }
+  #header.header-scrolled, #header.header-inner-pages {
+    background: rgba(40, 58, 90, 0.9);
+  }
+  #header .logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  #header .logo a {
+    color:white;
+  }
+  #header .logo img {
+    max-height: 40px;
+  }
+  
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  .navbar {
+    padding: 0;
+  }
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    background-color: #892883;
+  }
+  .navbar li {
+    position: relative;
+  }
+  .navbar a, .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+  .navbar a i, .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+  .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+    color: #F8B84E;
+  }
+  .navbar .getstarted, .navbar .getstarted:focus {
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 18px;
+    border: 2px solid #B586BD;
+    font-weight: 600;
+  }
+  .navbar .getstarted:hover, .navbar .getstarted:focus:hover {
+    color: #fff;
+    background: #F8B84E;
+  }
+
+  section {
+    padding: 20px 0;
+    overflow: hidden;
+  }  
+  .section-bg {
+    background-color: #E9C3EF;
+  }  
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #892883;
+  }
+  .section-title h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+  }
+  .section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #892883;
+    bottom: 0;
+    left: calc(50% - 20px);
+  }
+  .section-title p {
+    margin-bottom: 0;
+  }   
+  
+/*------- Footer -------*/
+  .short-text { display: none; }
+  
+  @media (max-width: 1200px) {
+    .short-text { display: inline-block; }
+    .full-text { display: none; }
+  }
+ 
+  
+  /*--------------------------------------------------------------
+  # accept payments online
+  --------------------------------------------------------------*/
+  
+  .html1 {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  .column1 {
+    float: left;
+    width: 33%;
+    margin-bottom: 10px;
+    padding: 0 8px;
+  }
+  @media screen and (max-width: 650px) {
+    .column1 {
+      width: 100%;
+      display: block;
+    }
+  }
+  .card1 {
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+    border-radius: 0;
+    border: 0;
+    background-color: purple;
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+  }
+  .card1:hover {
+    transform: scale(1.06);
+  }
+  #cardfont1{
+    color: #F8B84E;
+  }
+  #cardfont2{
+    color: white;
+  }
+  .container1 {
+    padding: 0 16px;
+    background-color: blue;
+  }
+  .container1::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+   .signout_btn:hover{
+    background-color: #F8B84E;
+    cursor: pointer;
+  }
+  
+
+  @import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.container2{
+height: 50%;
+align-content: center;
+}
+
+.cardregister{
+    height: 240px;
+    margin-top: 14%;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    border-radius: 13px;
+    }
+
+.register{
+    color: #B586BD;
+}
+
+.textregister{
+    color: #F8B74E;
+}
+.starregister{
+    color: red;
+}
+
+.card-header{
+color: white;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #B586BD;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+}
+
+.login_btn{
+color: black;
+background-color: #B586BD;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
