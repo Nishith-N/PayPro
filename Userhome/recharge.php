@@ -101,7 +101,7 @@ or die('Error connecting to MySQL server.');
                 <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 50%;">
                   <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
-                    <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
+                    <li><a class="nav-link scrollto active" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <li><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;
@@ -129,7 +129,7 @@ or die('Error connecting to MySQL server.');
               <nav id="navbar" class="navbar">
               <ul style="margin-left: 0%;">
               <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
-                    <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
+                    <li><a class="nav-link scrollto active" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <li><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;

@@ -88,7 +88,7 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PayPro-Login</title>
+	
    
    
 	<!--Bootsrap 4 CDN-->
@@ -99,6 +99,7 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 
 	<!--Custom styles-->
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>PayPro-Login</title>
 	<link rel="icon" href="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/46/d1/61/46d16165-c305-5c6f-7626-1a60208042f3/source/512x512bb.jpg" type="image/icon type">
     
 </head>
