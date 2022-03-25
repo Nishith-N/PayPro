@@ -48,7 +48,16 @@ if(isset($_POST['submit_btn']))
         exit();
 
 		}
+    
 	}
+  else
+    {
+      $_SESSION['username']=$username;
+			header("Location:../Transaction/error.php");
+      exit();
+
+
+    }
 
 
 
