@@ -4,6 +4,17 @@ or die('Error connecting to MySQL server.');
 		session_start();
         $username=$_SESSION['username'];
         echo $username;
+        if($username=='')
+        {
+          header("Location:../Home/home.html");
+                exit(); 
+        }
+            if(isset($_POST['signout']))
+            {
+              session_destroy();
+            header("Location:../Login/login.php");
+                  exit();
+            }
 
 			if(isset($_POST['submit_btn']))
 			{
@@ -92,7 +103,7 @@ or die('Error connecting to MySQL server.');
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto active" href="../Profile/password_reset.php">Reset Password</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <li><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;
+  <li><form method="post" action="#"><input type="submit" style=" width: 120px;
                         border-radius: 20px;
                         height: 40px;
                         border-color: white;
@@ -120,7 +131,7 @@ or die('Error connecting to MySQL server.');
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto active" href="../Profile/password_reset.php">Reset Password</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <li><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;
+  <li><form method="post" action="#"><input type="submit" style=" width: 120px;
                         border-radius: 20px;
                         height: 40px;
                         border-color: white;

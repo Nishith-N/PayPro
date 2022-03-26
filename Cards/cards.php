@@ -247,7 +247,7 @@ if(isset($_POST['signout']))
               </p>        
             </div>
           </div>
-        </div>';
+        </div><br>';
         }
         else
         {

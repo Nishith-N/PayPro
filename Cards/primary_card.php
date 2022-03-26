@@ -25,12 +25,22 @@ if(isset($_POST['submit_btn']))
 
 	$card_num=$_POST['card_num'];
 	$cvv=$_POST['cvv'];
-  
-		$sql="DELETE FROM card_details WHERE card_number='".$card_num."' AND pay_id='".$pay_id."'";
+
+  $sql="SELECT card_number FROM card_details WHERE card_number='".$card_num."' AND cvv='".$cvv."'";
+  $result=mysqli_query($db,$sql);
+  if(mysqli_num_rows($result)==1)
+  {
+		$sql="UPDATE user_details SET primary_card='".$card_num."' WHERE pay_id='".$pay_id."'";
 		$result=mysqli_query($db,$sql);
 		$_SESSION['pay_id'] = $pay_id;
 		header("Location:../Cards/cards.php");
         exit();
+  }
+  else{
+    $_SESSION['pay_id'] = $pay_id;
+    header("Location:../Transaction/error.php");
+        exit();
+  }
     
 	}
 	/*
