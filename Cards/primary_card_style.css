@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');
+background-size: cover;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }  
+  a:hover{
+    text-decoration: none;
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # Preloader
+  --------------------------------------------------------------*/
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #37517e;
+  }  
+  #preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #37517e;
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+  }  
+  @-webkit-keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }  
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  #header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    background: #892883;
+  }
+  #header.header-scrolled, #header.header-inner-pages {
+    background: rgba(40, 58, 90, 0.9);
+  }
+  #header .logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  #header .logo a {
+    color:white;
+  }
+  #header .logo img {
+    max-height: 40px;
+  }
+  
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  .navbar {
+    padding: 0;
+  }
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    background-color: #892883;
+  }
+  .navbar li {
+    position: relative;
+  }
+  .navbar a, .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+  .navbar a i, .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+  .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+    color: #F8B84E;
+  }
+  .navbar .getstarted, .navbar .getstarted:focus {
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 18px;
+    border: 2px solid #B586BD;
+    font-weight: 600;
+  }
+  .navbar .getstarted:hover, .navbar .getstarted:focus:hover {
+    color: #fff;
+    background: #F8B84E;
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # Go to Top
+  --------------------------------------------------------------*/
+  #topBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #F8B84E;
+  color: #892883;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  }
+  #topBtn:hover {
+  background-color: #555;
+  color: #F8B84E;
+  }
+  
+  /*------- Window Size -------*/
+  .short-text { display: none; }
+  
+  @media (max-width: 1200px) {
+    .short-text { display: inline-block; }
+    .full-text { display: none; }
+  }
+  
+ 
+.container{
+height: 100%;
+align-content: center;
+}
+
+.cardnewcontact{
+    height: 350px;
+    margin-top: 13%;
+    margin-bottom: auto;
+    border-radius: 13px;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    }
+
+.addcontact{
+    color: white;
+}
+
+.textaddcontact{
+    color: #F8B74E;
+}
+.starregister{
+    color: red;
+}
+
+.card-header{
+color: white;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #B586BD;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+}
+
+.add_contact_btn{
+color: black;
+margin-top: 2%;
+background-color: #B586BD;
+transition: background-color 1s;
+width: 100px;
+}
+
+.add_contact_btn:hover{
+color: black;
+background-color: white;
+}
+
+.signout_btn{
+        width: 120px;
+        border-radius: 20px;
+        height: 40px;
+        border-color: white;
+        background-color: #892883;
+        color: white;
+        font-size: 18px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+}
+.signout_btn:hover{
+  background-color: #F8B84E;
+  cursor: pointer;
+}

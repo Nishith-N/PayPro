@@ -30,6 +30,13 @@ if(isset($_POST['delete_cards']))
   header("Location:../Cards/delete_card.php");
         exit();
 }
+if(isset($_POST['primary_card']))
+{
+  $_SESSION['pay_id']=$pay_id;
+  header("Location:../Cards/primary_card.php");
+        exit();
+}
+
 if(isset($_POST['signout']))
 {
   session_destroy();
@@ -140,6 +147,10 @@ if(isset($_POST['signout']))
 <br>
 <form method="post" action="#">
   <input type="submit" style="margin-left: 50px" value="DELETE CARDS" name="delete_cards" id="delete_cards" class="delete_cards_btn" >
+</form>
+<br>
+<form method="post" action="#">
+  <input type="submit" style="margin-left: 50px" value="PRIMARY CARD" name="primary_card" id="primary_card" class="delete_cards_btn" >
 </form>
      
 <?php

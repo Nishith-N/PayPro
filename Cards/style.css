@@ -400,7 +400,7 @@ body {
     cursor: pointer;
     }
 
-    .delete_cards_btn{
+  .delete_cards_btn{
       color: black;
       background-color: #892883;
       width: 150px;
@@ -411,14 +411,16 @@ body {
       border-color: white;
       }
       
-    .delete_cards_btn:hover{
+  .delete_cards_btn:hover{
       color: white;
       background-color: #F8B84E;
       border-color: white;
       cursor: pointer;
       }
 
-      .signout_btn{
+  
+
+  .signout_btn{
         width: 120px;
         border-radius: 20px;
         height: 40px;
@@ -431,7 +433,7 @@ body {
         padding-top: 5px;
         padding-bottom: 5px;
       }
-      .signout_btn:hover{
+  .signout_btn:hover{
         background-color: #F8B84E;
         cursor: pointer;
       }
