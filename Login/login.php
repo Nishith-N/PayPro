@@ -58,7 +58,8 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 			header("Location:../Login/login_err.php");
         	exit();
 		}
-        $errmsg= $att_1;
+        $errmsg= "Wrong password! Attempts remaining:";
+		$errmsg.= strval(3-$att_1);
 		$sql="UPDATE login_attempt SET attempt=attempt+1 WHERE phone='".$username."' OR email='".$username."'";
 		$result=mysqli_query($db,$sql);
     }
@@ -145,7 +146,7 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
 				</form>
-				<span><?php echo $errmsg ?></span>
+				<span style="color: #ffcccb"><?php echo $errmsg ?></span>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">

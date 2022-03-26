@@ -20,7 +20,7 @@ if(mysqli_num_rows($result)==1)
         
     }
 
-    if(isset($_POST['delete_btn']))
+    if(isset($_POST['signout']))
     {
       session_destroy();
       header("Location:../Home/home.html");
@@ -79,7 +79,7 @@ if(mysqli_num_rows($result)==1)
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <li><form method="post" action="../Login/login.php"><input type="submit"  style=" width: 120px;
+  <li><form method="post" action="#"><input type="submit"  style=" width: 120px;
         border-radius: 20px;
         height: 40px;
         border-color: white;
@@ -108,7 +108,7 @@ if(mysqli_num_rows($result)==1)
                     <li><a class="nav-link scrollto" href="../Transaction/form.php">Transaction</a></li>
                     <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <li><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;
+  <li><form method="post" action="#"><input type="submit" style=" width: 120px;
         border-radius: 20px;
         height: 40px;
         border-color: white;
