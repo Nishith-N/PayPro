@@ -44,7 +44,7 @@ or die('Error connecting to MySQL server.');
                 $leftamount=$bankamount-$amount;
 				$sql="UPDATE user_details SET wallet='".$addamount."' WHERE phone='".$username."' OR email='".$username."'";
 				$result=mysqli_query($db,$sql);
-                $sql="UPDATE bank_details SET amount='".$leftamount."' WHERE phone='".$username."'";
+                $sql="UPDATE bank_details SET amount='".$leftamount."' WHERE phone='".$username."' AND card_number='".$cardnum."'";
 				$result=mysqli_query($db,$sql);
 
 				header("Location:../Transaction/success.php");
