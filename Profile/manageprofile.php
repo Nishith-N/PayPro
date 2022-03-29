@@ -116,6 +116,11 @@ $ifname=$_POST['fname'];
     header("Location:../Login/login.php");
           exit();
     }
+    else
+    {
+      header("Location:../Transaction/error.php");
+      exit();
+    }
   
   }
 }
