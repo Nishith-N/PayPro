@@ -22,7 +22,11 @@ or die('Error connecting to MySQL server.');
                 $amount=$_POST['amount'];
 				if($amount)
 				{
-				$sql="SELECT amount FROM bank_details WHERE phone='".$username."'";
+          $sql="SELECT primary_card FROM user_details WHERE phone='".$username."' OR email='".$username."'";
+                $result=mysqli_query($db,$sql);
+                $row=mysqli_fetch_row($result);
+                $cardnum=$row[0];
+				$sql="SELECT amount FROM bank_details WHERE phone='".$username."' AND card_number='".$cardnum."'";
                 $result=mysqli_query($db,$sql);
                 $row=mysqli_fetch_row($result);
                 $bankamount=$row[0];
@@ -33,14 +37,14 @@ or die('Error connecting to MySQL server.');
                 $walletamount=$row[0];
                 echo $walletamount;
 
-				if($bankamount>$amount)
+				if($walletamount>=$amount)
 				{
 				
-				$addamount=$walletamount+$amount;
-                $leftamount=$bankamount-$amount;
-				$sql="UPDATE user_details SET wallet='".$addamount."' WHERE phone='".$username."' OR email='".$username."'";
+				$addamount=$bankamount+$amount;
+                $leftamount=$walletamount-$amount;
+				$sql="UPDATE user_details SET wallet='".$leftamount."' WHERE phone='".$username."' OR email='".$username."'";
 				$result=mysqli_query($db,$sql);
-                $sql="UPDATE bank_details SET amount='".$leftamount."' WHERE phone='".$username."'";
+                $sql="UPDATE bank_details SET amount='".$addamount."' WHERE phone='".$username."'";
 				$result=mysqli_query($db,$sql);
 
 				header("Location:../Transaction/success.php");

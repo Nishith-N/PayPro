@@ -22,7 +22,11 @@ or die('Error connecting to MySQL server.');
                 $amount=$_POST['amount'];
 				if($amount)
 				{
-				$sql="SELECT amount FROM bank_details WHERE phone='".$username."'";
+          $sql="SELECT primary_card FROM user_details WHERE phone='".$username."' OR email='".$username."'";
+                $result=mysqli_query($db,$sql);
+                $row=mysqli_fetch_row($result);
+                $cardnum=$row[0];
+				$sql="SELECT amount FROM bank_details WHERE phone='".$username."' AND card_number='".$cardnum."'";
                 $result=mysqli_query($db,$sql);
                 $row=mysqli_fetch_row($result);
                 $bankamount=$row[0];
