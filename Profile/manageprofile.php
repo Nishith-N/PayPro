@@ -112,6 +112,8 @@ $ifname=$_POST['fname'];
     {
     $sql="UPDATE user_details SET fname='".$ifname."',lname='".$ilname."',phone='".$iphone."',email='".$iemail."',city='".$icity."',zip='".$izip."',state1='".$istate."',addresss='".$iaddress."' WHERE email='".$username."' OR phone='".$username."'";
     $result=mysqli_query($db,$sql);
+    $sql="INSERT INTO login_attempt (phone, email, attempt) VALUES ($iphone, '$iemail','1')";
+    $result=mysqli_query($db,$sql);
     session_destroy();
     header("Location:../Login/login.php");
           exit();

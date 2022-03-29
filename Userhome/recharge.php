@@ -4,6 +4,10 @@ or die('Error connecting to MySQL server.');
 		session_start();
         $username=$_SESSION['username'];
         echo $username;
+        $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
+	$result=mysqli_query($db,$sql);
+  $row=mysqli_fetch_row($result);
+  $disp=$row[0];
 
 		$amount=0;
     if($username=='')
@@ -129,6 +133,10 @@ or die('Error connecting to MySQL server.');
                   </ul>
                 </ul>
               </nav>
+              <?php
+              print'
+              <marquee style="color:#F8B74E"><h4>Wallet amount: '.$disp.'</h4></marquee>';
+              ?>
               <br>
               <!-- .navbar --> 
             </span>
@@ -156,6 +164,10 @@ or die('Error connecting to MySQL server.');
                         font-size: 18px;" value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
+              <?php
+              print'
+              <marquee style="color:#F8B74E"><h4>Wallet amount: '.$disp.'</h4></marquee>';
+              ?>
               <!-- .navbar -->
             </span>
           </section>
@@ -169,7 +181,7 @@ or die('Error connecting to MySQL server.');
     
 	<div class="d-flex justify-content-center h-100">      
 
-		<div class="cardregister" style="margin-top: 150px">
+		<div class="cardregister" style="margin-top: 180px">
            
 			<div class="card-header">
 				<h3 class="register">Recharge</h3>				

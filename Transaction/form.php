@@ -5,6 +5,10 @@ or die('Error connecting to MySQL server.');
 session_start();
 $username=$_SESSION['username'];
 echo $username;
+$sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
+	$result=mysqli_query($db,$sql);
+  $row=mysqli_fetch_row($result);
+  $disp=$row[0];
 $otp=1234;
 if($username=='')
 {
@@ -110,13 +114,19 @@ if(isset($_POST['signout']))
                   <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
                     <li><a class="nav-link scrollto" href="../Cards/cards.php">Cards</a></li>
                     <li><a class="nav-link scrollto active" href="../Transaction/form.php">Transaction</a></li>
-                    <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="../Contacts/list_contact.php">Contact</a></li>&nbsp;&nbsp;
+                
                     <li><a class="nav-link scrollto" href="../Profile/profilehome.php">Profile</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+  
                   </ul>
                 </ul>
               </nav>
               <br>
+              <?php
+              print'
+              <marquee style="color:#F8B74E"><h4>Wallet amount: '.$disp.'</h4></marquee>';
+              ?>
               <!-- .navbar --> 
             </span>
 
@@ -138,6 +148,10 @@ if(isset($_POST['signout']))
   <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
+              <?php
+              print'
+              <marquee style="color:#F8B74E"><h4>Wallet amount: '.$disp.'</h4></marquee>';
+              ?>
               <!-- .navbar --> 
             </span>
           </section>
