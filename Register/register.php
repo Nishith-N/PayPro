@@ -23,8 +23,21 @@ if(isset($_POST['submit_btn']))
 {
   $sql="CREATE TABLE IF NOT EXISTS bank_details ( acc_number BIGINT NOT NULL , card_number BIGINT NOT NULL , bank_name VARCHAR(25) NOT NULL , amount BIGINT NOT NULL , phone BIGINT NOT NULL , cvv INT NOT NULL , PRIMARY KEY (acc_number, card_number)) ENGINE = MyISAM";
   $result=mysqli_query($db,$sql);
-  $sql="INSERT INTO bank_details (acc_number, card_number, bank_name, amount, phone, cvv) VALUES ('130401000011843', '4722124577342143', 'IOB', '300000', '9994712098', '245')";
+  $sql="INSERT INTO bank_details (acc_number, card_number, bank_name, amount, phone, cvv) VALUES ('110401000011843', '1722124577342143', 'IOB', '300000', '9994712098', '245')";
   $result=mysqli_query($db,$sql);
+$sql="INSERT INTO bank_details (acc_number, card_number, bank_name, amount, phone, cvv) VALUES ('120401000011843', '2722124577342143', 'KVB', '300000', '6380076653', '132')";
+  $result=mysqli_query($db,$sql);
+$sql="INSERT INTO bank_details (acc_number, card_number, bank_name, amount, phone, cvv) VALUES ('130401000011843', '3722124577342143', 'BOI', '300000', '9791798018', '143')";
+  $result=mysqli_query($db,$sql);
+$sql="INSERT INTO bank_details (acc_number, card_number, bank_name, amount, phone, cvv) VALUES ('140401000011843', '4722124577342143', 'IOB', '300000', '9952122792', '444')";
+  $result=mysqli_query($db,$sql);
+$sql="INSERT INTO bank_details (acc_number, card_number, bank_name, amount, phone, cvv) VALUES ('150401000011843', '5722124577342143', 'IOB', '300000', '9994712098', '231')";
+  $result=mysqli_query($db,$sql);
+$sql="INSERT INTO bank_details (acc_number, card_number, bank_name, amount, phone, cvv) VALUES ('160401000011843', '6722124577342143', 'ICIC', '300000', '9791798018', '205')";
+  $result=mysqli_query($db,$sql);
+$sql="INSERT INTO bank_details (acc_number, card_number, bank_name, amount, phone, cvv) VALUES ('170401000011843', '7722124577342143', 'ICIC', '300000', '6380076653', '105')";
+  $result=mysqli_query($db,$sql);
+
   $sql="CREATE TABLE IF NOT EXISTS card_details ( card_number BIGINT NOT NULL , cvv INT NOT NULL, card_name VARCHAR(25) NOT NULL, validto VARCHAR(25) NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (card_number), FOREIGN KEY (pay_id) REFERENCES user_details(pay_id))";
 	$result=mysqli_query($db,$sql);
   $sql="CREATE TABLE IF NOT EXISTS contact_details ( username VARCHAR(25) NOT NULL , pay_name VARCHAR(25) NOT NULL , nickname VARCHAR(25) NOT NULL , pay_id INT NOT NULL , PRIMARY KEY (username,pay_id))";
