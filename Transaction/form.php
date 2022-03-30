@@ -4,7 +4,6 @@ or die('Error connecting to MySQL server.');
 
 session_start();
 $username=$_SESSION['username'];
-echo $username;
 $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
 	$result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);

@@ -7,7 +7,7 @@ or die('Error connecting to MySQL server.');
 	$result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);
   $disp=$row[0];
-        echo $username;
+        
         if($username=='')
 {
   header("Location:../Home/home.html");

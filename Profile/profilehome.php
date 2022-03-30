@@ -6,8 +6,7 @@ session_start();
 $username=$_SESSION['username'];
 $_SESSION['username']=$username;
 $pay_id=$_SESSION['pay_id'];
-echo $pay_id;
-echo $username;
+
 if($username=='')
 {
   header("Location:../Home/home.html");

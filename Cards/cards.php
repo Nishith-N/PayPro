@@ -9,7 +9,7 @@ if($username=='')
   header("Location:../Home/home.html");
         exit(); 
 }
-echo $pay_id;
+
 
 $card_number=0;
 

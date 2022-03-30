@@ -4,7 +4,7 @@ or die('Error connecting to MySQL server.');
 session_start();
 $pay_id=$_SESSION['pay_id'];
 $username=$_SESSION['username'];
-echo $username;
+
 if($username=='')
 {
   header("Location:../Home/home.html");

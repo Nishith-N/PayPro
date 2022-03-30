@@ -3,7 +3,7 @@ $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 		session_start();
         $username=$_SESSION['username'];
-        echo $username;
+      
         if($username=='')
         {
           header("Location:../Home/home.html");

@@ -8,7 +8,7 @@ if($username=='')
   header("Location:../Home/home.html");
         exit(); 
 }
-echo $username;
+
 
 $sql="SELECT * FROM user_details WHERE PHONE='".$username."' OR EMAIL='".$username."'";
 $result=mysqli_query($db,$sql);
