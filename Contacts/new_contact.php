@@ -41,9 +41,14 @@ if(isset($_POST['submit_btn']))
     header("Location:../Contacts/list_contact.php");
           exit();
 	}
+  else{
+    header("Location:../Transaction/error.php");
+          exit();
+	}
+  }
 	
 
-}
+
 if(isset($_POST['signout']))
 {
   session_destroy();
