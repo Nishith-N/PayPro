@@ -162,13 +162,7 @@ or die('Error connecting to MySQL server.');
 			</div>
 
 			<div class="card-body">
-				<form method="post" action="#">
-
-                    <div class="form-group">
-                    <label for="cno" class="textregister">Card Number: </label><label for="cno" class="starregister"> * </label>
-                        <input type="text" id="cno" name="cno" class="form-control" style="width: 300px;">
-                    </div>
-                    
+				<form method="post" action="#">                    
                     <div class="form-group">
                         <label for="amt" class="textregister">Amount Limit: </label><label for="amt" class="starregister"> * </label>
                         <input type="text" id="amt" name="amt" class="form-control" style="width: 300px;">
