@@ -3,65 +3,45 @@ $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 		session_start();
         $username=$_SESSION['username'];
-        
-        $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
-	$result=mysqli_query($db,$sql);
-  $row=mysqli_fetch_row($result);
-  $disp=$row[0];
+      
+        if($username=='')
+        {
+          header("Location:../Home/home.html");
+                exit(); 
+        }
+            if(isset($_POST['signout']))
+            {
+              session_destroy();
+            header("Location:../Login/login.php");
+                  exit();
+            }
 
-		$amount=0;
-    if($username=='')
-{
-  header("Location:../Home/home.html");
-        exit(); 
-}
-    if(isset($_POST['signout']))
-    {
-      session_destroy();
-    header("Location:../Login/login.php");
-          exit();
-    }
 			if(isset($_POST['submit_btn']))
 			{
-                $amount=$_POST['amount'];
-				if($amount)
-				{
-          $sql="SELECT primary_card FROM user_details WHERE phone='".$username."' OR email='".$username."'";
-                $result=mysqli_query($db,$sql);
-                $row=mysqli_fetch_row($result);
-                $cardnum=$row[0];
-				$sql="SELECT amount FROM bank_details WHERE phone='".$username."' AND card_number='".$cardnum."'";
-                $result=mysqli_query($db,$sql);
-                $row=mysqli_fetch_row($result);
-                $bankamount=$row[0];
-
-                $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
-                $result=mysqli_query($db,$sql);
-                $row=mysqli_fetch_row($result);
-                $walletamount=$row[0];
-                echo $walletamount;
-
-				if($bankamount>$amount)
-				{
+                $pwd=$_POST['pwd'];
+				$oldpwd=$_POST['oldpwd'];
 				
-				$addamount=$walletamount+$amount;
-                $leftamount=$bankamount-$amount;
-				$sql="UPDATE user_details SET wallet='".$addamount."' WHERE phone='".$username."' OR email='".$username."'";
+				$sql="SELECT pay_id FROM user_details WHERE password1='".$oldpwd."'";
 				$result=mysqli_query($db,$sql);
-                $sql="UPDATE bank_details SET amount='".$leftamount."' WHERE phone='".$username."' AND card_number='".$cardnum."'";
-				$result=mysqli_query($db,$sql);
+				$row=mysqli_num_rows($result);
+				if($row && $oldpwd!='' && $pwd!='')
+				{
 
-				header("Location:../Transaction/success.php");
+                $sql="UPDATE user_details SET password1='".$pwd."' WHERE phone='".$username."' OR email='".$username."'";
+                $result=mysqli_query($db,$sql);
+				
+				
+				header("Location:../Home/home.html");
         		exit();
-                
 				}
-			}
-				else{
+				else
+				{
 					$_SESSION['username']=$username;
-					header("Location:../Transaction/error.php");
+				header("Location:../Transaction/error.php");
         		exit();
-                
 				}
+                
+				
 			}
 
 
@@ -73,7 +53,7 @@ or die('Error connecting to MySQL server.');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recharge</title>
+    <title>Set Limit</title>
     <meta charset="utf-8">
     
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -107,7 +87,7 @@ or die('Error connecting to MySQL server.');
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Template Main CSS File -->
-  <link href="recharge.css" rel="stylesheet">
+  <link href="set_limit_style.css" rel="stylesheet">
   <link rel="icon" href="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/46/d1/61/46d16165-c305-5c6f-7626-1a60208042f3/source/512x512bb.jpg" type="image/icon type">
 </head>
 <body style="background-image: url('https://www.sykes.com/wp-content/uploads/2020/10/100820-feature-image-gen-z-mobile-digital-blog-scaled.jpg');background-size: cover;height: 100%;font-family: 'Numans', sans-serif;">
@@ -120,10 +100,10 @@ or die('Error connecting to MySQL server.');
                 <li><h1 class="logo me-auto" ><a href="../Userhome/userhome.php"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 38%;">
                   <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
-                    <li><a class="nav-link scrollto active" href="../Userhome/recharge.php">Recharge</a></li>
+                    <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/set_limit.php">Set Limit</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a class="nav-link scrollto active" href="../Profile/password_reset.php">Reset Password</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/set_limit.php">Set Limit</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    
   <li><form method="post" action="#"><input type="submit" style=" width: 120px;
                         border-radius: 20px;
                         height: 40px;
@@ -134,10 +114,6 @@ or die('Error connecting to MySQL server.');
                   </ul>
                 </ul>
               </nav>
-              <?php
-              print'
-              <marquee style="color:#F8B74E"><h4>Wallet amount: '.$disp.'</h4></marquee>';
-              ?>
               <br>
               <!-- .navbar --> 
             </span>
@@ -153,9 +129,9 @@ or die('Error connecting to MySQL server.');
               <nav id="navbar" class="navbar">
               <ul style="margin-left: 0%;">
               <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
-                    <li><a class="nav-link scrollto active" href="../Userhome/recharge.php">Recharge</a></li>
+                    <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>
+                    <li><a class="nav-link scrollto active" href="../Profile/password_reset.php">Reset Password</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/set_limit.php">Set Limit</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <li><form method="post" action="#"><input type="submit" style=" width: 120px;
                         border-radius: 20px;
@@ -166,10 +142,6 @@ or die('Error connecting to MySQL server.');
                         font-size: 18px;" value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
-              <?php
-              print'
-              <marquee style="color:#F8B74E"><h4>Wallet amount: '.$disp.'</h4></marquee>';
-              ?>
               <!-- .navbar -->
             </span>
           </section>
@@ -183,24 +155,27 @@ or die('Error connecting to MySQL server.');
     
 	<div class="d-flex justify-content-center h-100">      
 
-		<div class="cardregister" style="margin-top: 180px">
+		<div class="cardregister" style="margin-top: 150px;">
            
 			<div class="card-header">
-				<h3 class="register">Recharge</h3>				
+				<h3 class="register">Set Limit</h3>				
 			</div>
 
 			<div class="card-body">
 				<form method="post" action="#">
 
                     <div class="form-group">
-                        <label for="amount" class="textregister">Enter amount: </label><label for="amount" class="starregister"> * </label>
-                        <input type="number" id="amount" name="amount" class="form-control" style="width: 300px;">
-                    </div> 
-
-                                    
+                    <label for="cno" class="textregister">Card Number: </label><label for="cno" class="starregister"> * </label>
+                        <input type="text" id="cno" name="cno" class="form-control" style="width: 300px;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="amt" class="textregister">Amount Limit: </label><label for="amt" class="starregister"> * </label>
+                        <input type="text" id="amt" name="amt" class="form-control" style="width: 300px;">
+                    </div>                                     
 
 					<div class="form-group">
-						<input type="submit" value="Submit" class="btn float-right login_btn" name="submit_btn" id="submit_btn">
+						<input type="submit" value="Set" class="btn float-right login_btn" name="submit_btn" id="submit_btn">
 					</div>
 				</form>
 			</div>

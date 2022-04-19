@@ -149,11 +149,12 @@ $ifname=$_POST['fname'];
               <nav id="navbar" class="navbar" style="margin-top:7px;">
                 <ul>
                   <li><h1 class="logo me-auto" ><a href="../Userhome/userhome.php" style="text-decoration:none;"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
-                  <ul style="margin-left: 40%;">
+                  <ul style="margin-left: 28%;">
                     <li><a class="nav-link scrollto active" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/set_limit.php">Set Limit</a></li>
                     <li style="padding-left:20px;"><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;border-radius: 20px;height: 40px;border-color: white;background-color: #892883;color: white;
         font-size: 18px;" value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
@@ -177,6 +178,7 @@ $ifname=$_POST['fname'];
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
                     <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>
+                    <li><a class="nav-link scrollto" href="../Profile/set_limit.php">Set Limit</a></li>
                     <li style="padding-left:15px;"><form method="post" action="../Login/login.php"><input type="submit" style=" width: 120px;border-radius: 20px;height: 40px;border-color: white;background-color: #892883;color: white;
         font-size: 18px;" value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </nav>
