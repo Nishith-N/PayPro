@@ -18,28 +18,27 @@ or die('Error connecting to MySQL server.');
 
 			if(isset($_POST['submit_btn']))
 			{
-                $pwd=$_POST['pwd'];
-				$oldpwd=$_POST['oldpwd'];
+                $amt=$_POST['amt'];
 				
-				$sql="SELECT pay_id FROM user_details WHERE password1='".$oldpwd."'";
+				
+				$sql="UPDATE user_details SET limits='".$amt."' WHERE phone='".$username."' OR email='".$username."'";
 				$result=mysqli_query($db,$sql);
 				$row=mysqli_num_rows($result);
-				if($row && $oldpwd!='' && $pwd!='')
+				if($result!='')
 				{
 
-                $sql="UPDATE user_details SET password1='".$pwd."' WHERE phone='".$username."' OR email='".$username."'";
-                $result=mysqli_query($db,$sql);
+                
 				
 				
 				header("Location:../Home/home.html");
         		exit();
 				}
-				else
+			/*	else
 				{
 					$_SESSION['username']=$username;
 				header("Location:../Transaction/error.php");
         		exit();
-				}
+				}*/
                 
 				
 			}
