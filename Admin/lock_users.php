@@ -1,3 +1,31 @@
+<?php
+$db = mysqli_connect('localhost','root','','payprodb')
+or die('Error connecting to MySQL server.');
+
+
+
+
+if(isset($_POST['submit_btn']))
+{
+  $phno=$_POST['phno'];
+  $blocks=1;
+  $sql="SELECT pay_id FROM user_details WHERE phone='".$phno."' OR email='".$phno."'";
+  $result=mysqli_query($db,$sql);
+  $num=mysqli_num_rows($result);
+  if($num!=0)
+  {
+    $sql="UPDATE user_details SET blocks='".$blocks."' WHERE phone='".$phno."' OR email='".$phno."'";
+    $result=mysqli_query($db,$sql);
+   
+  }
+  else{
+    header("Location:../Transaction/error.php");
+        		exit();
+  }
+}
+
+?>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
