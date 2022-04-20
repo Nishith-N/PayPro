@@ -105,7 +105,7 @@ if(isset($_POST['signout']))
 	<title>Transaction</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="formstyle.css">   
+	<link rel="stylesheet" type="text/css" href="pay_style.css">   
 	<link rel="icon" href="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/46/d1/61/46d16165-c305-5c6f-7626-1a60208042f3/source/512x512bb.jpg" type="image/icon type">
 </head>
 <body>
@@ -165,21 +165,12 @@ if(isset($_POST['signout']))
         </div>
       </header>
       <!-- End Header -->
-
-      <form method="post" action="#">
-        <input type="submit" style="margin-left: 350px;margin-top: 150px;" value="PAY" name="add_cards" id="add_cards" class="addcards_btn" >
-      </form>
-      <br>
-      <form method="post" action="#">
-        <input type="submit" style="margin-left: 650px;margin-top: -80px;" value="SEARCH" name="delete_cards" id="delete_cards" class="delete_cards_btn" >
-      </form>
-      <br>
     
 <div class="container" >
     
 	<div class="d-flex justify-content-center h-100">      
 
-		<div class="cardregister" style="margin-top: 10px;">
+		<div class="cardregister" style="margin-top: 180px;">
            
 			<div class="card-header">
 				<h3 class="register">Transaction</h3>				
