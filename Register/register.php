@@ -214,12 +214,37 @@ if($flag==1)
                         <div class="form-group col-md-4">
                           <label for="state" class="textregister">State</label><label for="state" class="starregister"> * </label> 
                           <select id="state" class="form-control" name="state">
-                            <option selected>Choose...</option>
-                            <option value="TamilNadu">TamilNadu</option>
-                            <option value="Telengana">Telengana</option>
+                            <option selected>Choose...</option>                                
+                            <option value="Andhra Pradesh">	Andhra Pradesh</option>                            
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">	Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
                             <option value="Karnataka">Karnataka</option>
                             <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
                             <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">	Mizoram</option>
+                            <option value="Nagaland">	Nagaland</option>
+                            <option value="Orissa">	Orissa</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="TamilNadu">TamilNadu</option>
+                            <option value="Telengana">Telengana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">	Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">	West Bengal</option>
                           </select> <span class="error"><?php echo $stateerr; ?> </span>
                         </div>
 
