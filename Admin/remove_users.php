@@ -21,10 +21,10 @@
                   <li><h1 class="logo me-auto" style="margin-left: -200px;"><a href="../Userhome/userhome.php"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
                   <ul style="margin-left: 72%;">
                     <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
-                    <li><a class="nav-link scrollto " href="../Admin/set_limit.php">Set Limit</a></li>
+                    <li><a class="nav-link scrollto " href="../Admin/block_users.php">Block Users</a></li>
+                    <li><a class="nav-link scrollto " href="../Admin/unblock_users.php">Unblock Users</a></li>
                     <li><a class="nav-link scrollto active" href="../Admin/remove_users.php">Remove Users</a></li>
-                    <li><a class="nav-link scrollto" href="../Admin/coupons.php">Coupons</a></li>
-                    <li><a class="nav-link scrollto" href="../Admin/lock_users.php">Lock Users</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a class="nav-link scrollto " href="../Admin/coupons.php">Coupons</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
                 </ul>
@@ -44,10 +44,10 @@
               <nav id="navbar" class="navbar">
               <ul style="margin-left: -24px;">
                     <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
-                    <li><a class="nav-link scrollto " href="../Admin/set_limit.php">Set Limit</a></li>
+                    <li><a class="nav-link scrollto " href="../Admin/block_users.php">Block Users</a></li>
+                    <li><a class="nav-link scrollto " href="../Admin/unblock_users.php">Unblock Users</a></li>
                     <li><a class="nav-link scrollto active" href="../Admin/remove_users.php">Remove Users</a></li>
-                    <li><a class="nav-link scrollto" href="../Admin/coupons.php">Coupons</a></li>
-                    <li><a class="nav-link scrollto" href="../Admin/lock_users.php">Lock Users</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a class="nav-link scrollto " href="../Admin/coupons.php">Coupons</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
