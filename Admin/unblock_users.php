@@ -8,7 +8,7 @@ or die('Error connecting to MySQL server.');
 if(isset($_POST['submit_btn']))
 {
   $phno=$_POST['phno'];
-  $blocks=1;
+  $blocks=0;
   $sql="SELECT pay_id FROM user_details WHERE phone='".$phno."' OR email='".$phno."'";
   $result=mysqli_query($db,$sql);
   $num=mysqli_num_rows($result);
