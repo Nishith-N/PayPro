@@ -14,7 +14,7 @@ if(isset($_POST['submit_btn']))
   $num=mysqli_num_rows($result);
   if($num!=0)
   {
-    $sql="UPDATE user_details SET blocks='".$blocks."' WHERE phone='".$phno."' OR email='".$phno."'";
+    $sql="UPDATE user_details SET block1='".$blocks."' WHERE phone='".$phno."' OR email='".$phno."'";
     $result=mysqli_query($db,$sql);
    
   }

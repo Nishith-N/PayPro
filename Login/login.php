@@ -32,19 +32,35 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 	
 
 	$result=mysqli_query($db,$sql);
+
 	
 	if(mysqli_num_rows($result)==1)
     {
+		
+
 		$sql = "SELECT pay_id FROM user_details WHERE phone='".$username."' AND password1='".$pwd."' limit 1";
 		$result=mysqli_query($db,$sql);
 		$row=mysqli_fetch_row($result);
+		$sql = "SELECT block1 FROM user_details WHERE phone='".$username."' OR email='".$username."'";
+		$result1=mysqli_query($db,$sql);
+		$fecth1=mysqli_fetch_row($result1);
+		$block_check=$fecth1[0];
+		if($block_check==0)
+		{
+		$rows2=mysqli_num_rows($result2);
 		$_SESSION['varname'] = $username;
 		$sql="UPDATE login_attempt SET attempt=1 WHERE phone='".$username."' OR email='".$username."'";
 		$result=mysqli_query($db,$sql);
         header("Location:../Userhome/userhome.php");
         exit();
+		}
+		else{
+			header("Location:../Login/login.php");
+        	exit();
+		}
     }
     else{
+		
 		$sql = "SELECT attempt FROM login_attempt WHERE phone='".$username."' OR email='".$username."'";
 		$att=mysqli_query($db,$sql);
 		if(mysqli_num_rows($att))

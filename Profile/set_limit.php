@@ -101,8 +101,8 @@ or die('Error connecting to MySQL server.');
                   <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
-                    <li><a class="nav-link scrollto active" href="../Profile/password_reset.php">Reset Password</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/set_limit.php">Set Limit</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    
+                    <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>
+                    <li><a class="nav-link scrollto active" href="../Profile/set_limit.php">Set Limit</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    
   <li><form method="post" action="#"><input type="submit" style=" width: 120px;
                         border-radius: 20px;
                         height: 40px;
@@ -130,8 +130,8 @@ or die('Error connecting to MySQL server.');
               <li><a class="nav-link scrollto" href="../Profile/manageprofile.php">Manage Profile</a></li>                   
                     <li><a class="nav-link scrollto" href="../Userhome/recharge.php">Recharge</a></li>
                     <li><a class="nav-link scrollto" href="../Userhome/remove_money.php">Remove Money</a></li>
-                    <li><a class="nav-link scrollto active" href="../Profile/password_reset.php">Reset Password</a></li>
-                    <li><a class="nav-link scrollto" href="../Profile/set_limit.php">Set Limit</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a class="nav-link scrollto" href="../Profile/password_reset.php">Reset Password</a></li>
+                    <li><a class="nav-link scrollto active" href="../Profile/set_limit.php">Set Limit</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <li><form method="post" action="#"><input type="submit" style=" width: 120px;
                         border-radius: 20px;
                         height: 40px;
