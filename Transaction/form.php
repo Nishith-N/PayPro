@@ -22,7 +22,15 @@ if(isset($_POST['submit_btn']))
 	$phno=$_POST['phno'];
 	$amount=$_POST['amount'];
 
-
+  $sql="SELECT limits FROM user_details WHERE phone='".$username."' OR email='".$username."'";
+	$result=mysqli_query($db,$sql);
+  $row1=mysqli_fetch_row($result);
+  if($row1<$amount)
+  {
+    header("Location:../Transaction/error.php");
+    exit();
+  }
+  
 	$sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
 	$result=mysqli_query($db,$sql);
 	if(mysqli_num_rows($result)==1)
