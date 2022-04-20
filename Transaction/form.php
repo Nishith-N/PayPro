@@ -14,73 +14,19 @@ if($username=='')
   header("Location:../Home/home.html");
         exit(); 
 }
-
-
-
-if(isset($_POST['submit_btn']))
-{
-	$phno=$_POST['phno'];
-	$amount=$_POST['amount'];
-
-  $sql="SELECT limits FROM user_details WHERE phone='".$username."' OR email='".$username."'";
-	$result=mysqli_query($db,$sql);
-  $row1=mysqli_fetch_row($result);
-  if($row1<$amount)
-  {
-    header("Location:../Transaction/error.php");
-    exit();
-  }
-  
-	$sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
-	$result=mysqli_query($db,$sql);
-	if(mysqli_num_rows($result)==1)
-	{
-		$row=mysqli_fetch_row($result);
-		$mywallet=$row[0];
-	}
-
-	$sql="SELECT wallet FROM user_details WHERE phone='".$phno."'";
-	$result=mysqli_query($db,$sql);
-	if(mysqli_num_rows($result)==1)
-	{
-		$row=mysqli_fetch_row($result);
-		$recv_wallet=$row[0];
-		if($mywallet>$amount)
-		{
-			
-			$_SESSION['phno']=$phno;
-			$_SESSION['amount']=$amount;
-			$_SESSION['username']=$username;
-			$_SESSION['mywallet']=$mywallet;
-			$_SESSION['recv_wallet']=$recv_wallet;
-			$_SESSION['otp']=$otp;
-
-			header("Location:../Transaction/otp.php");
-        exit();
-
-		}
-    else
-    {
-      $_SESSION['username']=$username;
-			header("Location:../Transaction/error.php");
+if(isset($_POST['pay'])){
+$_SESSION['username']=$username;
+			header("Location:../Transaction/pay.php");
       exit();
-
-
-    }
-    
-	}
-  else
-    {
-      $_SESSION['username']=$username;
-			header("Location:../Transaction/error.php");
-      exit();
-
-
-    }
-
-
-
 }
+if(isset($_POST['search'])){
+  $_SESSION['username']=$username;
+        header("Location:../Transaction/search_transaction.php");
+        exit();
+  }
+
+
+
 
 if(isset($_POST['signout']))
 {
