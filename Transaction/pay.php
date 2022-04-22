@@ -4,6 +4,7 @@ or die('Error connecting to MySQL server.');
 
 session_start();
 $username=$_SESSION['username'];
+$pay_id=$_SESSION['pay_id'];
 $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
 	$result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);
@@ -54,6 +55,7 @@ if(isset($_POST['submit_btn']))
 			$_SESSION['mywallet']=$mywallet;
 			$_SESSION['recv_wallet']=$recv_wallet;
 			$_SESSION['otp']=$otp;
+      $_SESSION['pay_id'] = $pay_id;
 
 			header("Location:../Transaction/otp.php");
         exit();

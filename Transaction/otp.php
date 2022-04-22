@@ -2,6 +2,11 @@
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 		session_start();
+		$pay_id=$_SESSION['pay_id'];
+		$t=time();
+				$d=date("Y-m-d",$t);
+				echo $d;
+	
 			$phno=$_SESSION['phno'];
 			$amount=$_SESSION['amount'];
 			$username=$_SESSION['username'];
@@ -20,6 +25,13 @@ or die('Error connecting to MySQL server.');
 				$_SESSION['mywallet']=$mywallet;
 				$_SESSION['recv_wallet']=$recv_wallet;
 				$_SESSION['otp']=$otp;
+				$t=time();
+				$d=date("Y-m-d",$t);
+				
+
+				$sql="CREATE TABLE IF NOT EXISTS trans_hist ( pay_id INT NOT NULL , pay_username BIGINT NOT NULL, amount BIGINT NOT NULL,dates DATE NOT NULL)";
+				$result=mysqli_query($db,$sql);
+
 
 				$leftamount=$mywallet-$amount;
 				$sql="UPDATE user_details SET wallet='".$leftamount."' WHERE phone='".$username."'";
@@ -30,6 +42,8 @@ or die('Error connecting to MySQL server.');
 				$result=mysqli_query($db,$sql);
 				if($result)
 				{
+				$sql="INSERT INTO trans_hist (pay_id, pay_username, amount,dates) VALUES ($pay_id, $phno,$amount,'$d')";
+  				$result=mysqli_query($db,$sql);
 				$_SESSION['username'] = $username;
 				header("Location:../Transaction/success.php");
         		exit();
