@@ -120,39 +120,45 @@ if(isset($_POST['signout']))
         <input type="submit" style="margin-left: 950px;margin-top: -80px;" value="SEARCH" name="search" id="search" class="search_btn" >
       </form>
       <br>
-    
-<div class="container" >
-    
-	<div class="d-flex justify-content-center h-100">      
-
-		<div class="cardregister" style="margin-top: 10px;">
-           
-			<div class="card-header">
-				<h3 class="register">Transaction</h3>				
-			</div>
-
-			<div class="card-body" >
-				<form action="#" method="post">
-
-                    <div class="form-group">
-                        <label for="phno" class="textregister">Phone Number </label><label for="phno" class="starregister"> * </label>
-                        <input type="number" id="phno" name="phno" class="form-control" style="width: 300px;">
-                    </div> 
-
-                    <div class="form-group">
-                        <label for="amount" class="textregister">Amount </label><label for="amount" class="starregister"> * </label>
-                        <input type="number" id="amount" name="amount" class="form-control" style="width: 300px;"> 
-                    </div>                  
-
-					<div class="form-group">
-						<input type="submit" value="Submit" class="btn float-right login_btn" name="submit_btn" id="submit_btn"><br><br>
-						
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
+      <form class="example" action="/action_page.php" style="margin:auto;max-width:300px;max-height: 30px;">
+        <input type="text" placeholder="Search.." name="search2">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+      <br><br>
+      <center>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <table style="width: 100%;height: 100%;">
+                <tr>
+                  <td rowspan="3" style="width: 15%;"><i class="fa fa-user" style="font-size: 30px;"></i></td>
+                  <td style="text-align:left;">Name</td>                  
+                </tr>
+                <tr>
+                  <td style="text-align:left;">Card Number</td>
+                </tr>
+                <tr>
+                  <td style="text-align:left;">Amount</td>
+                </tr>
+              </table>
+              
+            </div>
+            <div class="flip-card-back">
+              <table style="width: 100%;">
+                <tr>
+                  <td rowspan="2" style="width: 80%;"><h3>Reason</h3></td>
+                  
+                </tr>
+                <tr>
+                  
+                </tr>
+              </table>
+                    
+            </div>
+          </div>
+        </div>
+        </center>
+        <br>
 <br><br>
 </body>
 </html>

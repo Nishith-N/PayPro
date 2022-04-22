@@ -105,7 +105,7 @@ if(isset($_POST['signout']))
 	<title>Search Transaction</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="search_transaction_style.css">   
+	<link rel="stylesheet" type="text/css" href="search_transaction.css">   
 	<link rel="icon" href="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/46/d1/61/46d16165-c305-5c6f-7626-1a60208042f3/source/512x512bb.jpg" type="image/icon type">
 </head>
 <body>
@@ -182,6 +182,11 @@ if(isset($_POST['signout']))
                     <div class="form-group">
                         <label for="cno" class="textregister">Card Number </label><label for="cno" class="starregister"> * </label>
                         <input type="text" id="cno" name="cno" class="form-control" style="width: 300px;">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="reason" class="textregister">Reason </label><label for="reason" class="starregister"> * </label>
+                      <input type="text" id="reason" name="reason" class="form-control" style="width: 300px;">
                     </div> 
 
                     <label for="date" class="textregister">From</label><label for="date" class="starregister"> * </label>

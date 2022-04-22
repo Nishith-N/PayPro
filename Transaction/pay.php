@@ -4,7 +4,6 @@ or die('Error connecting to MySQL server.');
 
 session_start();
 $username=$_SESSION['username'];
-$pay_id=$_SESSION['pay_id'];
 $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
 	$result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);
@@ -55,7 +54,6 @@ if(isset($_POST['submit_btn']))
 			$_SESSION['mywallet']=$mywallet;
 			$_SESSION['recv_wallet']=$recv_wallet;
 			$_SESSION['otp']=$otp;
-      $_SESSION['pay_id'] = $pay_id;
 
 			header("Location:../Transaction/otp.php");
         exit();
@@ -189,7 +187,12 @@ if(isset($_POST['signout']))
                     <div class="form-group">
                         <label for="amount" class="textregister">Amount </label><label for="amount" class="starregister"> * </label>
                         <input type="number" id="amount" name="amount" class="form-control" style="width: 300px;"> 
-                    </div>                  
+                    </div>  
+                    
+                    <div class="form-group">
+                        <label for="reason" class="textregister">Reason </label><label for="reason" class="starregister"> * </label>
+                        <input type="text" id="reason" name="reason" class="form-control" style="width: 300px;"> 
+                    </div> 
 
 					<div class="form-group">
 						<input type="submit" value="Submit" class="btn float-right login_btn" name="submit_btn" id="submit_btn"><br><br>
