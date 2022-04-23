@@ -19,64 +19,21 @@ if($username=='')
 
 if(isset($_POST['submit_btn']))
 {
-	$phno=$_POST['phno'];
-	$amount=$_POST['amount'];
+	$day=$_POST['date'];
+  $month=$_POST['month'];
+  $year=$_POST['year'];
 
-  $sql="SELECT limits FROM user_details WHERE phone='".$username."' OR email='".$username."'";
+  $search_date=$year."-".$month."-".$day;
+  echo $search_date;
+  $sql="SELECT pay_id FROM trans_hist WHERE dates < '".$search_date."'";
 	$result=mysqli_query($db,$sql);
-  $row1=mysqli_fetch_row($result);
-  if($row1<$amount)
+  $num=mysqli_num_rows($result);
+  if($num!=0)
   {
-    header("Location:../Transaction/error.php");
-    exit();
+    header("Location:../Userhome/userhome.php");
+        exit(); 
   }
-  
-	$sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
-	$result=mysqli_query($db,$sql);
-	if(mysqli_num_rows($result)==1)
-	{
-		$row=mysqli_fetch_row($result);
-		$mywallet=$row[0];
-	}
 
-	$sql="SELECT wallet FROM user_details WHERE phone='".$phno."'";
-	$result=mysqli_query($db,$sql);
-	if(mysqli_num_rows($result)==1)
-	{
-		$row=mysqli_fetch_row($result);
-		$recv_wallet=$row[0];
-		if($mywallet>$amount)
-		{
-			
-			$_SESSION['phno']=$phno;
-			$_SESSION['amount']=$amount;
-			$_SESSION['username']=$username;
-			$_SESSION['mywallet']=$mywallet;
-			$_SESSION['recv_wallet']=$recv_wallet;
-			$_SESSION['otp']=$otp;
-
-			header("Location:../Transaction/otp.php");
-        exit();
-
-		}
-    else
-    {
-      $_SESSION['username']=$username;
-			header("Location:../Transaction/error.php");
-      exit();
-
-
-    }
-    
-	}
-  else
-    {
-      $_SESSION['username']=$username;
-			header("Location:../Transaction/error.php");
-      exit();
-
-
-    }
 
 
 
@@ -110,7 +67,7 @@ if(isset($_POST['signout']))
 </head>
 <body>
 
-<header id="header" style="margin-top: -22px;" class="fixed-top ">
+<!-- <header id="header" style="margin-top: -22px;" class="fixed-top ">
         <div class="container d-flex align-items-center">  
           <section>
             <span class="full-text" >
@@ -163,7 +120,7 @@ if(isset($_POST['signout']))
             </span>
           </section>
         </div>
-      </header>
+      </header> -->
       <!-- End Header -->
     
 <div class="container" >
@@ -193,16 +150,16 @@ if(isset($_POST['signout']))
                     <div class="form-row">
                         <div class="form-group col-md-3">
                           <label for="date" class="textregister">Date</label>
-                          <select id="date" class="form-control">
-                            <option selected value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
+                          <select id="date" class="form-control" name="date">
+                            <option selected value="01">1</option>
+                            <option value="02">2</option>
+                            <option value="03">3</option>
+                            <option value="04">4</option>
+                            <option value="05">5</option>
+                            <option value="06">6</option>
+                            <option value="07">7</option>
+                            <option value="08">8</option>
+                            <option value="09">9</option>
                             <option value="10">10</option>
                             <option value="11">11</option>
                             <option value="12">12</option>
@@ -230,32 +187,32 @@ if(isset($_POST['signout']))
 
                         <div class="form-group col-md-3">
                           <label for="month" class="textregister">Month</label>
-                          <select id="month" class="form-control">
-                            <option selected value="Jan">Jan</option>
-                            <option value="Feb">Feb</option>
-                            <option value="Mar">Mar</option>
-                            <option value="Apr">Apr</option>
-                            <option value="May">May</option>
-                            <option value="Jun">Jun</option>
-                            <option value="Jul">Jul</option>
-                            <option value="Aug">Aug</option>
-                            <option value="Sep">Sep</option>
-                            <option value="Oct">Oct</option>
-                            <option value="Nov">Nov</option>
-                            <option value="Dec">Dec</option>
+                          <select id="month" class="form-control" name="month">
+                            <option selected value="01">Jan</option>
+                            <option value="02">Feb</option>
+                            <option value="03">Mar</option>
+                            <option value="04">Apr</option>
+                            <option value="05">May</option>
+                            <option value="06">Jun</option>
+                            <option value="07">Jul</option>
+                            <option value="08">Aug</option>
+                            <option value="09">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
                           </select>
                         </div>
 
                         <div class="form-group col-md-4">
-                          <label for="zip" class="textregister">Year</label>
-                          <input type="text" class="form-control" id="zip" name="zip">
+                          <label for="year" class="textregister">Year</label>
+                          <input type="text" class="form-control" id="year" name="year">
                         </div>
                     </div>      
                     <label for="date" class="textregister">To</label><label for="date" class="starregister"> * </label>
                     <div class="form-row">                        
                         <div class="form-group col-md-3">
                           <label for="date" class="textregister">Date</label>
-                          <select id="date" class="form-control">
+                          <select id="todate" class="form-control" name="todate">
                             <option selected value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -292,7 +249,7 @@ if(isset($_POST['signout']))
 
                         <div class="form-group col-md-3">
                           <label for="month" class="textregister">Month</label>
-                          <select id="month" class="form-control">
+                          <select id="month" class="form-control" name="tomonth">
                             <option selected value="Jan">Jan</option>
                             <option value="Feb">Feb</option>
                             <option value="Mar">Mar</option>
@@ -309,8 +266,8 @@ if(isset($_POST['signout']))
                         </div>
 
                         <div class="form-group col-md-4">
-                          <label for="zip" class="textregister">Year</label>
-                          <input type="text" class="form-control" id="zip" name="zip">
+                          <label for="toyear" class="textregister">Year</label>
+                          <input type="text" class="form-control" id="toyear" name="toyear">
                         </div>
                     </div>
 
