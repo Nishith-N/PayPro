@@ -12,6 +12,7 @@ or die('Error connecting to MySQL server.');
 			$username=$_SESSION['username'];
 			$mywallet=$_SESSION['mywallet'];
 			$recv_wallet=$_SESSION['recv_wallet'];
+			$reason=$_SESSION['reason'];
 
 			if(isset($_POST['submit_btn']))
 			{
@@ -30,7 +31,7 @@ or die('Error connecting to MySQL server.');
 				$d=date("Y-m-d",$t);
 				
 
-				$sql="CREATE TABLE IF NOT EXISTS trans_hist ( pay_id INT NOT NULL , pay_username BIGINT NOT NULL, amount BIGINT NOT NULL,dates DATE NOT NULL)";
+				$sql="CREATE TABLE IF NOT EXISTS trans_hist ( pay_id INT NOT NULL , pay_username BIGINT NOT NULL, amount BIGINT NOT NULL,dates DATE NOT NULL,reasons LONGTEXT NOT NULL)";
 				$result=mysqli_query($db,$sql);
 
 
@@ -43,7 +44,7 @@ or die('Error connecting to MySQL server.');
 				$result=mysqli_query($db,$sql);
 				if($result)
 				{
-				$sql="INSERT INTO trans_hist (pay_id, pay_username, amount,dates) VALUES ($pay_id, $phno,$amount,'$d')";
+				$sql="INSERT INTO trans_hist (pay_id, pay_username, amount,dates,reasons) VALUES ($pay_id, $phno,$amount,'$d','$reason')";
   				$result=mysqli_query($db,$sql);
 				$_SESSION['username'] = $username;
 				header("Location:../Transaction/success.php");

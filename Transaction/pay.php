@@ -20,6 +20,7 @@ if(isset($_POST['submit_btn']))
 {
 	$phno=$_POST['phno'];
 	$amount=$_POST['amount'];
+  $reason=$_POST['reason'];
 
   $otp = rand(1111,9999);
 
@@ -94,6 +95,9 @@ if(isset($_POST['submit_btn']))
 			$_SESSION['username']=$username;
 			$_SESSION['mywallet']=$mywallet;
 			$_SESSION['recv_wallet']=$recv_wallet;
+      $_SESSION['reason']=$reason;
+      
+
 
 			header("Location:../Transaction/otp.php");
         exit();

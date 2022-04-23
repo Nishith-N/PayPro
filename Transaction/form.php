@@ -4,11 +4,16 @@ or die('Error connecting to MySQL server.');
 
 session_start();
 $username=$_SESSION['username'];
+$pay_id=$_SESSION['pay_id'];
 $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
 	$result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);
   $disp=$row[0];
 $otp=1234;
+$sql="SELECT tr_id FROM trans_hist WHERE pay_id='".$pay_id."'";
+$result=mysqli_query($db,$sql);
+$num=mysqli_num_rows($result);
+
 if($username=='')
 {
   header("Location:../Home/home.html");
@@ -102,6 +107,8 @@ if(isset($_POST['signout']))
               </ul>
               </nav>
               <?php
+              
+              
               print'
               <marquee style="color:#F8B74E"><h4>Wallet amount: '.$disp.'</h4></marquee>';
               ?>
@@ -125,6 +132,54 @@ if(isset($_POST['signout']))
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
       <br><br>
+      <?php
+      
+     
+      if($num==0)
+      {
+        
+        print '
+        <center>
+        
+          <div>
+          
+          <h3>No History</h3>
+          </div>
+        </center>
+        
+        ';
+        
+      }
+      else{
+        while($row=mysqli_fetch_row($result))
+        {
+          $i=0;
+          $tr_id=$row[$i];
+          echo $tr_id;
+          $sql1="SELECT pay_username FROM trans_hist WHERE tr_id='".$tr_id."'";
+          $result1=mysqli_query($db,$sql1);
+          if(mysqli_num_rows($result1))
+          {
+            $row1=mysqli_fetch_row($result1);
+            $pay_username=$row1[0];
+          }
+          $sql2="SELECT amount FROM trans_hist WHERE tr_id='".$tr_id."'";
+          $result2=mysqli_query($db,$sql2);
+          if(mysqli_num_rows($result2))
+          {
+            $row2=mysqli_fetch_row($result2);
+            $sent_amount=$row2[0];
+          }
+          $sql3="SELECT reasons FROM trans_hist WHERE tr_id='".$tr_id."'";
+          $result3=mysqli_query($db,$sql3);
+          if(mysqli_num_rows($result3))
+          {
+            $row3=mysqli_fetch_row($result3);
+            $reasons=$row3[0];
+          }
+
+          
+      print '
       <center>
         <div class="flip-card">
           <div class="flip-card-inner">
@@ -132,13 +187,11 @@ if(isset($_POST['signout']))
               <table style="width: 100%;height: 100%;">
                 <tr>
                   <td rowspan="3" style="width: 15%;"><i class="fa fa-user" style="font-size: 30px;"></i></td>
-                  <td style="text-align:left;">Name</td>                  
+                  <td style="text-align:left;">'.$pay_username.'</td>                  
                 </tr>
+               
                 <tr>
-                  <td style="text-align:left;">Card Number</td>
-                </tr>
-                <tr>
-                  <td style="text-align:left;">Amount</td>
+                  <td style="text-align:left;">'.$sent_amount.'</td>
                 </tr>
               </table>
               
@@ -146,7 +199,7 @@ if(isset($_POST['signout']))
             <div class="flip-card-back">
               <table style="width: 100%;">
                 <tr>
-                  <td rowspan="2" style="width: 80%;"><h3>Reason</h3></td>
+                  <td rowspan="2" style="width: 80%;"><h3>'.$reasons.'</h3></td>
                   
                 </tr>
                 <tr>
@@ -157,7 +210,10 @@ if(isset($_POST['signout']))
             </div>
           </div>
         </div>
-        </center>
+        </center>';
+        }
+      }
+        ?>
         <br>
 <br><br>
 </body>
