@@ -67,7 +67,7 @@ if(isset($_POST['signout']))
 </head>
 <body>
 
-<!-- <header id="header" style="margin-top: -22px;" class="fixed-top ">
+<header id="header" style="margin-top: -22px;" class="fixed-top ">
         <div class="container d-flex align-items-center">  
           <section>
             <span class="full-text" >
@@ -91,7 +91,7 @@ if(isset($_POST['signout']))
               print'
               <marquee style="color:#F8B74E"><h4>Wallet amount: '.$disp.'</h4></marquee>';
               ?>
-              <!-- .navbar --> 
+               
             </span>
 
             <span class="short-text">
@@ -116,12 +116,12 @@ if(isset($_POST['signout']))
               print'
               <marquee style="color:#F8B74E"><h4>Wallet amount: '.$disp.'</h4></marquee>';
               ?>
-              <!-- .navbar --> 
+            
             </span>
           </section>
         </div>
       </header> -->
-      <!-- End Header -->
+      End Header
     
 <div class="container" >
     
