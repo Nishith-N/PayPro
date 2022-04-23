@@ -154,23 +154,24 @@ if(isset($_POST['submit_btn']))
                     <div class="form-group">
                         <label for="card_num" class="textaddcontact">Card Number</label><label for="card_num" class="starregister"> * </label>
                         <input type="number" id="card_num" name="card_num" class="form-control" style="width: 300px;">
-                    </div>                   
+                    </div>   
                     
-
                     <div class="form-group">
-                        <label for="cvv" class="textaddcontact">CVV </label><label for="cvv" class="starregister"> * </label>
-                        <input type="number" id="cvv" name="cvv" class="form-control" style="width: 300px;">
-                    </div> 
-					<div class="form-group">
-                        <label for="card_name" class="textaddcontact">Card Name </label><label for="card_name" class="starregister"> * </label>
-                        <input type="text" id="card_name" name="card_name" class="form-control" style="width: 300px;">
-                    </div>
-
-					<div class="form-group">
+                      <label for="card_name" class="textaddcontact">Card Name </label><label for="card_name" class="starregister"> * </label>
+                      <input type="text" id="card_name" name="card_name" class="form-control" style="width: 300px;">
+                    </div>    
+                    
+                    <div class="form-row">
+                      <div class="form-group col-md-7">
                         <label for="validto" class="textaddcontact">Valid Upto </label><label for="validto" class="starregister"> * </label>
-                        <input type="text" id="validto" name="validto" class="form-control" style="width: 300px;">
+                        <input type="text" id="validto" name="validto" class="form-control" style="width: 210px;">
+                      </div>
+
+                      <div class="form-group col-md-5">
+                        <label for="cvv" class="textaddcontact">CVV </label><label for="cvv" class="starregister"> * </label>
+                      <input type="number" id="cvv" name="cvv" class="form-control" style="width: 90px;">
+                      </div>              
                     </div>
-  
                     
                    
 
