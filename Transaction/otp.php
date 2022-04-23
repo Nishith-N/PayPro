@@ -12,19 +12,20 @@ or die('Error connecting to MySQL server.');
 			$username=$_SESSION['username'];
 			$mywallet=$_SESSION['mywallet'];
 			$recv_wallet=$_SESSION['recv_wallet'];
-			$otp=$_SESSION['otp'];
 
 			if(isset($_POST['submit_btn']))
 			{
 				$typed_otp=$_POST['typed_otp'];
-				if($typed_otp==$otp)
+				$sql="SELECT otp from user_details WHERE phone='".$username."' OR email='".$username."'";
+				$result=mysqli_query($db,$sql);
+				$row=mysqli_fetch_row($result);
+				if($typed_otp==$row[0])
 				{
 				$_SESSION['phno']=$phno;
 				$_SESSION['amount']=$amount;
 				$_SESSION['username']=$username;
 				$_SESSION['mywallet']=$mywallet;
 				$_SESSION['recv_wallet']=$recv_wallet;
-				$_SESSION['otp']=$otp;
 				$t=time();
 				$d=date("Y-m-d",$t);
 				

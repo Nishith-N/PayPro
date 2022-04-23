@@ -8,7 +8,6 @@ $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$u
 	$result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);
   $disp=$row[0];
-$otp=1234;
 if($username=='')
 {
   header("Location:../Home/home.html");
@@ -21,6 +20,48 @@ if(isset($_POST['submit_btn']))
 {
 	$phno=$_POST['phno'];
 	$amount=$_POST['amount'];
+
+  $otp = rand(1111,9999);
+
+  $no = $username;
+  
+  $fields = array(
+  "variables_values" => "$otp",
+  "route" => "otp",
+  "numbers" => "$no",
+  );
+
+  $curl = curl_init();
+  
+  curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://www.fast2sms.com/dev/bulkV2",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_SSL_VERIFYHOST => 0,
+  CURLOPT_SSL_VERIFYPEER => 0,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => json_encode($fields),
+  CURLOPT_HTTPHEADER => array(
+  "authorization: a1mYvJTkBdoeW9EyMbi74PLnuhFtpsQCKgVl5IXzHOrUAZq68DQiJDj4NOA3C5mhLM2KcXyRxuZa6kY8",
+  "accept: */*",
+  "cache-control: no-cache",
+  "content-type: application/json"
+  ),
+  ));
+  
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
+  
+  curl_close($curl);
+  
+ 
+
+  $sql="UPDATE user_details SET otp='".$otp."' WHERE phone='".$username."' OR email='".$username."'";
+  $result=mysqli_query($db,$sql);
+
 
   $sql="SELECT limits FROM user_details WHERE phone='".$username."' OR email='".$username."'";
 	$result=mysqli_query($db,$sql);
@@ -53,7 +94,6 @@ if(isset($_POST['submit_btn']))
 			$_SESSION['username']=$username;
 			$_SESSION['mywallet']=$mywallet;
 			$_SESSION['recv_wallet']=$recv_wallet;
-			$_SESSION['otp']=$otp;
 
 			header("Location:../Transaction/otp.php");
         exit();
