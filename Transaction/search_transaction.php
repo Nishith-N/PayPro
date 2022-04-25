@@ -30,7 +30,11 @@ if(isset($_POST['submit_btn']))
   $num=mysqli_num_rows($result);
   if($num!=0)
   {
-    header("Location:../Userhome/userhome.php");
+    $flag=1;
+    $_SESSION['search_date']=$search_date;
+    $_SESSION['flag']=$flag;
+
+    header("Location:../Transaction/form.php");
         exit(); 
   }
 

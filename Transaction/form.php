@@ -5,19 +5,30 @@ or die('Error connecting to MySQL server.');
 session_start();
 $username=$_SESSION['username'];
 $pay_id=$_SESSION['pay_id'];
+$flag=$_SESSION['flag'];
+$search_date=$_SESSION['search_date'];
 $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
 	$result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);
   $disp=$row[0];
 $otp=1234;
+if($flag!=1)
+{
 $sql="SELECT tr_id FROM trans_hist WHERE pay_id='".$pay_id."'";
 $result=mysqli_query($db,$sql);
 $num=mysqli_num_rows($result);
+}
 
 if($username=='')
 {
   header("Location:../Home/home.html");
         exit(); 
+}
+if($flag==1)
+{
+  $sql="SELECT tr_id FROM trans_hist WHERE pay_id='".$pay_id."' AND dates < '".$search_date."'";
+$result=mysqli_query($db,$sql);
+$num=mysqli_num_rows($result);
 }
 if(isset($_POST['pay'])){
 $_SESSION['username']=$username;
@@ -116,7 +127,7 @@ if(isset($_POST['signout']))
             </span>
           </section>
         </div>
-      </header>
+      </header> 
       <!-- End Header -->
 
       <form method="post" action="#">
