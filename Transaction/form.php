@@ -3,7 +3,12 @@ $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 
 session_start();
+$flag=0;
+$num=0;
+$search_date='';
 $username=$_SESSION['username'];
+$f_amount=$_SESSION['f_amount'];
+$t_amount=$_SESSION['t_amount'];
 $pay_id=$_SESSION['pay_id'];
 $flag=$_SESSION['flag'];
 $search_date=$_SESSION['search_date'];
@@ -26,9 +31,42 @@ if($username=='')
 }
 if($flag==1)
 {
+  if($f_amount!=0)
+  {
+    $sql="SELECT tr_id FROM trans_hist WHERE pay_id='".$pay_id."' AND amount = '".$f_amount."'";
+$result=mysqli_query($db,$sql);
+$num=mysqli_num_rows($result);
+  }
+  if($f_amount!=0 && $t_amount!=0)
+  {
+    $sql="SELECT tr_id FROM trans_hist WHERE pay_id='".$pay_id."' AND amount BETWEEN '".$f_amount."' AND '".$t_amount."'";
+$result=mysqli_query($db,$sql);
+$num=mysqli_num_rows($result);
+echo $f_amount;
+  }
+  if($search_date!='')
+  {
   $sql="SELECT tr_id FROM trans_hist WHERE pay_id='".$pay_id."' AND dates < '".$search_date."'";
 $result=mysqli_query($db,$sql);
 $num=mysqli_num_rows($result);
+echo $search_date;
+  }
+}
+if($flag==2)
+{
+  if($f_amount!=0 && $t_amount!=0)
+  {
+  echo $f_amount;
+  $sql="SELECT tr_id FROM trans_hist WHERE dates < '".$search_date."' AND  amount BETWEEN '".$f_amount."' AND '".$t_amount."'";
+	$result=mysqli_query($db,$sql);
+  $num=mysqli_num_rows($result);
+  }
+  if($t_amount==0)
+  {
+    $sql="SELECT tr_id FROM trans_hist WHERE dates < '".$search_date."' AND  amount='".$f_amount."'";
+	$result=mysqli_query($db,$sql);
+  $num=mysqli_num_rows($result);
+  }
 }
 if(isset($_POST['pay'])){
 $_SESSION['username']=$username;
@@ -96,7 +134,7 @@ if(isset($_POST['signout']))
               print'
               <marquee style="color:#F8B74E"><h4>Wallet amount: '.$disp.'</h4></marquee>';
               ?>
-              <!-- .navbar --> 
+              
             </span>
 
             <span class="short-text">
@@ -123,12 +161,12 @@ if(isset($_POST['signout']))
               print'
               <marquee style="color:#F8B74E"><h4>Wallet amount: '.$disp.'</h4></marquee>';
               ?>
-              <!-- .navbar --> 
+       
             </span>
           </section>
         </div>
       </header> 
-      <!-- End Header -->
+    
 
       <form method="post" action="#">
         <input type="submit" style="margin-left: 500px;margin-top: 180px;" value="PAY" name="pay" id="pay" class="pay_btn" >

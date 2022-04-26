@@ -8,7 +8,11 @@ $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$u
 	$result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);
   $disp=$row[0];
-$otp=1234;
+$day='';
+$month='';
+$f_amount=0;
+$t_amount=0;
+$year='';
 if($username=='')
 {
   header("Location:../Home/home.html");
@@ -19,24 +23,111 @@ if($username=='')
 
 if(isset($_POST['submit_btn']))
 {
+  $f_amount=0;
+  $search_date='';
+  $day='';
+  $month='';
+  $year='';
 	$day=$_POST['date'];
+  echo $day;
   $month=$_POST['month'];
   $year=$_POST['year'];
+  $f_amount=$_POST['f_amount'];
+  $t_amount=$_POST['t_amount'];
 
   $search_date=$year."-".$month."-".$day;
-  echo $search_date;
+  if($day=='' || $month=='' || $year=='')
+  {
+    if($f_amount==0 && $t_amount==0)
+    {
+    header("Location:../Transaction/error.php");
+        exit();
+    }
+    if($t_amount==0)
+    {
+      $sql="SELECT pay_id FROM trans_hist WHERE amount = '".$f_amount."'";
+	$result=mysqli_query($db,$sql);
+  $num=mysqli_num_rows($result);
+  if($num!=0)
+  {
+    
+    $flag=1;
+    $_SESSION['f_amount']=$f_amount;
+    $_SESSION['flag']=$flag;
+
+    header("Location:../Transaction/form.php");
+        exit(); 
+  }
+    }
+    if($t_amount!=0 && $f_amount!=0)
+    {
+      $sql="SELECT pay_id FROM trans_hist WHERE amount >= '".$f_amount."' AND amount <= '".$t_amount."'";
+	$result=mysqli_query($db,$sql);
+  $num=mysqli_num_rows($result);
+  if($num!=0)
+  {
+    $flag=1;
+    $_SESSION['search_date']='';
+    $_SESSION['f_amount']=$f_amount;
+    $_SESSION['t_amount']=$t_amount;
+    $_SESSION['flag']=$flag;
+
+    header("Location:../Transaction/form.php");
+        exit(); 
+  }
+    }
+  }
+  else if($day!='' && $month!='' && $year!='' && $t_amount!=0 && $f_amount!=0)
+  {
+    $sql="SELECT pay_id FROM trans_hist WHERE dates < '".$search_date."' AND  amount BETWEEN '".$f_amount."' AND '".$t_amount."'";
+	$result=mysqli_query($db,$sql);
+  $num=mysqli_num_rows($result);
+  if($num!=0)
+  {
+    $flag=2;
+    $_SESSION['search_date']=$search_date;
+    $_SESSION['f_amount']=$f_amount;
+    $_SESSION['t_amount']=$t_amount;
+    $_SESSION['flag']=$flag;
+
+    header("Location:../Transaction/form.php");
+        exit(); 
+  }
+  }
+  else if($day!='' && $month!='' && $year!='' && $t_amount==0 && $f_amount!=0)
+  {
+    $sql="SELECT pay_id FROM trans_hist WHERE dates < '".$search_date."' AND  amount='".$f_amount."'";
+	$result=mysqli_query($db,$sql);
+  $num=mysqli_num_rows($result);
+  
+    $flag=2;
+    $_SESSION['search_date']=$search_date;
+    $_SESSION['f_amount']=$f_amount;
+    $_SESSION['t_amount']=0;
+    $_SESSION['flag']=$flag;
+
+    header("Location:../Transaction/form.php");
+        exit(); 
+  
+  }
+  else
+  {
+  
   $sql="SELECT pay_id FROM trans_hist WHERE dates < '".$search_date."'";
 	$result=mysqli_query($db,$sql);
   $num=mysqli_num_rows($result);
   if($num!=0)
   {
     $flag=1;
+    $_SESSION['f_amount']=0;
+    $_SESSION['t_amount']=0;
     $_SESSION['search_date']=$search_date;
     $_SESSION['flag']=$flag;
 
     header("Location:../Transaction/form.php");
         exit(); 
   }
+}
 
 
 
@@ -124,8 +215,7 @@ if(isset($_POST['signout']))
             </span>
           </section>
         </div>
-      </header> -->
-      End Header
+      </header> 
     
 <div class="container" >
     
@@ -139,23 +229,24 @@ if(isset($_POST['signout']))
 
 			<div class="card-body" >
 				<form action="#" method="post">
-
-                    <div class="form-group">
-                        <label for="cno" class="textregister">Card Number </label><label for="cno" class="starregister"> * </label>
-                        <input type="text" id="cno" name="cno" class="form-control" style="width: 300px;">
+                    <div class="form-row">
+                    <div class="form-group col-md">
+                        <label for="cno" class="textregister">Amount (From) </label><label for="cno" class="starregister"> * </label>
+                        <input type="text" id="cno" name="f_amount" class="form-control" style="width: 100px;">
                     </div>
                     
-                    <div class="form-group">
-                      <label for="reason" class="textregister">Reason </label><label for="reason" class="starregister"> * </label>
-                      <input type="text" id="reason" name="reason" class="form-control" style="width: 300px;">
+                    <div class="form-group col-md">
+                      <label for="reason" class="textregister">Amount (To) </label><label for="reason" class="starregister"> * </label>
+                      <input type="text" id="reason" name="t_amount" class="form-control" style="width: 100px;">
                     </div> 
-
+                    </div>
                     <label for="date" class="textregister">From</label><label for="date" class="starregister"> * </label>
                     <div class="form-row">
                         <div class="form-group col-md-3">
                           <label for="date" class="textregister">Date</label>
                           <select id="date" class="form-control" name="date">
-                            <option selected value="01">1</option>
+                            <option selected value=""></option>
+                            <option value="01">1</option>
                             <option value="02">2</option>
                             <option value="03">3</option>
                             <option value="04">4</option>
@@ -192,7 +283,8 @@ if(isset($_POST['signout']))
                         <div class="form-group col-md-3">
                           <label for="month" class="textregister">Month</label>
                           <select id="month" class="form-control" name="month">
-                            <option selected value="01">Jan</option>
+                            <option selected value=""></option>
+                            <option value="01">Jan</option>
                             <option value="02">Feb</option>
                             <option value="03">Mar</option>
                             <option value="04">Apr</option>
@@ -217,7 +309,7 @@ if(isset($_POST['signout']))
                         <div class="form-group col-md-3">
                           <label for="date" class="textregister">Date</label>
                           <select id="todate" class="form-control" name="todate">
-                            <option selected value="1">1</option>
+                            <option selected value="">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
@@ -254,7 +346,7 @@ if(isset($_POST['signout']))
                         <div class="form-group col-md-3">
                           <label for="month" class="textregister">Month</label>
                           <select id="month" class="form-control" name="tomonth">
-                            <option selected value="Jan">Jan</option>
+                            <option selected value="">Jan</option>
                             <option value="Feb">Feb</option>
                             <option value="Mar">Mar</option>
                             <option value="Apr">Apr</option>
