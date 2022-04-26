@@ -1,3 +1,34 @@
+<?php
+$db = mysqli_connect('localhost','root','','payprodb')
+or die('Error connecting to MySQL server.');
+session_start();
+
+$username=$_SESSION['username'];
+
+if(isset($_POST['submit_btn']))
+{
+	$pwd=$_POST['pwd'];
+	$rpwd=$_POST['rpwd'];
+
+	if($pwd==$rpwd)
+	{
+		$sql = "UPDATE user_details SET password1='".$pwd."' WHERE phone='".$username."'";
+		$result=mysqli_query($db,$sql);
+		header("Location:../Login/login.php");
+        	exit();
+	}
+	else
+	{
+		header("Location:../Transaction/error.php");
+        	exit();
+
+	}
+}
+
+
+?>
+
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
