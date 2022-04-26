@@ -169,7 +169,7 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 					Don't have an account?<a href="../Register/register.php" id="reg" name="reg">Sign Up</a>
 				</div>
 				<div class="d-flex justify-content-center links">
-					<a href="#">Forgot your password?</a>
+					<a href="../Register/forgotpwd_username.php" id="forgot_pwd">Forgot your password?</a>
 				</div>
 			</div>
 		</div>

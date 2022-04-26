@@ -1,3 +1,61 @@
+<?php
+$db = mysqli_connect('localhost','root','','payprodb')
+or die('Error connecting to MySQL server.');
+session_start();
+if(isset($_POST['submit_btn']))
+{
+$no=$_POST['uname'];	
+
+$sql = "SELECT pay_id FROM user_details WHERE phone='".$no."' limit 1";
+$result=mysqli_query($db,$sql);
+$row=mysqli_num_rows($result);
+if($row!=0)
+{
+	$otp = rand(1111,9999);
+
+  
+  
+  $fields = array(
+  "variables_values" => "$otp",
+  "route" => "otp",
+  "numbers" => "$no",
+  );
+
+  $curl = curl_init();
+  
+  curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://www.fast2sms.com/dev/bulkV2",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_SSL_VERIFYHOST => 0,
+  CURLOPT_SSL_VERIFYPEER => 0,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => json_encode($fields),
+  CURLOPT_HTTPHEADER => array(
+  "authorization: a1mYvJTkBdoeW9EyMbi74PLnuhFtpsQCKgVl5IXzHOrUAZq68DQiJDj4NOA3C5mhLM2KcXyRxuZa6kY8",
+  "accept: */*",
+  "cache-control: no-cache",
+  "content-type: application/json"
+  ),
+  ));
+  
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
+  $sql="UPDATE user_details SET otp='".$otp."' WHERE phone='".$no."' OR email='".$no."'";
+  $result=mysqli_query($db,$sql);
+  curl_close($curl);
+	$_SESSION['username'] = $no;
+	header("Location:../Register/forgotpwd_otp.php");
+        	exit();
+}
+}
+
+?>
+
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
