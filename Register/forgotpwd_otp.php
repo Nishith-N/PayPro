@@ -4,10 +4,20 @@ or die('Error connecting to MySQL server.');
 session_start();
 
 $username=$_SESSION['username'];
+$sql = "SELECT otp FROM user_details WHERE phone='".$username."' limit 1";
+		$result=mysqli_query($db,$sql);
+		$row=mysqli_fetch_row($result);
+		$otp=$row[0];
 
-if(isset($_POST['submit']))
+if(isset($_POST['submit_btn']))
 {
-	
+	$typed=$_POST['typed_otp'];
+	if($typed==$otp)
+	{
+		$_SESSION['username'] = $username;
+		header("Location:../Register/forgotpwd_reset.php");
+		exit();
+	}
 }
 
 ?>
