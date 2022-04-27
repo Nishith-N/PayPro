@@ -17,6 +17,7 @@ or die('Error connecting to MySQL server.');
 			if(isset($_POST['submit_btn']))
 			{
 				$typed_otp=$_POST['typed_otp'];
+				
 				$sql="SELECT otp from user_details WHERE phone='".$username."' OR email='".$username."'";
 				$result=mysqli_query($db,$sql);
 				$row=mysqli_fetch_row($result);
@@ -31,8 +32,17 @@ or die('Error connecting to MySQL server.');
 				$d=date("Y-m-d",$t);
 				
 
-				$sql="CREATE TABLE IF NOT EXISTS trans_hist ( pay_id INT NOT NULL , pay_username BIGINT NOT NULL, amount BIGINT NOT NULL,dates DATE NOT NULL,reasons LONGTEXT NOT NULL)";
+				$sql="CREATE TABLE IF NOT EXISTS trans_hist ( pay_id INT NOT NULL , pay_username BIGINT NOT NULL,pay_name VARCHAR(50) NOT NULL, amount BIGINT NOT NULL,dates DATE NOT NULL,reasons LONGTEXT NOT NULL)";
 				$result=mysqli_query($db,$sql);
+				$sql="SELECT fname from user_details WHERE phone='".$phno."'";
+				$result=mysqli_query($db,$sql);
+				$row=mysqli_fetch_row($result);
+				$fname=$row[0];
+				$sql="SELECT lname from user_details WHERE phone='".$phno."'";
+				$result=mysqli_query($db,$sql);
+				$row=mysqli_fetch_row($result);
+				$lname=$row[0];
+				$name=$fname." ".$lname;
 
 
 				$leftamount=$mywallet-$amount;
@@ -44,7 +54,7 @@ or die('Error connecting to MySQL server.');
 				$result=mysqli_query($db,$sql);
 				if($result)
 				{
-				$sql="INSERT INTO trans_hist (pay_id, pay_username, amount,dates,reasons) VALUES ($pay_id, $phno,$amount,'$d','$reason')";
+				$sql="INSERT INTO trans_hist (pay_id, pay_username,pay_name, amount,dates,reasons) VALUES ($pay_id, $phno,'$name',$amount,'$d','$reason')";
   				$result=mysqli_query($db,$sql);
 				$_SESSION['username'] = $username;
 				header("Location:../Transaction/success.php");

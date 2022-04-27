@@ -17,7 +17,23 @@ $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$u
   $row=mysqli_fetch_row($result);
   $disp=$row[0];
 $otp=1234;
-if($flag!=1)
+if(isset($_POST['submit_btn']))
+{
+  $flag=3;
+  
+  $search=$_POST['search2'];
+  echo $search;
+  $sql="SELECT tr_id FROM trans_hist WHERE pay_name LIKE '%".$search."%' AND pay_id='".$pay_id."'";
+  $result=mysqli_query($db,$sql);
+  $num=mysqli_num_rows($result);
+  if($num==0)
+  {
+    $sql="SELECT tr_id FROM trans_hist WHERE pay_username='".$search."' AND pay_id='".$pay_id."'";
+  $result=mysqli_query($db,$sql);
+  $num=mysqli_num_rows($result);
+  }
+}
+if($flag==0)
 {
 $sql="SELECT tr_id FROM trans_hist WHERE pay_id='".$pay_id."'";
 $result=mysqli_query($db,$sql);
@@ -110,7 +126,7 @@ if(isset($_POST['signout']))
 </head>
 <body>
 
-<header id="header" style="margin-top: -22px;" class="fixed-top ">
+<!-- <header id="header" style="margin-top: -22px;" class="fixed-top ">
         <div class="container d-flex align-items-center">  
           <section>
             <span class="full-text" >
@@ -165,7 +181,7 @@ if(isset($_POST['signout']))
             </span>
           </section>
         </div>
-      </header> 
+      </header>  -->
     
 
       <form method="post" action="#">
@@ -176,9 +192,9 @@ if(isset($_POST['signout']))
         <input type="submit" style="margin-left: 950px;margin-top: -80px;" value="SEARCH" name="search" id="search" class="search_btn" >
       </form>
       <br>
-      <form class="example" action="/action_page.php" style="margin:auto;max-width:300px;max-height: 30px;">
+      <form class="form-group" action="#" style="margin:auto;max-width:300px;max-height: 30px;" method="post">
         <input type="text" placeholder="Search.." name="search2">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <input type="submit" name="submit_btn" class="btn float-right add_contact_btn" id="submit_btn">
       </form>
       <br><br>
       <?php
