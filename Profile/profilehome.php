@@ -5,6 +5,10 @@ or die('Error connecting to MySQL server.');
 session_start();
 $username=$_SESSION['username'];
 $_SESSION['username']=$username;
+$_SESSION['search_date']='';
+    $_SESSION['flag']=0;
+    $_SESSION['f_amount']=0;
+    $_SESSION['t_amount']=0;
 $pay_id=$_SESSION['pay_id'];
 
 if($username=='')

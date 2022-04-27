@@ -5,6 +5,10 @@ session_start();
 $pay_id=$_SESSION['pay_id'];
 $usernametest=$_SESSION['username'];
 echo $pay_id;
+$_SESSION['search_date']='';
+    $_SESSION['flag']=0;
+    $_SESSION['f_amount']=0;
+    $_SESSION['t_amount']=0;
 
 $phone=0;
 if($usernametest=='')

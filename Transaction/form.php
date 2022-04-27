@@ -204,7 +204,7 @@ if(isset($_POST['signout']))
         {
           $i=0;
           $tr_id=$row[$i];
-          echo $tr_id;
+          
           $sql1="SELECT pay_username FROM trans_hist WHERE tr_id='".$tr_id."'";
           $result1=mysqli_query($db,$sql1);
           if(mysqli_num_rows($result1))

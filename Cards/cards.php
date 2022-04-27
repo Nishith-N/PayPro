@@ -4,6 +4,10 @@ or die('Error connecting to MySQL server.');
 session_start();
 $username=$_SESSION['username'];
 $pay_id=$_SESSION['pay_id'];
+$_SESSION['search_date']='';
+    $_SESSION['flag']=0;
+    $_SESSION['f_amount']=0;
+    $_SESSION['t_amount']=0;
 if($username=='')
 {
   header("Location:../Home/home.html");

@@ -2,6 +2,10 @@
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 session_start();
+$_SESSION['search_date']='';
+    $_SESSION['flag']=0;
+    $_SESSION['f_amount']=0;
+    $_SESSION['t_amount']=0;
 $username=$_SESSION['username'];
 if($username=='')
 {
