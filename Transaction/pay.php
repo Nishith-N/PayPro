@@ -8,6 +8,8 @@ $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$u
 	$result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);
   $disp=$row[0];
+  $sql="DELETE FROM trans_hist WHERE dates < now() - interval 30 DAY";
+$result=mysqli_query($db,$sql);
 if($username=='')
 {
   header("Location:../Home/home.html");

@@ -10,6 +10,8 @@ $_SESSION['search_date']='';
     $_SESSION['f_amount']=0;
     $_SESSION['t_amount']=0;
 $pay_id=$_SESSION['pay_id'];
+$sql="DELETE FROM trans_hist WHERE dates < now() - interval 30 DAY";
+$result=mysqli_query($db,$sql);
 
 if($username=='')
 {

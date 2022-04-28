@@ -13,7 +13,8 @@ if($username=='')
         exit(); 
 }
 $_SESSION['username']=$username;
-
+$sql="DELETE FROM trans_hist WHERE dates < now() - interval 30 DAY";
+$result=mysqli_query($db,$sql);
 $sql="SELECT pay_id FROM user_details WHERE phone='".$username."' OR email='".$username."'";
 $result=mysqli_query($db,$sql);
 

@@ -12,6 +12,8 @@ $t_amount=$_SESSION['t_amount'];
 $pay_id=$_SESSION['pay_id'];
 $flag=$_SESSION['flag'];
 $search_date=$_SESSION['search_date'];
+$sql="DELETE FROM trans_hist WHERE dates < now() - interval 30 DAY";
+$result=mysqli_query($db,$sql);
 $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
 	$result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);

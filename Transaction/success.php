@@ -5,6 +5,8 @@ or die('Error connecting to MySQL server.');
 		session_start();
     $username=$_SESSION['username'];
     $_SESSION['varname'] = $username;
+    $sql="DELETE FROM trans_hist WHERE dates < now() - interval 30 DAY";
+$result=mysqli_query($db,$sql);
 
     if(isset($_POST['gotohome_btn']))
     {

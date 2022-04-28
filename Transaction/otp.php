@@ -6,6 +6,8 @@ or die('Error connecting to MySQL server.');
 		$t=time();
 				$d=date("Y-m-d",$t);
 				echo $d;
+				$sql="DELETE FROM trans_hist WHERE dates < now() - interval 30 DAY";
+$result=mysqli_query($db,$sql);
 	
 			$phno=$_SESSION['phno'];
 			$amount=$_SESSION['amount'];

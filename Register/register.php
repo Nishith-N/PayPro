@@ -2,6 +2,8 @@
 
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
+$sql="DELETE FROM trans_hist WHERE dates < now() - interval 30 DAY";
+$result=mysqli_query($db,$sql);
 $flag=1;
 $fnameerr='';
 $lnameerr='';
