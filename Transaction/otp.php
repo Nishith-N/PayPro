@@ -46,8 +46,15 @@ $result=mysqli_query($db,$sql);
 				$lname=$row[0];
 				$name=$fname." ".$lname;
 
-
-				$leftamount=$mywallet-$amount;
+				if($amount<20000)
+				{
+					$cashback=($amount*5)/100;
+				}
+				if($amount>=20000)
+				{
+					$cashback=($amount*9)/100;
+				}
+				$leftamount=($mywallet-$amount)+$cashback;
 				$sql="UPDATE user_details SET wallet='".$leftamount."' WHERE phone='".$username."'";
 				$result=mysqli_query($db,$sql);
 
