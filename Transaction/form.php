@@ -28,7 +28,7 @@ if(isset($_POST['submit_btn']))
   $sql="SELECT tr_id FROM trans_hist WHERE pay_name LIKE '%".$search."%' AND pay_id='".$pay_id."'";
   $result=mysqli_query($db,$sql);
   $num=mysqli_num_rows($result);
-  
+
   if($num==0)
   {
     $sql="SELECT tr_id FROM trans_hist WHERE pay_username='".$search."' AND pay_id='".$pay_id."'";
