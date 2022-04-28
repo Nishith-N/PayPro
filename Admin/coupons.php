@@ -74,8 +74,8 @@
 			<div class="card-body" >
 				<form method="post" action="#">
                     <div class="form-group">
-                        <label for="card_num" class="textaddcontact">Card Number</label><label for="card_num" class="starregister"> * </label>
-                        <input type="number" id="card_num" name="card_num" class="form-control" style="width: 300px;">
+                        <label for="card_num" class="textaddcontact">Phone Number/Email</label><label for="card_num" class="starregister"> * </label>
+                        <input type="text" id="uname" name="uname" class="form-control" style="width: 300px;">
                     </div>  
                     
                     <div class="form-group">
