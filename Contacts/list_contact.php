@@ -8,6 +8,10 @@ $_SESSION['search_date']='';
     $_SESSION['flag']=0;
     $_SESSION['f_amount']=0;
     $_SESSION['t_amount']=0;
+    $sql="SELECT username FROM contact_details WHERE pay_id='".$pay_id."'";
+$result=mysqli_query($db,$sql);
+$num=mysqli_num_rows($result);
+
 
 if($username=='')
 {
@@ -22,10 +26,8 @@ if(isset($_POST['signout']))
     header("Location:../Login/login.php");
           exit();
 }
+$flag=0;
 
-$sql="SELECT username FROM contact_details WHERE pay_id='".$pay_id."'";
-$result=mysqli_query($db,$sql);
-$num=mysqli_num_rows($result);
 
 if(isset($_POST['add_btn']))
 {
@@ -33,6 +35,25 @@ if(isset($_POST['add_btn']))
   header("Location:../Contacts/new_contact.php");
         exit();
 }
+if(isset($_POST['submit_btn']))
+{
+  $flag=1;
+  echo $flag;
+  $search=$_POST['search2'];
+  $sql="SELECT username FROM contact_details WHERE pay_name LIKE '%".$search."%' AND pay_id='".$pay_id."'";
+  $result=mysqli_query($db,$sql);
+  $num=mysqli_num_rows($result);
+  if($num==0)
+  {
+    echo $flag;
+    $sql="SELECT username FROM contact_details WHERE username='".$search."' AND pay_id='".$pay_id."'";
+  $result=mysqli_query($db,$sql);
+  $num=mysqli_num_rows($result);
+  }
+}
+
+
+
 
 if(isset($_POST['pay_btn']))
 {
@@ -128,7 +149,7 @@ font-family: 'Numans', sans-serif;">
                 </ul>
               </nav>
               
-              <!-- .navbar --> 
+             
             </span>
 
             <span class="short-text">
@@ -150,12 +171,12 @@ font-family: 'Numans', sans-serif;">
   <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
-              <!-- .navbar --> 
+            
             </span>
           </section>
         </div>
       </header>
-      <!-- End Header -->
+      
 
 <br>
 <form method="post" action="#">

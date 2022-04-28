@@ -32,7 +32,7 @@ if(isset($_POST['submit_btn']))
 	$row=mysqli_fetch_row($result);
 	$lname=$row[0];
 
-	$name=$fname.$lname;
+	$name=$fname." ".$lname;
 
 	$sql="SELECT pay_id FROM user_details WHERE email='".$uname."' OR phone='".$uname."'";
 	$result=mysqli_query($db,$sql);
