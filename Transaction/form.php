@@ -40,14 +40,7 @@ if($flag==0)
 {
 $sql="SELECT tr_id FROM trans_hist WHERE pay_id='".$pay_id."'";
 $result=mysqli_query($db,$sql);
-if($result==FALSE)
-{
-  $num=0;
-}
-else
-{
 $num=mysqli_num_rows($result);
-}
 }
 
 if($username=='')
@@ -136,7 +129,7 @@ if(isset($_POST['signout']))
 </head>
 <body>
 
-<header id="header" style="margin-top: -22px;" class="fixed-top ">
+<!-- <header id="header" style="margin-top: -22px;" class="fixed-top ">
         <div class="container d-flex align-items-center">  
           <section>
             <span class="full-text" >
@@ -191,7 +184,7 @@ if(isset($_POST['signout']))
             </span>
           </section>
         </div>
-      </header> 
+      </header>  -->
     
 
       <form method="post" action="#">
