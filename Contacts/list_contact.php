@@ -171,6 +171,11 @@ font-family: 'Numans', sans-serif;">
 <form method="post" action="#">
   <input type="submit" style="margin-left: 50px" value="UPDATE CONTACTS" name="update_btn" id="update_btn" class="updatecontacts_btn" >
 </form>
+
+<form class="form-group" action="#" style="margin:auto;max-width:313px;max-height: 30px;" method="post">
+	<input type="text" placeholder="Search.." name="search2" style="height: 27px;" >
+	<input type="submit" name="submit_btn" class="btn float-right searchbtn" id="submit_btn">
+  </form>
 <?php
 $i=0;
 if($num==0)

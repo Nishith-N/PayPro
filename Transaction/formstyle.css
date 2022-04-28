@@ -276,6 +276,23 @@ background-color: white;
     cursor: pointer;
     }
 
+    .searchbtn{
+      color: black;
+      background-color: #892883;
+      width: 110px;
+      height: 32px;
+      font-size: 13px;
+      color: white;
+      border-color: white;
+      }
+      
+  .searchbtn:hover{
+      color: white;
+      background-color: #F8B84E;
+      border-color: white;
+      cursor: pointer;
+      }
+
 
 
     .flip-card {

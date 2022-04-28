@@ -195,16 +195,16 @@ if(isset($_POST['signout']))
     
 
       <form method="post" action="#">
-        <input type="submit" style="margin-left: 500px;margin-top: 180px;" value="PAY" name="pay" id="pay" class="pay_btn" >
+        <input type="submit" style="margin-left: 400px;margin-top: 180px;" value="PAY" name="pay" id="pay" class="pay_btn" >
       </form>
       <br>
       <form method="post" action="#">
-        <input type="submit" style="margin-left: 950px;margin-top: -80px;" value="SEARCH" name="search" id="search" class="search_btn" >
+        <input type="submit" style="margin-left: 1000px;margin-top: -80px;" value="SEARCH" name="search" id="search" class="search_btn" >
       </form>
       <br>
-      <form class="form-group" action="#" style="margin:auto;max-width:300px;max-height: 30px;" method="post">
+      <form class="form-group" action="#" style="margin:auto;max-width:313px;max-height: 30px;" method="post">
         <input type="text" placeholder="Search.." name="search2">
-        <input type="submit" name="submit_btn" class="btn float-right add_contact_btn" id="submit_btn">
+        <input type="submit" name="submit_btn" class="btn float-right searchbtn" id="submit_btn">
       </form>
       <br><br>
       <?php
