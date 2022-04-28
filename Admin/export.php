@@ -71,24 +71,7 @@ if(isset($_POST["export_data"])) {
                     <td><?php echo $developer ['reasons']; ?></td>   
                     </tr>
                  <?php } ?>
-                 <?php foreach($developer_records as $developer) { ?>
-                    <tr>
-                    <td><?php echo $developer ['pay_username']; ?></td>
-                    <td><?php echo $developer ['pay_name']; ?></td>
-                    <td><?php echo $developer ['amount']; ?></td>   
-                    <td><?php echo $developer ['dates']; ?></td>
-                    <td><?php echo $developer ['reasons']; ?></td>   
-                    </tr>
-                 <?php } ?>
-                 <?php foreach($developer_records as $developer) { ?>
-                    <tr>
-                    <td><?php echo $developer ['pay_username']; ?></td>
-                    <td><?php echo $developer ['pay_name']; ?></td>
-                    <td><?php echo $developer ['amount']; ?></td>   
-                    <td><?php echo $developer ['dates']; ?></td>
-                    <td><?php echo $developer ['reasons']; ?></td>   
-                    </tr>
-                 <?php } ?>
+                 
             </tbody>
         </table>
     </div>
