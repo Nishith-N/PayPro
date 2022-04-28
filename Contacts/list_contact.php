@@ -176,6 +176,7 @@ font-family: 'Numans', sans-serif;">
 	<input type="text" placeholder="Search.." name="search2" style="height: 27px;" >
 	<input type="submit" name="submit_btn" class="btn float-right searchbtn" id="submit_btn">
   </form>
+  <br><br>
 <?php
 $i=0;
 if($num==0)
