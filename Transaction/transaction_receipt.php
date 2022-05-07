@@ -65,7 +65,7 @@ $sql="SELECT fname from user_details WHERE phone='".$username."'";
 			<div class="card-body" >
 				<table  style="width: 100%;border-spacing: 20px;color:black">
                     <tr>
-                        <td style="padding-bottom: 3px;">Payer Information</td>
+                        <td style="padding-bottom: 3px;color: #F8B84E;">Payer Information</td>
                     </tr>
                     <tr >
                         <td style="padding-left: 20px;padding-bottom: 3px;">'.$payer_name.'</td>
@@ -75,7 +75,7 @@ $sql="SELECT fname from user_details WHERE phone='".$username."'";
                         <td style="padding-left: 20px;padding-bottom: 9px;">'.$username.'</td>
                     </tr>
                     <tr>
-                        <td style="padding-bottom: 3px;">Payee Information</td>
+                        <td style="padding-bottom: 3px;color: #F8B84E;">Payee Information</td>
                     </tr>
                     <tr >
                         <td style="padding-left: 20px;padding-bottom: 3px;">'.$payee_name.'</td>
@@ -97,11 +97,20 @@ $sql="SELECT fname from user_details WHERE phone='".$username."'";
                     <tr>
                         <td style="padding-bottom: 3px;">CashBack: ₹ '.$cashback.'</td>
                     </tr>
+                    <tr>
+                        <td style="padding-left: 350px;padding-top:20px;">
+                            <form method="post" action="#">
+                                <input type="submit"  value="Go To Home" id="gotohome_btn" name="gotohome_btn" class="home" >
+                            </form>
+                        </td>
+                    </tr>
                 </table>
+                
 			</div>';
             ?>
          
 		</div>
+        
 	</div>
 </div>
 <br><br>

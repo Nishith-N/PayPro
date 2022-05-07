@@ -135,3 +135,20 @@ table{
     padding-left: 30px;
     padding: 40px;
 }
+
+.home{
+  background-color: purple;
+  color: white;  
+  padding: 18px 1px;
+  width: 120px;
+  border-radius: 12px;
+  border-color: white;
+}
+
+
+.home:hover {
+    color: white;
+    background-color: #F8B84E;
+    border-color: white;
+    cursor: pointer;
+}
