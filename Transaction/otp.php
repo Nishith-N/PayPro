@@ -66,7 +66,13 @@ $result=mysqli_query($db,$sql);
 				$sql="INSERT INTO trans_hist (pay_id, pay_username,pay_name, amount,dates,reasons) VALUES ($pay_id, $phno,'$name',$amount,'$d','$reason')";
   				$result=mysqli_query($db,$sql);
 				$_SESSION['username'] = $username;
-				header("Location:../Transaction/success.php");
+				$_SESSION['pay_uname'] = $phno;
+				$_SESSION['amount'] = $amount;
+				$_SESSION['cashback'] = $cashback;
+				$_SESSION['dates'] = $d;
+				$_SESSION['reason'] = $reason;
+				$_SESSION['name'] = $name;
+				header("Location:../Transaction/transaction_receipt.php");
         		exit();
 				}
 				
