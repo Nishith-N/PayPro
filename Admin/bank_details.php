@@ -100,7 +100,7 @@
                         <input type="text" id="phno" name="phno" class="form-control" style="width: 300px;">
                     </div>
                     <div class="form-group">
-                        <label for="cvv" class="textaddcontact">cvv</label><label for="cvv" class="starregister"> * </label>
+                        <label for="cvv" class="textaddcontact">CVV</label><label for="cvv" class="starregister"> * </label>
                         <input type="text" id="cvv" name="cvv" class="form-control" style="width: 300px;">
                     </div>                   
 
