@@ -34,7 +34,7 @@ $result=mysqli_query($db,$sql);
 				$d=date("Y-m-d",$t);
 				
 
-				$sql="CREATE TABLE IF NOT EXISTS trans_hist (tr_id INT NOT NULL AUTO_INCREMENT, pay_id INT NOT NULL , pay_username BIGINT NOT NULL,pay_name VARCHAR(50) NOT NULL, amount BIGINT NOT NULL,dates DATE NOT NULL,reasons LONGTEXT NOT NULL)";
+				$sql="CREATE TABLE IF NOT EXISTS trans_hist (tr_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, pay_id INT NOT NULL , pay_username BIGINT NOT NULL,pay_name VARCHAR(50) NOT NULL, amount BIGINT NOT NULL,dates DATE NOT NULL,reasons LONGTEXT NOT NULL)";
 				$result=mysqli_query($db,$sql);
 				$sql="SELECT fname from user_details WHERE phone='".$phno."'";
 				$result=mysqli_query($db,$sql);
