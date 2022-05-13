@@ -47,7 +47,7 @@ if(isset($_POST['submit_btn']))
               <nav id="navbar" class="navbar" style="margin-top: 0%;">
                 <ul style="padding-top: 20px;">
                   <li><h1 class="logo me-auto" style="margin-left: -200px;"><a href="../Userhome/userhome.php"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
-                  <ul style="margin-left: 57%;">
+                  <ul style="margin-left: 35%;">
                   <li><a class="nav-link scrollto " href="../Userhome/userhome.php">Home</a></li>
                     <li><a class="nav-link scrollto " href="../Admin/bank_details.php">Bank Details</a></li>
                     <li><a class="nav-link scrollto " href="../Admin/block_users.php">Block Users</a></li>

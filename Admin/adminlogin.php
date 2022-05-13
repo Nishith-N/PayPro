@@ -21,48 +21,16 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 	else
 	{
 
-		if(preg_match("/^[0-9]+$/",$username))
+	if($username=='admin' && $pwd=='1234')
 	{
-		$sql="SELECT * FROM user_details WHERE phone='".$username."' AND password1='".$pwd."' limit 1";
-	}
-	else{
-		$sql="SELECT * FROM user_details WHERE email='".$username."' AND password1='".$pwd."' limit 1";
-	}
-
-	
-
-	$result=mysqli_query($db,$sql);
-	
-	if(mysqli_num_rows($result)==1)
-    {
-		$sql = "SELECT pay_id FROM user_details WHERE phone='".$username."' AND password1='".$pwd."' limit 1";
-		$result=mysqli_query($db,$sql);
-		$row=mysqli_fetch_row($result);
-		$_SESSION['varname'] = $username;
-		$sql="UPDATE login_attempt SET attempt=1 WHERE phone='".$username."' OR email='".$username."'";
-		$result=mysqli_query($db,$sql);
-        header("Location:../Userhome/userhome.php");
+		header("Location:../Admin/block_users.php");
         exit();
-    }
-    else{
-		$sql = "SELECT attempt FROM login_attempt WHERE phone='".$username."' OR email='".$username."'";
-		$att=mysqli_query($db,$sql);
-		if(mysqli_num_rows($att))
-      	{
-          $row1=mysqli_fetch_row($att);
-	        $att_1=$row1[0];
-        }
-		if($att_1==3){
-			$sql="UPDATE login_attempt SET attempt=1 WHERE phone='".$username."' OR email='".$username."'";
-			$result=mysqli_query($db,$sql);
-			header("Location:../Login/login_err.php");
-        	exit();
-		}
-        $errmsg= "Wrong password! Attempts remaining:";
-		$errmsg.= strval(3-$att_1);
-		$sql="UPDATE login_attempt SET attempt=attempt+1 WHERE phone='".$username."' OR email='".$username."'";
-		$result=mysqli_query($db,$sql);
-    }
+	}
+	
+
+
+	
+	
 }
 
 	}
@@ -143,7 +111,7 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn">
+						<input type="submit" value="Login" class="btn float-right login_btn" name="submit_btn">
 					</div>
 				</form>
 				<span style="color: #ffcccb"><?php echo $errmsg ?></span>

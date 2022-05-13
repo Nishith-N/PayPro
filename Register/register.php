@@ -63,6 +63,7 @@ $sql="CREATE TABLE IF NOT EXISTS user_details ( pay_id INT NOT NULL AUTO_INCREME
   $email=$_POST['email'];
   $phone=$_POST['phone'];
   $pwd=$_POST['pwd'];
+  $numlength = strlen((string)$phone);
   $block=0;
   
   $primary_card=0;
@@ -128,7 +129,11 @@ $sql="CREATE TABLE IF NOT EXISTS user_details ( pay_id INT NOT NULL AUTO_INCREME
     $phoneerr = "Phone is required"; 
     $flag=0;
   }
-
+  if($numlength!=10)
+  {
+    $phoneerr = "Phone No is not valid"; 
+    $flag=0;
+  }
   
 
   
