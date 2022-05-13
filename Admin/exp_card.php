@@ -2,7 +2,7 @@
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 
-$sql_query = "SELECT pay_username,pay_name,amount,dates,reasons FROM trans_hist";
+$sql_query = "SELECT pay_id,card_name as CardHolder,card_number,cvv,validto from card_details ";
 $resultset = mysqli_query($db, $sql_query) or die("database error:". mysqli_error($db));
 $developer_records = array();
 while( $rows = mysqli_fetch_assoc($resultset) ) {
@@ -10,7 +10,7 @@ while( $rows = mysqli_fetch_assoc($resultset) ) {
 }	
 
 if(isset($_POST["export_data"])) {	
-	$filename = "trans_hist_".date('Ymd') . ".xls";			
+	$filename = "card_details_".date('Ymd') . ".xls";			
 	header("Content-Type: application/vnd.ms-excel");
 	header("Content-Disposition: attachment; filename=\"$filename\"");	
 	$show_coloumn = false;
@@ -54,21 +54,21 @@ if(isset($_POST["export_data"])) {
         <table border="1" class="styled-table">
             <thead>
             <tr>
-                <th>Payer</th>
-                <th>Payee</th>
-                <th>Amount</th>	
-                <th>Date</th>
-                <th>Reason</th>
+                <th>Pay Id</th>
+                <th>CardHolder</th>
+                <th>Card Number</th>
+                <th>Cvv</th>
+                <th>Valid upto</th>	
             </tr>
             </thead>
             <tbody>
                 <?php foreach($developer_records as $developer) { ?>
                     <tr>
-                    <td><?php echo $developer ['pay_username']; ?></td>
-                    <td><?php echo $developer ['pay_name']; ?></td>
-                    <td><?php echo $developer ['amount']; ?></td>   
-                    <td><?php echo $developer ['dates']; ?></td>
-                    <td><?php echo $developer ['reasons']; ?></td>   
+                    <td><?php echo $developer ['pay_id']; ?></td>
+                    <td><?php echo $developer ['CardHolder']; ?></td>
+                    <td><?php echo $developer ['card_number']; ?></td>
+                    <td><?php echo $developer ['cvv']; ?></td>
+                    <td><?php echo $developer ['validto']; ?></td>      
                     </tr>
                  <?php } ?>
                  
