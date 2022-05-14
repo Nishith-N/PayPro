@@ -47,7 +47,7 @@ if(isset($_POST["export_data"])) {
         <div >
             <div>	
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">					
-                    <button type="submit" id="export_data" name='export_data' value="Export to excel">Export to excel</button>
+                    <button type="submit" id="export_data" name='export_data' value="Export to excel" class="home">Export to excel</button>
                 </form>
             </div>
         </div>				  
