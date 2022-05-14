@@ -49,7 +49,6 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 		$block_check=$fecth1[0];
 		if($block_check==0)
 		{
-		$rows2=mysqli_num_rows($result2);
 		$_SESSION['varname'] = $username;
 		$sql="UPDATE login_attempt SET attempt=1 WHERE phone='".$username."' OR email='".$username."'";
 		$result=mysqli_query($db,$sql);

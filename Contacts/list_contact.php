@@ -1,4 +1,6 @@
 <?php
+$pay_name="";
+$nickname="";
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 session_start();

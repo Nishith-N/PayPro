@@ -1,4 +1,7 @@
 <?php
+$pay_username="";
+$sent_amount=0;
+$reasons="";
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 

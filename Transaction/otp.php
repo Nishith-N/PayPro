@@ -1,4 +1,5 @@
 <?php
+$cashback=0;
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 		session_start();

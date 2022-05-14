@@ -5,7 +5,7 @@ or die('Error connecting to MySQL server.');
 $sql_query = "SELECT pay_id, phone, email, fname, lname,addresss,city, zip, state1, primary_card, wallet FROM user_details";
 $resultset = mysqli_query($db, $sql_query) or die("database error:". mysqli_error($db));
 $developer_records = array();
-while( $rows = mysqli_fetch_assoc($resultset) ) {
+while($rows = mysqli_fetch_assoc($resultset) ) {
 	$developer_records[] = $rows;
 }	
 

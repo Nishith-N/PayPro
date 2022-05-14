@@ -1,4 +1,8 @@
 <?php
+$card_name="";
+$card_number=0;
+$validto="";
+$testcardnum=0;
 $db = mysqli_connect('localhost','root','','payprodb')
 or die('Error connecting to MySQL server.');
 session_start();

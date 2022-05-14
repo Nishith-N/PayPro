@@ -28,7 +28,8 @@ if(isset($_POST['submit_btn']))
     }
     $sql="SELECT nickname FROM contact_details WHERE username='".$olduname."' AND pay_id='".$pay_id."'";
     $result=mysqli_query($db,$sql);
-$row=mysqli_fetch_row($result);
+    $row=mysqli_fetch_row($result);
+    $row1=mysqli_num_rows($result);
     if($inick=='')
     {
         $inick=$row[0];
@@ -37,11 +38,11 @@ $row=mysqli_fetch_row($result);
     echo $newuname;
     $sql="SELECT acc_number FROM bank_details WHERE phone='".$newuname."'";
     $result1=mysqli_query($db,$sql);
-$row=mysqli_fetch_row($result);
+    $row2=mysqli_num_rows($result1);
 
    
 
-    if($result1!=0 && $result!=0)
+    if($row1!=0 && $row2!=0)
     {
 
         $sql="UPDATE contact_details SET username='".$newuname."',nickname='".$inick."' WHERE username='".$olduname."' AND pay_id='".$pay_id."'";
