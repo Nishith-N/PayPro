@@ -55,3 +55,19 @@ align-content: center;
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid #892883;
 }
+
+.home{
+    background-color: purple;
+    color: white;    
+    padding: 10px 1px;
+    width: 130px;
+    border-radius: 12px;
+    border-color: white;
+  }  
+  
+  .home:hover {
+      color: white;
+      background-color: #F8B84E;
+      border-color: white;
+      cursor: pointer;
+  }
