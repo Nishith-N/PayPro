@@ -48,6 +48,10 @@ align-content: center;
     border-bottom: 1px solid #dddddd;
 }
 
+.styled-table tbody tr:nth-of-type(odd) {
+    background-color: #C3E8FA;
+  }
+  
 .styled-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
