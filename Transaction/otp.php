@@ -100,6 +100,32 @@ $result=mysqli_query($db,$sql);
 	<link rel="stylesheet" type="text/css" href="otpstyle.css">   
 </head>
 <body>
+<header id="header" style="margin-top: -9px;margin-left: -469px;" class="fixed-top ">
+        <div class="container d-flex align-items-center">  
+          <section>
+            <span class="full-text" >
+              <nav id="navbar" class="navbar" style="margin-top: 0%;">
+                <ul>
+                  <li><h1 class="logo me-auto" ><a href="../Userhome/userhome.php"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>
+                </ul>
+              </nav>
+              <br>
+              <!-- .navbar --> 
+            </span>
+
+            <span class="short-text">
+              <nav id="navbar" class="navbar">
+                <ul>
+                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>                  
+                </ul>
+              </nav>
+              <br>
+              <!-- .navbar --> 
+            </span>
+          </section>
+        </div>
+      </header>
+      <!-- End Header -->
     
 <div class="container">
     
