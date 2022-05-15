@@ -43,7 +43,7 @@ if(isset($_POST["export_data"])) {
     <center>
     <div class="container">	
         <div><img src="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/46/d1/61/46d16165-c305-5c6f-7626-1a60208042f3/source/512x512bb.jpg" class="logo"></div>
-        <h1>Transaction Details</h1>
+        <h1>Card Details</h1>
         <div >
             <div>	
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">					
