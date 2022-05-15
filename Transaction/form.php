@@ -10,6 +10,15 @@ $flag=0;
 $num=0;
 $search_date='';
 $username=$_SESSION['username'];
+if($username=='')
+{
+  header("Location:../Home/home.html");
+        exit(); 
+}
+
+echo 0;
+echo $username;
+echo 1;
 $f_amount=$_SESSION['f_amount'];
 $t_amount=$_SESSION['t_amount'];
 $pay_id=$_SESSION['pay_id'];
@@ -17,11 +26,12 @@ $flag=$_SESSION['flag'];
 $search_date=$_SESSION['search_date'];
 $sql="DELETE FROM trans_hist WHERE dates < now() - interval 30 DAY";
 $result=mysqli_query($db,$sql);
+
 $sql="SELECT wallet FROM user_details WHERE phone='".$username."' OR email='".$username."'";
 	$result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);
   $disp=$row[0];
-$otp=1234;
+
 if(isset($_POST['submit_btn']))
 {
   $flag=3;
@@ -53,11 +63,7 @@ $num=mysqli_num_rows($result);
 }
 }
 
-if($username=='')
-{
-  header("Location:../Home/home.html");
-        exit(); 
-}
+
 if($flag==1)
 {
   if($f_amount!=0)
@@ -114,8 +120,8 @@ if(isset($_POST['search'])){
 if(isset($_POST['signout']))
 {
   session_destroy();
-    header("Location:../Login/login.php");
-          exit();
+  header("Location:../Login/login.php");
+  exit();
 }
 
 
