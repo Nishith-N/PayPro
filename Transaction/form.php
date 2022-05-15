@@ -213,7 +213,7 @@ if(isset($_POST['signout']))
       <?php
       
      
-      if($num==0)
+      if($num==0 || $flag==4)
       {
         
         print '

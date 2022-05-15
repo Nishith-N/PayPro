@@ -60,6 +60,15 @@ if(isset($_POST['submit_btn']))
     header("Location:../Transaction/form.php");
         exit(); 
   }
+  else
+  {
+    $flag=4;
+    
+    $_SESSION['flag']=$flag;
+
+    header("Location:../Transaction/form.php");
+        exit();
+  }
     }
     if($t_amount!=0 && $f_amount!=0)
     {
@@ -76,6 +85,15 @@ if(isset($_POST['submit_btn']))
 
     header("Location:../Transaction/form.php");
         exit(); 
+  }
+  else
+  {
+    $flag=4;
+    
+    $_SESSION['flag']=$flag;
+
+    header("Location:../Transaction/form.php");
+        exit();
   }
     }
   }
@@ -95,12 +113,23 @@ if(isset($_POST['submit_btn']))
     header("Location:../Transaction/form.php");
         exit(); 
   }
+  else
+  {
+    $flag=4;
+    
+    $_SESSION['flag']=$flag;
+
+    header("Location:../Transaction/form.php");
+        exit();
+  }
   }
   else if($day!='' && $month!='' && $year!='' && $t_amount==0 && $f_amount!=0)
   {
     $sql="SELECT pay_id FROM trans_hist WHERE dates < '".$search_date."' AND  amount='".$f_amount."'";
 	$result=mysqli_query($db,$sql);
   $num=mysqli_num_rows($result);
+  if($num!=0)
+  {
   
     $flag=2;
     $_SESSION['search_date']=$search_date;
@@ -110,6 +139,16 @@ if(isset($_POST['submit_btn']))
 
     header("Location:../Transaction/form.php");
         exit(); 
+  }
+  else
+  {
+    $flag=4;
+    
+    $_SESSION['flag']=$flag;
+
+    header("Location:../Transaction/form.php");
+        exit();
+  }
   
   }
   else
@@ -128,6 +167,15 @@ if(isset($_POST['submit_btn']))
 
     header("Location:../Transaction/form.php");
         exit(); 
+  }
+  else
+  {
+    $flag=4;
+    
+    $_SESSION['flag']=$flag;
+
+    header("Location:../Transaction/form.php");
+        exit();
   }
 }
 
