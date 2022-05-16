@@ -111,11 +111,11 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 						<input type="submit" value="Login" class="btn float-right login_btn" name="submit_btn">
 					</div>
 				</form>
-				<span style="color: #ffcccb"><?php echo $errmsg ?></span>   
-        <div class="d-flex justify-content-center links" style="padding-right: 130px;">
-          <a href="../Login/lohin.php" id="forgot_pwd">Login as User</a>
-        </div>     
+				<span style="color: #ffcccb"><?php echo $errmsg ?></span>       
 			</div>
+			<div class="d-flex justify-content-center links" style="padding-right: 230px;padding-bottom: 20px;">
+        <a href="../Login/login.php" id="forgot_pwd">Login as User</a>
+      </div>
           			
 		</div>
 	</div>
