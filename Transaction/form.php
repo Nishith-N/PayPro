@@ -321,7 +321,7 @@ if(isset($_POST['signout']))
                     
             </div>
           </div>
-        </div><br><br>
+        </div><br>
         </center>';
         }
       }
