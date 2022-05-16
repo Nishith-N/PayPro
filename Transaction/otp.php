@@ -116,7 +116,7 @@ $result=mysqli_query($db,$sql);
             <span class="short-text">
               <nav id="navbar" class="navbar">
                 <ul>
-                  <li><h1 class="logo me-auto" ><a href=""><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>                  
+                  <li><h1 class="logo me-auto" ><a href="../Userhome/userhome.php"><i style="font-size: 35px;"><strong>PayPro</strong></i></a></h1></li>                  
                 </ul>
               </nav>
               <br>
