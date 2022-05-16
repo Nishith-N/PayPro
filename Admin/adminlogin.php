@@ -67,7 +67,7 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 	<!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="sample6_style.css">
 	<title>PayPro-Admin Login</title>
 	<link rel="icon" href="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/46/d1/61/46d16165-c305-5c6f-7626-1a60208042f3/source/512x512bb.jpg" type="image/icon type">
     
@@ -107,18 +107,19 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 						</div>
 						<input type="password" class="form-control" placeholder="password" id="pwd" name="pwd">
 					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
-					</div>
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn" name="submit_btn">
 					</div>
 				</form>
-				<span style="color: #ffcccb"><?php echo $errmsg ?></span>
+				<span style="color: #ffcccb"><?php echo $errmsg ?></span>   
+        <div class="d-flex justify-content-center links" style="padding-right: 130px;">
+          <a href="../Login/lohin.php" id="forgot_pwd">Login as User</a>
+        </div>     
 			</div>
-			
+          			
 		</div>
 	</div>
+  
 </div>
 	</div>
 </body>
