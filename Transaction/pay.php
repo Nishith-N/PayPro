@@ -24,7 +24,11 @@ if(isset($_POST['submit_btn']))
 	$phno=$_POST['phno'];
 	$amount=$_POST['amount'];
   $reason=$_POST['reason'];
-  
+  if($phno==$username)
+  {
+    header("Location:../Transaction/error.php");
+    exit();
+  }
   $sql="SELECT block1 FROM user_details WHERE phone='".$phno."'";
   $result=mysqli_query($db,$sql);
   $row=mysqli_fetch_row($result);
