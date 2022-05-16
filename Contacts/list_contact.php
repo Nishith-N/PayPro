@@ -276,18 +276,33 @@ $i++;
 
 ?>
 
-<video width="320" height="240" controls>
-  <source src="paypro_d_demo.mp4" type="video/mp4">
-  <source src="movie.ogg" type="video/ogg">
-Your browser does not support the video tag.
-</video>
 <br>
+<center>
+<table style="border-spacing: 3px;padding-left: 10px;padding-right: 40px;">
+	<tr>
+		<th style="color: #F8B84E;">Add Contact</th>		
+		<th style="color: #F8B84E;">Delete Contact</th>
+	</tr>
+	<tr>
+		<td style="padding-left: 100px;padding-right:100px;">
+			<video width="520" height="320" controls>
+				<source src="paypro_a_demo.mp4" type="video/mp4">
+				<source src="movie.ogg" type="video/ogg">
+			  Your browser does not support the video tag.
+			  </video>
+		</td>
+		<td style="padding-left: 100px;padding-right:100px;">
+			<video width="520" height="320" controls>
+				<source src="paypro_d_demo.mp4" type="video/mp4">
+				<source src="movie.ogg" type="video/ogg">
+			  Your browser does not support the video tag.
+			  </video>
+		</td>
+	</tr>
+</table>
+</center>
 
-<video width="320" height="240" controls>
-  <source src="paypro_a_demo.mp4" type="video/mp4">
-  <source src="movie.ogg" type="video/ogg">
-Your browser does not support the video tag.
-</video>
+<br>
 
 
         <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>    

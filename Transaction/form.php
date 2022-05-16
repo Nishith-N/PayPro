@@ -328,11 +328,14 @@ if(isset($_POST['signout']))
         ?>
         <br>
         
-        <video width="320" height="240" controls>
-  <source src="paypro_tr_demo.mp4" type="video/mp4">
-  <source src="movie.ogg" type="video/ogg">
-Your browser does not support the video tag.
-</video>
+      <center>
+      <h3 style="color: #F8B84E;">Transaction Demo</h3>
+        <video width="520" height="320" controls>
+  			  <source src="paypro_tr_demo.mp4" type="video/mp4">
+  			  <source src="movie.ogg" type="video/ogg">
+			    Your browser does not support the video tag.
+		    </video>
+		  </center>
 <br><br>
 </body>
 </html>
