@@ -16,9 +16,7 @@ if($username=='')
         exit(); 
 }
 
-echo 0;
-echo $username;
-echo 1;
+
 $f_amount=$_SESSION['f_amount'];
 $t_amount=$_SESSION['t_amount'];
 $pay_id=$_SESSION['pay_id'];
