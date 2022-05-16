@@ -23,7 +23,7 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 
 	if($username=='admin' && $pwd=='1234')
 	{
-		header("Location:../Admin/block_users.php");
+		header("Location:../Admin/adminhome.php");
         exit();
 	}
 	

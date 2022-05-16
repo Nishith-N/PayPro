@@ -224,9 +224,6 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 						</div>
 						<input type="password" class="form-control" placeholder="password" id="pwd" name="pwd">
 					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
-					</div>
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
@@ -239,6 +236,9 @@ if(isset($_POST['uid']) && isset($_POST['pwd']))
 				</div>
 				<div class="d-flex justify-content-center links">
 					<a href="../Register/forgotpwd_username.php" id="forgot_pwd">Forgot your password?</a>
+				</div>
+				<div class="d-flex justify-content-center links">
+					<a href="../Admin/adminlogin.php" id="forgot_pwd">Login as Admin</a>
 				</div>
 			</div>
 		</div>
