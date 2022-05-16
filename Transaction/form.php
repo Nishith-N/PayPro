@@ -49,6 +49,35 @@ if(isset($_POST['submit_btn']))
   $num=mysqli_num_rows($result);
   }
 }
+
+if(isset($_POST['exp_btn']))
+{
+  $moy=date("Y-m");
+  $sql_query1 = "SELECT tr_id as Transaction_ID,pay_id as Pay_ID,pay_username as Pay_Username,pay_name as Payee_Name,amount as Amount,reasons as Reasons from trans_hist WHERE dates LIKE '%".$moy."%' AND pay_id='".$pay_id."'";
+$resultset = mysqli_query($db, $sql_query1) or die("database error:". mysqli_error($db));
+$developer_records = array();
+while( $rows = mysqli_fetch_assoc($resultset) ) {
+	$developer_records[] = $rows;
+}	
+$filename = "monthlyreport".date('Ymd') . ".xls";			
+	header("Content-Type: application/vnd.ms-excel");
+	header("Content-Disposition: attachment; filename=\"$filename\"");	
+	$show_coloumn = false;
+	if(!empty($developer_records)) {
+	  foreach($developer_records as $record) {
+		if(!$show_coloumn) {
+		  // display field/column names in first row
+		  echo implode("\t", array_keys($record)) . "\n";
+		  $show_coloumn = true;
+		}
+		echo implode("\t", array_values($record)) . "\n";
+	  }
+	}
+  else
+  {
+	exit;  
+  }
+}
 if($flag==0)
 {
 $sql="SELECT tr_id FROM trans_hist WHERE pay_id='".$pay_id."'";
@@ -214,7 +243,11 @@ if(isset($_POST['signout']))
       <form class="form-group" action="#" style="margin:auto;max-width:313px;max-height: 30px;" method="post">
         <input type="text" placeholder="Search.." name="search2">
         <input type="submit" name="submit_btn" class="btn float-right searchbtn" id="submit_btn">
+        
       </form>
+      <form class="form-group" action="#" style="margin:auto;max-width:313px;max-height: 30px;" method="post">
+      <input type="submit" name="exp_btn" class="btn float-right searchbtn" id="exp_btn" value="Export">
+</form>
       <br><br>
       <?php
       
