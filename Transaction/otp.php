@@ -100,7 +100,7 @@ $result=mysqli_query($db,$sql);
 	<link rel="stylesheet" type="text/css" href="otpstyle.css">   
 </head>
 <body>
-<!-- <header id="header" style="margin-top: -9px;margin-left: -469px;" class="fixed-top ">
+<header id="header" style="margin-top: -9px;margin-left: -469px;" class="fixed-top ">
         <div class="container d-flex align-items-center">  
           <section>
             <span class="full-text" >
@@ -124,7 +124,7 @@ $result=mysqli_query($db,$sql);
             </span>
           </section>
         </div>
-      </header> -->
+      </header> 
       <!-- End Header -->
     
 <div class="container">

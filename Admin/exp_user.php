@@ -87,6 +87,9 @@ if(isset($_POST["export_data"])) {
             </tbody>
         </table>
     </div>
+    <form action="../Admin/adminhome.php" method="post">					
+		<button type="submit" id="export_data" name='export_data' value="HOME" class="home">HOME</button>
+	</form>
 </center>
 </body>
 </html>

@@ -242,9 +242,9 @@ if(isset($_POST['signout']))
       <br>
       <form class="form-group" action="#" style="margin:auto;max-width:313px;max-height: 30px;" method="post">
         <input type="text" placeholder="Search.." name="search2">
-        <input type="submit" name="submit_btn" class="btn float-right searchbtn" id="submit_btn">
-        
+        <input type="submit" name="submit_btn" class="btn float-right searchbtn" id="submit_btn">        
       </form>
+      <br>
       <form class="form-group" action="#" style="margin:auto;max-width:313px;max-height: 30px;" method="post">
       <input type="submit" name="exp_btn" class="btn float-right searchbtn" id="exp_btn" value="Export">
 </form>
@@ -326,7 +326,7 @@ if(isset($_POST['signout']))
                     
             </div>
           </div>
-        </div>
+        </div><br><br>
         </center>';
         }
       }

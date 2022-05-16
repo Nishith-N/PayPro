@@ -62,7 +62,7 @@ or die('Error connecting to MySQL server.');
     <link rel="icon" href="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/46/d1/61/46d16165-c305-5c6f-7626-1a60208042f3/source/512x512bb.jpg" type="image/icon type">
 </head>
 <body>
-<!-- <header id="header" style="margin-top: -22px;" class="fixed-top ">
+ <header id="header" style="margin-top: -22px;" class="fixed-top ">
         <div class="container d-flex align-items-center">  
           <section>
             <span class="full-text" >
@@ -76,7 +76,7 @@ or die('Error connecting to MySQL server.');
                     <li><a class="nav-link scrollto " href="../Admin/unblock_users.php">Unblock Users</a></li>
                     <li><a class="nav-link scrollto active" href="../Admin/remove_users.php">Remove Users</a></li>
                     <li><a class="nav-link scrollto " href="../Admin/coupons.php">Coupons</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+                    <li><form method="post" action="../Home/home.html"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
                 </ul>
               </nav>
@@ -100,7 +100,7 @@ or die('Error connecting to MySQL server.');
                     <li><a class="nav-link scrollto " href="../Admin/unblock_users.php">Unblock Users</a></li>
                     <li><a class="nav-link scrollto active" href="../Admin/remove_users.php">Remove Users</a></li>
                     <li><a class="nav-link scrollto " href="../Admin/coupons.php">Coupons</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+                    <li><form method="post" action="../Home/home.html"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
             
@@ -108,7 +108,7 @@ or die('Error connecting to MySQL server.');
           </section>
         </div>
       </header>
-       -->
+     
 
 	  
 <div class="container-fluid mainhead">

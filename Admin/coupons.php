@@ -26,7 +26,7 @@
                     <li><a class="nav-link scrollto " href="../Admin/unblock_users.php">Unblock Users</a></li>
                     <li><a class="nav-link scrollto " href="../Admin/remove_users.php">Remove Users</a></li>
                     <li><a class="nav-link scrollto active" href="../Admin/coupons.php">Coupons</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+                    <li><form method="post" action="../Home/home.html"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
                   </ul>
                 </ul>
               </nav>
@@ -50,7 +50,7 @@
                     <li><a class="nav-link scrollto " href="../Admin/unblock_users.php">Unblock Users</a></li>
                     <li><a class="nav-link scrollto " href="../Admin/remove_users.php">Remove Users</a></li>
                     <li><a class="nav-link scrollto active" href="../Admin/coupons.php">Coupons</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
+                    <li><form method="post" action="../Home/home.html"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
               <!-- .navbar --> 
