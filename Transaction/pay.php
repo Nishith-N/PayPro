@@ -55,7 +55,13 @@ if(isset($_POST['submit_btn']))
 		$row=mysqli_fetch_row($result);
 		$mywallet=$row[0];
 	}
-
+  $sql="SELECT amount FROM bank_details WHERE phone='".$phno."'";
+	$result=mysqli_query($db,$sql);
+  if(mysqli_num_rows($result)==0)
+  {
+    header("Location:../Transaction/error.php");
+    exit();
+  }
 	$sql="SELECT wallet FROM user_details WHERE phone='".$phno."'";
 	$result=mysqli_query($db,$sql);
 	if(mysqli_num_rows($result)==1)

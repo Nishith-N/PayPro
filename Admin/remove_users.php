@@ -12,19 +12,29 @@ or die('Error connecting to MySQL server.');
 		  $result=mysqli_query($db,$sql);
       $row=mysqli_fetch_row($result);
       $payid=$row[0];
+
+      $sql="SELECT wallet FROM user_details WHERE phone='".$uname."' OR email='".$uname."'";
+		  $result=mysqli_query($db,$sql);
+      $row1=mysqli_fetch_row($result);
+      $watm=$row1[0];
+
+      $sql="UPDATE bank_details SET amount=amount+'".$watm."' WHERE phone='".$uname."' LIMIT 1";
+		  $result=mysqli_query($db,$sql);
+
+
       $sql="DELETE FROM user_details WHERE phone='".$uname."' OR email='".$uname."'";
 		  $result=mysqli_query($db,$sql);
-      $num1=mysqli_num_rows($result);
+      
 
       $sql="DELETE FROM contact_details WHERE username='".$uname."' AND pay_id='".$payid."'";
 		  $result=mysqli_query($db,$sql);
-      $num2=mysqli_num_rows($result);
+      
 
       $sql="DELETE FROM card_details WHERE pay_id='".$payid."'";
 		  $result=mysqli_query($db,$sql);
-      $num3=mysqli_num_rows($result);
+      
 
-      if($num1!=0)
+      if($result)
       {
         header("Location:../Admin/adminlogin.php");
         exit();
@@ -52,7 +62,7 @@ or die('Error connecting to MySQL server.');
     <link rel="icon" href="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/46/d1/61/46d16165-c305-5c6f-7626-1a60208042f3/source/512x512bb.jpg" type="image/icon type">
 </head>
 <body>
-<header id="header" style="margin-top: -22px;" class="fixed-top ">
+<!-- <header id="header" style="margin-top: -22px;" class="fixed-top ">
         <div class="container d-flex align-items-center">  
           <section>
             <span class="full-text" >
@@ -71,7 +81,7 @@ or die('Error connecting to MySQL server.');
                 </ul>
               </nav>
               <br>
-              <!-- .navbar --> 
+              
             </span>
 
             <span class="short-text">
@@ -93,12 +103,12 @@ or die('Error connecting to MySQL server.');
                     <li><form method="post" action="#"><input type="submit"  value="SignOut" id="signout" name="signout" class="signout_btn"></form></li>
               </ul>
               </nav>
-              <!-- .navbar --> 
+            
             </span>
           </section>
         </div>
       </header>
-      <!-- End Header -->
+       -->
 
 	  
 <div class="container-fluid mainhead">
