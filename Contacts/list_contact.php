@@ -276,6 +276,19 @@ $i++;
 
 ?>
 
+<video width="320" height="240" controls>
+  <source src="paypro_d_demo.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+<br>
+
+<video width="320" height="240" controls>
+  <source src="paypro_a_demo.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
 
         <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>    
 

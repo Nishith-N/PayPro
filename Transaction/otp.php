@@ -5,7 +5,7 @@ or die('Error connecting to MySQL server.');
 		$pay_id=$_SESSION['pay_id'];
 		$t=time();
 				$d=date("Y-m-d",$t);
-				echo $d;
+				
 				$sql="DELETE FROM trans_hist WHERE dates < now() - interval 30 DAY";
 $result=mysqli_query($db,$sql);
 	
@@ -100,7 +100,7 @@ $result=mysqli_query($db,$sql);
 	<link rel="stylesheet" type="text/css" href="otpstyle.css">   
 </head>
 <body>
-<header id="header" style="margin-top: -9px;margin-left: -469px;" class="fixed-top ">
+<!-- <header id="header" style="margin-top: -9px;margin-left: -469px;" class="fixed-top ">
         <div class="container d-flex align-items-center">  
           <section>
             <span class="full-text" >
@@ -124,7 +124,7 @@ $result=mysqli_query($db,$sql);
             </span>
           </section>
         </div>
-      </header>
+      </header> -->
       <!-- End Header -->
     
 <div class="container">
