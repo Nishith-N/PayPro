@@ -110,7 +110,7 @@ $result=mysqli_query($db,$sql);
                 </ul>
               </nav>
               <br>
-              <!-- .navbar --> 
+              
             </span>
 
             <span class="short-text">
@@ -120,7 +120,7 @@ $result=mysqli_query($db,$sql);
                 </ul>
               </nav>
               <br>
-              <!-- .navbar --> 
+        
             </span>
           </section>
         </div>
