@@ -204,7 +204,6 @@ font-family: 'Numans', sans-serif;">
 $i=0;
 if($num==0)
 {
-  echo $pay_id;
         print '
         <center>
         
